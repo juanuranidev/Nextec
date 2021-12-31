@@ -1,0 +1,9 @@
+@import "../core/base";
+
+.itemCount{
+    div{
+        @include flexRow();
+        justify-content: center;
+        margin: 1rem 0rem;
+    }
+}
