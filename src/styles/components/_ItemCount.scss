@@ -4,6 +4,22 @@
     div{
         @include flexRow();
         justify-content: center;
+        align-items: center;
         margin: 1rem 0rem;
+        .add{
+            width: 1rem;
+            text-align: center;
+            color: $primario;
+            cursor: pointer;
+        }
+        .minus{
+            @extend .add;
+        }
+        .count{
+            margin: 0rem 1rem;
+        }
+    }
+    button{
+        @include button();
     }
 }

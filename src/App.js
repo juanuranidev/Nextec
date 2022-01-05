@@ -1,9 +1,9 @@
-import NavBar from './components/NavBar.js';
+import Header from './components/header/Header';
 import ItemListContainer from './components/ItemListContainer.js';
 
 function App() {
   return <>
-    <NavBar />
+    <Header />
     <ItemListContainer titulo = "Nuestros Productos" />
   </>
 }

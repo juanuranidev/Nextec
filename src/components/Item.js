@@ -1,11 +1,13 @@
 import React from 'react'
 import ItemCount from './ItemCount'
+import '../styles/components/_Item.scss'
 
 function Item(props) {
     return (
-        <div  key={props.id}>
-            <h1>{props.titulo}</h1>
-            <p>id: {props.id}</p>
+        <div  key={props.id} className="item">
+            <img src={props.imagen} />
+            <h3 className="titulo">{props.titulo}</h3>
+            <p className="precio">Precio: ${props.precio}</p>
             <ItemCount stock={props.stock}/>
         </div>
     )

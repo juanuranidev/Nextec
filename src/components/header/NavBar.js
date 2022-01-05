@@ -1,11 +1,11 @@
 import React from 'react';
 import CarWidget from './CarWidget';
-import "../styles/layout/_NavBar.scss";
+import "../../styles/layout/header/_NavBar.scss";
 
 function NavBar(){
     return(
         <nav>
-            <h2>Savage Store</h2>
+            <h2><a href="#">Savage Store</a></h2>
             <ul>
               <li><a href="#">Inicio</a></li>
               <li><a href="#">Productos</a></li>
