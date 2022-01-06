@@ -1,9 +1,9 @@
 import React from 'react';
-import "../../styles/layout/header/_CarWidget.scss"
+import './_CarWidget.scss'
 
-function  CarWidget() {
+function CarWidget() {
     return (
-        <i className="fas fa-shopping-cart fa-2x"></i>
+            <i className="fas fa-shopping-cart fa-2x"></i>
     )
 }
 

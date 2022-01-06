@@ -1,6 +1,6 @@
 import React from 'react'
 import ItemCount from './ItemCount'
-import '../styles/components/_Item.scss'
+import './_Item.scss'
 
 function Item(props) {
     return (

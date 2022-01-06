@@ -1,4 +1,4 @@
-@import "../core/base";
+@import "../../styles/core/base";
 
 .itemCount{
     div{
@@ -15,7 +15,7 @@
         .minus{
             @extend .add;
         }
-        .count{
+        .counter{
             margin: 0rem 1rem;
         }
     }

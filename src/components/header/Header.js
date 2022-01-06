@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from './NavBar'
 import HeaderImage from '../img/test.png'
-import '../../styles/layout/header/_Header.scss'
+import './_Header.scss'
 
 function Header() {
     return (

@@ -1,6 +1,7 @@
 import React from 'react';
 import CarWidget from './CarWidget';
-import "../../styles/layout/header/_NavBar.scss";
+import MenuWidget from './MenuWidget';
+import "./_NavBar.scss";
 
 function NavBar(){
     return(
@@ -13,6 +14,7 @@ function NavBar(){
               <li><a href="#">Contacto</a></li>
             </ul>
             <CarWidget />
+            <MenuWidget />
         </nav>
     )
 }
