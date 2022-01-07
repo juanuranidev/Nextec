@@ -13,7 +13,7 @@ function ItemCount({stock}) {
     return (
         <div className="itemCount">
             <div>
-                <i className="fas fa-minus minus" onClick={handleDecrement}></i>           
+                <i className="fas fa-minus minus" onClick={handleDecrement} />         
                 <p className="counter">{counter}</p>
                 <i className="fas fa-plus add" onClick={handleIncrement} />
             </div>

@@ -1,8 +1,9 @@
+import React from 'react'
 import { useState, useEffect } from 'react'
-import ItemList from './item/ItemList'
-import Titulo from "./Titulo"
-import {getFetch} from "./products"
-import "../styles/layout/_ItemListContainer.scss"
+import ItemList from './ItemList/ItemList'
+import Titulo from '../Titulo'
+import {getFetch} from "../products"
+import "./_ItemListContainer.scss"
 
 
 function ItemListContainer() {
@@ -22,7 +23,7 @@ function ItemListContainer() {
     }, [])
 // Se ejecuta una sola vez por el filtro "[]"
 
-console.log(data)
+
 
     return (
         <main>

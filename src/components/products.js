@@ -1,10 +1,10 @@
 const products = [
-    {"id": 1, "titulo" : "NOTEBOOK HP 240 G8", "precio" : 70000, "stock" : 1, "imagen" : "./img/productos/notebookhp.png"},
-    {"id": 2, "titulo" : "producto2", "precio" : 60000, "stock" : 7},
-    {"id": 3, "titulo" : "producto3", "precio" : 78000, "stock" : 4},
-    {"id": 4, "titulo" : "producto4", "precio" : 32000, "stock" : 12},
-    {"id": 5, "titulo" : "producto5", "precio" : 29000, "stock" : 4},
-    {"id": 6, "titulo" : "producto6", "precio" : 20000, "stock" : 20} 
+    {id: "1", name : "NOTEBOOK HP 240 G8", price : 70000, stock : 1, imagen : "img/productos/notebookhp.png"},
+    {id: "2", name : "producto2", price : 60000, stock : 7},
+    {id: "3", name : "producto3", price : 78000, stock : 4},
+    {id: "4", name : "producto4", price : 32000, stock : 12},
+    {id: "5", name : "producto5", price : 29000, stock : 4},
+    {id: "6", name : "producto6", price : 20000, stock : 20} 
 ]
 
  // Promesa simulando una api
