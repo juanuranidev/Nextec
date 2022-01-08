@@ -1,0 +1,48 @@
+@import "../../../styles/core/base";
+
+.itemDetail{
+    @include flexRow();
+    justify-content: center;
+    margin: 0rem 1rem;
+    padding: 1rem;
+    .itemImage{
+        width: 60%;
+    }
+    .itemDetails{
+        border: 1px solid black;
+        width: 40%;
+        .itemTitle{
+           font-size: 2rem;
+           margin-bottom: 1rem;
+        }
+        .itemPrice{
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: $primario;
+        }
+        .itemPaymentMethods{
+            margin-bottom: 1rem;
+            p{
+                margin-bottom: 0.5rem;
+            }
+        }
+        .itemButtons{
+            margin-bottom: 1rem;
+        }
+        .itemHelpers{
+            margin-bottom: 1rem;
+            .itemHelper{
+                @include flexRow();
+                margin-bottom: 0.5rem;
+                span{
+                    margin-right: 0.5rem;
+                }
+                p{
+                    font-size: 0.8rem
+                }
+            }
+        }
+    }
+
+    
+}

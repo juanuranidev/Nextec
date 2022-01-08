@@ -1,40 +1,41 @@
-@import "../../styles/core/base";
+@import "../../../styles/core/base";
 
 nav{
     @include flexRow();
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    position: fixed;
     overflow: hidden;
     padding: 1rem;
     background-color: $primario;
-    height: 10vh;
     width: 100%;
     box-shadow: $boxShadow;
-    h2{
+    .title{
+        color: $secundario;
+        text-decoration: none;
         width: 25%;
         text-align: left;
         color: $secundario;
         font-size: 1.2rem;
-        a{
-            color: $secundario;
-            text-decoration: none;
-        }
     }
     ul{
         @include flexRow();
         justify-content: center;
         width: 50%;
-        li{
+        a{
             list-style-type: none;
-            margin: 0rem 1rem;
+            margin: 0rem;
+            padding: 0rem;
             font-weight: 500;
             font-size: 1rem;
-            a{
-                color: $secundario;
-                text-decoration: none;
-            }
+            color: $secundario;
+            text-decoration: none;
+            text-align: center;
         }
+    }
+    a{
+        width: 25%;
+        text-align: right;
+        color: $secundario;
     }
 }

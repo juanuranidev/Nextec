@@ -3,7 +3,7 @@ import './_CarWidget.scss'
 
 function CarWidget() {
     return (
-            <i className="fas fa-shopping-cart fa-2x"></i>
+            <i className="fas fa-shopping-cart fa-2x cart"></i>
     )
 }
 

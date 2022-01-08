@@ -1,23 +1,23 @@
 import React from 'react'
+import ItemCount from '../ItemCount/ItemCount'
+import "./_ItemDetail.scss"
 
 const ItemDetail = ({producto}) => {
+    console.log(producto)
     return (
         <div className="itemDetail">
             <div className="itemImage">
-                {/* <img /> */}
+            <img src={producto.image}/>
             </div>
             <div className="itemDetails">
-                <h2>{producto.name}</h2>
-                <p>{producto.price}</p>
-                    <div className="itemButtons">
-                        <div className="itemAmount">
-                        <i className="fas fa-minus minus" />
-                        <p className="counter"></p>    
-                        <i className="fas fa-plus add" />
-                    </div>
-                    <div className="itemAddToCart">
-                        <button className="addToCartButton">Agregar al carrito</button>
-                    </div>
+                <h2 className="itemTitle">{producto.name}</h2>
+                <p className="itemPrice">${producto.price}</p>
+                <div className="itemPaymentMethods">
+                    <p>Tenemos distintos métodos de pago</p>
+                    <img src="img/mercadopago.png"/>
+                </div>
+                <div className="itemButtons">
+                    <ItemCount stock={producto.stock}/>
                 </div>
                 <div className="itemHelpers">
                     <div className="itemHelper">

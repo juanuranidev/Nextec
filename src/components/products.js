@@ -1,5 +1,5 @@
 const products = [
-    {id: "1", name : "NOTEBOOK HP 240 G8", price : 70000, stock : 1, imagen : "img/productos/notebookhp.png"},
+    {id: "1", name : "NOTEBOOK HP 240 G8", price : 70000, stock : 10, image : "img/productos/notebookhp.png"},
     {id: "2", name : "producto2", price : 60000, stock : 7},
     {id: "3", name : "producto3", price : 78000, stock : 4},
     {id: "4", name : "producto4", price : 32000, stock : 12},
