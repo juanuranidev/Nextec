@@ -1,16 +1,37 @@
-@import "../../../styles/core/base";
+@import "../../../styles/base";
 
 .itemDetail{
     @include flexRow();
     justify-content: center;
     margin: 0rem 1rem;
-    padding: 1rem;
     .itemImage{
         width: 60%;
+        @include flexRow();
+        align-items: center;
+        justify-content: center;
     }
     .itemDetails{
-        border: 1px solid black;
         width: 40%;
+        .itemRoute{
+            @include flexRow();
+            align-items: center;
+            margin-bottom: 1rem;
+            a{
+                margin-right: 0.2rem;
+                font-size: 0.8rem;
+                text-decoration: none;
+                color: $terciario;
+            }
+            a:hover{
+                color: $hoverSecundario;
+            }
+            span, p{
+                margin-right: 0.2rem;
+                font-size: 0.8rem;
+                text-decoration: none;
+                color: $terciario;
+            }
+        }
         .itemTitle{
            font-size: 2rem;
            margin-bottom: 1rem;
@@ -19,14 +40,18 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: $primario;
+            font-weight: 500;
         }
         .itemPaymentMethods{
             margin-bottom: 1rem;
+            img{
+                height: 6rem;
+            }
             p{
                 margin-bottom: 0.5rem;
             }
         }
-        .itemButtons{
+        .itemCount{
             margin-bottom: 1rem;
         }
         .itemHelpers{
@@ -36,6 +61,7 @@
                 margin-bottom: 0.5rem;
                 span{
                     margin-right: 0.5rem;
+                    color: $primario;
                 }
                 p{
                     font-size: 0.8rem

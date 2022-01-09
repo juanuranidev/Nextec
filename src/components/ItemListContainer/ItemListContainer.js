@@ -1,18 +1,16 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { getFetch } from "../products"
+import Header from '../header/Header'
+import Titulo from '../titulo/Titulo'
 import ItemList from './ItemList/ItemList'
-import Titulo from '../Titulo'
-import {getFetch} from "../products"
+import PageLoader from '../pageLoader/PageLoader'
 import "./_ItemListContainer.scss"
 
-
 function ItemListContainer() {
-    // useState
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
 
-   
-    
     // Use effect para que se ejecute en 2do plano, después de que se cargó y ejecutó toda la función se ejecuta
     useEffect(() => {
         // Simulando el llamado a una api
@@ -21,17 +19,14 @@ function ItemListContainer() {
         .catch(error => console.log(error))
         .finally(() => setLoading(false))
     }, [])
-// Se ejecuta una sola vez por el filtro "[]"
-
-
 
     return (
         <main>
+            <Header />
             <Titulo texto="Nuestros Productos"/> 
             {loading
-                ? <h2>Cargando...</h2>
+                ? <PageLoader />
                 : <ItemList products={data}/>}
-
         </main>
     )
 }

@@ -1,9 +1,10 @@
 import React from 'react'
+import HeaderImage from '../../images/header/header.jpg'
 import './_Header.scss'
 
 function Header() {
     return (
-        <img src='img/test.png'/>
+        <img src={HeaderImage} className="imageHeader"/>
     )
 }
 

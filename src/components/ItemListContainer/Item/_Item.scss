@@ -1,4 +1,4 @@
-@import "../../../styles/core/base";
+@import "../../../styles/base";
 
 .item{
     margin: 1rem;
@@ -20,10 +20,6 @@
         @include button();
     }
     .itemButton:hover{
-        background-color: $hover;
+        background-color: $hoverPrimario;
     }
-}
-.item:hover{
-    position: relative;
-    border: 0px solid green;
 }

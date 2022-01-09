@@ -1,7 +1,8 @@
-@import "../../../styles/core/base";
+@import "../../../styles/base";
 
 .itemCount{
     @include flexRow();
+    align-items: center;
     div{
         @include flexRow();
         justify-content: center;
@@ -13,17 +14,24 @@
             color: $primario;
             cursor: pointer;
         }
+        .add:hover{
+            color: $hoverPrimario;
+        }
         .minus{
             @extend .add;
         }
+        .minus:hover{
+            @extend.add,:hover
+        }
         .counter{
-            margin: 0rem 1rem;
+            width: 2rem;
+            text-align: center;
         }
     }
     button{
         @include button();
     }
     button:hover{
-        background-color: $hover;
+        background-color: $hoverPrimario;
     }
 }

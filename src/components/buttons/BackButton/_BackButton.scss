@@ -1,0 +1,9 @@
+@import '../../../styles/base';
+
+.backButton{
+    @include button();
+    margin: 1rem;
+}
+.backButton:hover{
+    background-color: $hoverPrimario;
+}

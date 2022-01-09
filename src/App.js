@@ -2,8 +2,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/cart/Cart';
-import NavBar from './components/header/NavBar/NavBar';
-
+import NavBar from './components/navbar/NavBar';
 
 function App() {
   return (

@@ -1,9 +1,8 @@
-@import "../../styles/core/base";
+@import "../../styles/base";
 
-header{
-    img{
-        margin-top: 10vh;
-        width: 100%;
-        height: 70vh;
-    }
+.imageHeader{
+    width: 100%;
+    height: 60vh;
+    box-shadow: $boxShadow;
+    margin-bottom: 2rem;
 }

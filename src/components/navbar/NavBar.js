@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
-import React from 'react';
-import CarWidget from '../CarWidget/CarWidget';
-import MenuWidget from '../MenuWidget/MenuWidget';
-import "./_NavBar.scss";
+import { Link } from 'react-router-dom'
+import React from 'react'
+import CarWidget from './CarWidget/CarWidget'
+import MenuWidget from './MenuWidget/MenuWidget'
+import "./_NavBar.scss"
 
 function NavBar(){
     return(
