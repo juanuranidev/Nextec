@@ -7,17 +7,29 @@ import "./_NavBar.scss"
 function NavBar(){
     return(
         <nav> 
-            <Link to='/' className="title"><h2>Savage Store</h2></Link>
+            <h2 className="navTitle"><Link to='/'>Savage Store</Link></h2>
             <ul>
-            <Link to='/'><li>Inicio</li></Link>
-            <Link to='/'><li>Productos</li></Link>
-            <Link to='/'><li>Nosotros</li></Link>
-            <Link to='/'><li>Contacto</li></Link>
+                <li className="navLink"><Link to='/'>Inicio</Link></li>
+                <div className="navDropdown">
+                    <li><Link to='/'>Productos</Link></li>
+                    <span className="fas fa-chevron-down" />
+                    <div class="dropdownContent">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+                <li className="navLink"><Link to='/'>Nosotros</Link></li>
+                <li className="navLink"><Link to='/'>Contacto</Link></li>
             </ul>
-            <Link to='/cart'><CarWidget /></Link>    
+            <div className="navCart"><Link to='/cart'><CarWidget /></Link></div>
             <MenuWidget />
         </nav>
     )
 }
+
+
+
+
 
 export default NavBar;

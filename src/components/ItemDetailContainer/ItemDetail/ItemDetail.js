@@ -26,9 +26,7 @@ const ItemDetail = ({producto}) => {
                         <p>Pagá con Mercado Pago y elegí una de sus distintas formas de pago</p>
                         <img src={MercadoPago} alt="imágen de los métodos de pago"/>
                     </div>
-                    <div className="itemCount">
                         <ItemCount stock={producto.stock}/>
-                    </div>
                     <div className="itemHelpers">
                         <div className="itemHelper">
                             <span className="fas fa-check" />

@@ -3,6 +3,7 @@
 .itemCount{
     @include flexRow();
     align-items: center;
+    margin-bottom: 1rem;
     div{
         @include flexRow();
         justify-content: center;
@@ -33,5 +34,12 @@
     }
     button:hover{
         background-color: $hoverPrimario;
+    }
+}
+@media(max-width: 768px){
+    .itemCount{
+        div{
+            margin-right: 1rem;
+        }
     }
 }

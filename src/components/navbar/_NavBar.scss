@@ -6,36 +6,112 @@ nav{
     align-items: center;
     flex-wrap: wrap;
     overflow: hidden;
-    padding: 1rem;
+    padding: 0rem 1rem;
     background-color: $primario;
     width: 100%;
     box-shadow: $boxShadow;
-    .title{
-        color: $secundario;
-        text-decoration: none;
+    .navTitle{
+        color: $secundario;     
         width: 25%;
         text-align: left;
         color: $secundario;
         font-size: 1.2rem;
+        a{
+            text-decoration: none;
+            color: $secundario;  
+        }
     }
     ul{
         @include flexRow();
         justify-content: center;
         width: 50%;
-        a{
+        .navLink{
             list-style-type: none;
-            margin: 0rem;
-            padding: 0rem;
+            padding: 1rem;
             font-weight: 500;
             font-size: 1rem;
             color: $secundario;
-            text-decoration: none;
-            text-align: center;
+            a{
+                text-decoration: none;
+                color: $secundario;  
+            }
+            a:hover{
+                text-decoration: underline;
+            }
         }
+        .navDropdown {
+            @include flexRow();
+            align-items: center;
+            li{
+                list-style-type: none;
+                padding: 1rem 0.5rem 1rem 1rem;
+                font-weight: 500;
+                font-size: 1rem;
+                color: $secundario;
+                a{
+                    text-decoration: none;
+                    color: $secundario;  
+                }
+                a:hover{
+                    text-decoration: underline;
+                }    
+            }
+            span{
+                color: $secundario;
+                margin-right: 0.5rem;
+            }
+            .dropdownContent {
+                display: none;
+                position: absolute;
+                background-color: $primario;
+                min-width: 8rem;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                top: 51px;
+                a {
+                    // float: none;
+                    color: $secundario;
+                    padding: 1rem 0.5rem 1rem 1rem;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    text-decoration: none;
+                    display: block;
+                    text-align: left;
+                }
+                a:hover{
+                    text-decoration: underline;
+                }
+            }
+        }                    
+        .navDropdown:hover .dropdownContent {
+          display: block;
+        }
+
+
+
+
+        
     }
-    a{
+    .navCart{
         width: 25%;
         text-align: right;
-        color: $secundario;
     }
+
+
+
+
+    
+
+
+      
+      
+      
+      
+      
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
+      
+      
+
 }
