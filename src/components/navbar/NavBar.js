@@ -1,37 +1,48 @@
-import { Link } from 'react-router-dom'
 import React from 'react'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import CarWidget from './CarWidget/CarWidget'
-import MenuWidget from './MenuWidget/MenuWidget'
+import OpenMenuWidget from './OpenMenuWidget/OpenMenuWidget'
+import CloseMenuWidget from './CloseMenuWidget/CloseMenuWidget'
+import NavBarLink from './NavbarLink/NavBarLink'
 import "./_NavBar.scss"
 
 function NavBar(){
+    const[menu, setMenu] = useState(false)
+
+    const openMenu = () => setMenu(true)
+    const closeMenu = () => setMenu(false)
+    
+    let navMenu = 'navLinks '
+    if(menu!=false) {navMenu += 'active'}
+    
     return(
     <nav>
-        {/* <!-- <span className="fas fa-bars bx bx-menu fa-2x"></span> --> */}
-        <span className="fas fa-bars closeMenu" />
+        <OpenMenuWidget onClick={openMenu} />
         <div className="navLogo">
             <Link to="/" className="navLogoLink">Savage Store</Link>
         </div>
-        <div className="navLinks">
+        <div className={navMenu} >
             <div className="sidebarLogo">
                 <h2>SavageStore</h2>
-                <i className='bx bx-x' />
+                <CloseMenuWidget onClick={closeMenu} />
             </div>
             <ul className="links">
-                <li className="link"><Link to="/">Inicio</Link></li>
+                <NavBarLink class="link" link="/" name="Inicio" onClick={closeMenu}/>
+                
                 <li className="link">
-                    <a href="#">Categorías<i className="fas fa-chevron-down arrow" /></a>
+                <Link to="/">Categorías<i className="fas fa-chevron-down arrow" /></Link>
                     <ul className="subMenu">
-                        <li className="subMenuLink"><a href="#">Notebooks</a></li>
-                        <li className="subMenuLink"><a href="#">Celulares</a></li>
-                        <li className="subMenuLink"><a href="#">Computadoras</a></li>
+                        <NavBarLink class="subMenuLink" link="/" name="Notebooks" onClick={closeMenu} />
+                        <NavBarLink class="subMenuLink" link="/" name="Celulares" onClick={closeMenu} />
+                        <NavBarLink class="subMenuLink" link="/" name="Computadoras" onClick={closeMenu} />
                     </ul>
                 </li>
-                <li className="link"><a href="#">Nosotros</a></li>
-                <li className="link"><a href="#">Contacto</a></li>
+                <NavBarLink class="link" link="/" name="Nosotros" onClick={closeMenu}/>
+                <NavBarLink class="link" link="/" name="Contacto" onClick={closeMenu}/>
             </ul>
         </div>
-        <div className="navCart"><Link to="/cart"><CarWidget /></Link></div>
+        <div className="navCart"><Link to="/cart"><CarWidget  onClick={closeMenu}/></Link></div>
     </nav>
     )
 }
