@@ -3,7 +3,7 @@ import './_PageLoader.scss'
 
 const PageLoader = () => {
     return (
-        <div className="loader"></div>
+        <div className="loader" />
     )
 }
 

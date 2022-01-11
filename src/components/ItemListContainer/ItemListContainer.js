@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { getFetch } from "../products"
+import { useParams } from 'react-router-dom'
 import Header from '../header/Header'
 import Titulo from '../titulo/Titulo'
 import ItemList from './ItemList/ItemList'
@@ -11,14 +12,25 @@ function ItemListContainer() {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
 
-    // Use effect para que se ejecute en 2do plano, después de que se cargó y ejecutó toda la función se ejecuta
+    const {idCategoria} = useParams()
+
+    console.log(idCategoria)
+
     useEffect(() => {
-        // Simulando el llamado a una api
-        getFetch 
-        .then(response => setData(response))
-        .catch(error => console.log(error))
-        .finally(() => setLoading(false))
-    }, [])
+        if (idCategoria) {
+                getFetch 
+                .then(response => setData(response.filter(prod => prod.categoria === idCategoria)))
+                .catch(error => console.log(error))
+                .finally(() => setLoading(false))
+        } else {
+                getFetch 
+                .then(response => setData(response))
+                .catch(error => console.log(error))
+                .finally(() => setLoading(false))
+        }
+    }, [idCategoria])
+
+    
 
     return (
         <main>

@@ -7,19 +7,38 @@
     border-radius: 1.25rem;
     .itemImage{
         width: 10rem;
+        margin-bottom: 0.5rem;
     }
     .itemTitle{
-        font-size: 1rem;
+        font-size: 1.2rem;
         margin-bottom: 0.5rem;
     }
     .itemPrice{
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
     }
     .itemButton{
         @include button();
+        width: 100%;
     }
     .itemButton:hover{
         background-color: $hoverPrimario;
+    }
+}
+
+@media(max-width: 576px){
+    .item{
+        .itemImage{
+            width: 14rem;
+        }
+        .itemTitle{
+            font-size: 1.2rem;
+        }
+        .itemPrice{
+            font-size: 1.2rem;
+        }
+        .itemButton{
+            width: 100%;
+        }
     }
 }

@@ -1,10 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import CarWidget from './CarWidget/CarWidget'
 import OpenMenuWidget from './OpenMenuWidget/OpenMenuWidget'
 import CloseMenuWidget from './CloseMenuWidget/CloseMenuWidget'
 import NavBarLink from './NavbarLink/NavBarLink'
+import CarWidget from './CarWidget/CarWidget'
 import "./_NavBar.scss"
 
 function NavBar(){
@@ -14,13 +14,13 @@ function NavBar(){
     const closeMenu = () => setMenu(false)
     
     let navMenu = 'navLinks '
-    if(menu!=false) {navMenu += 'active'}
+    if(menu==true) {navMenu += 'active'}
     
     return(
     <nav>
         <OpenMenuWidget onClick={openMenu} />
         <div className="navLogo">
-            <Link to="/" className="navLogoLink">Savage Store</Link>
+            <Link to="/" className="navLogoLink" onClick={closeMenu} >Savage Store</Link>
         </div>
         <div className={navMenu} >
             <div className="sidebarLogo">
@@ -33,9 +33,9 @@ function NavBar(){
                 <li className="link">
                 <Link to="/">Categorías<i className="fas fa-chevron-down arrow" /></Link>
                     <ul className="subMenu">
-                        <NavBarLink class="subMenuLink" link="/" name="Notebooks" onClick={closeMenu} />
-                        <NavBarLink class="subMenuLink" link="/" name="Celulares" onClick={closeMenu} />
-                        <NavBarLink class="subMenuLink" link="/" name="Computadoras" onClick={closeMenu} />
+                        <NavBarLink class="subMenuLink" link="/categoria/notebooks" name="Notebooks" onClick={closeMenu} />
+                        <NavBarLink class="subMenuLink" link="/categoria/celulares" name="Celulares" onClick={closeMenu} />
+                        <NavBarLink class="subMenuLink" link="/categoria/computadoras" name="Computadoras" onClick={closeMenu} />
                     </ul>
                 </li>
                 <NavBarLink class="link" link="/" name="Nosotros" onClick={closeMenu}/>
@@ -46,9 +46,5 @@ function NavBar(){
     </nav>
     )
 }
-
-
-
-
 
 export default NavBar;
