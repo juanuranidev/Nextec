@@ -1,9 +1,17 @@
 @import '../../../styles/base';
 
-.backButton{
+.buttonBody{
     @include button();
-    margin: 1rem;
+    display: flex;
+    margin: 1rem 0rem 0rem 1rem;
+    padding: 0rem;
+    .buttonLink{
+        color: $secundario;
+        text-decoration: none;
+        padding: 0.8rem 2.5rem;   
+    }
 }
+
 .backButton:hover{
     background-color: $hoverPrimario;
 }

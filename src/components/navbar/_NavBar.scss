@@ -136,12 +136,17 @@ nav{
           display: block;
           padding: 0rem;
           line-height: 4rem;
+          a:hover{ 
+              text-decoration: none;
+          }
           .subMenu{
             position: relative;
             top: 0rem;
             box-shadow: none;
-            display: none;
+            display: block;
             border: none;
+            opacity: 1;
+            visibility: visible;
             .subMenuLink{
               border-bottom: none;
               padding: 0rem 0rem 0rem 2rem;
@@ -149,11 +154,10 @@ nav{
           }
         }
         .link:hover > ul{
-          position: relative;
           top: 0rem;
-          box-shadow: none;
-          display: block;
-          transition: .2s linear;
+          // opacity: 1;
+          // visibility: visible;
+          // transition: .2s linear;
         }
       }
     }

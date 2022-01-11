@@ -6,7 +6,9 @@ import ItemCount from '../ItemCount/ItemCount'
 import "./_ItemDetail.scss"
 
 const ItemDetail = ({producto}) => {
-    console.log(producto)
+
+    let linkHaciaLaCategoria = `/categoria/${producto.categoria}`
+
     return (
         <>
             <BackButton />
@@ -17,6 +19,8 @@ const ItemDetail = ({producto}) => {
                 <div className="itemDetails">
                     <div className="itemRoute">
                         <Link to="/">Inicio</Link>
+                        <span className="fas fa-angle-left"></span>
+                        <Link to={linkHaciaLaCategoria}>{producto.categoria}</Link>
                         <span className="fas fa-angle-left"></span>
                         <p>{producto.name}</p>
                     </div>

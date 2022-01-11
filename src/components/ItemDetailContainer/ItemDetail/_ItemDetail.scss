@@ -3,7 +3,7 @@
 .itemDetail{
     @include flexRow();
     justify-content: center;
-    margin: 0rem 1rem;
+    margin: 1rem;
     .itemImage{
         width: 60%;
         @include flexRow();
@@ -18,16 +18,17 @@
             margin-bottom: 1rem;
             a{
                 margin-right: 0.2rem;
-                font-size: 0.8rem;
+                font-size: 1rem;
                 text-decoration: none;
                 color: $terciario;
+                opacity: 0.6;
             }
             a:hover{
                 color: $hoverSecundario;
             }
             span, p{
                 margin-right: 0.2rem;
-                font-size: 0.8rem;
+                font-size: 1rem;
                 text-decoration: none;
                 color: $terciario;
             }

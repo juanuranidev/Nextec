@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { getFetch } from "../products"
 import { useParams } from 'react-router-dom'
 import Header from '../header/Header'
+import BackButton from '../buttons/BackButton/BackButton'
 import Titulo from '../titulo/Titulo'
 import ItemList from './ItemList/ItemList'
 import PageLoader from '../pageLoader/PageLoader'
@@ -30,15 +31,12 @@ function ItemListContainer() {
         }
     }, [idCategoria])
 
-    
-
     return (
         <main>
             <Header />
-            <Titulo texto="Nuestros Productos"/> 
-            {loading
-                ? <PageLoader />
-                : <ItemList products={data}/>}
+            {idCategoria ? <BackButton /> : null}
+            <Titulo texto="Nuestros Productos"/>
+            {loading    ? <PageLoader />   : <ItemList products={data}/>}
         </main>
     )
 }
