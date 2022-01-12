@@ -34,8 +34,8 @@ function NavBar(){
                 <Link to="/">Categorías<i className="fas fa-chevron-down arrow" /></Link>
                     <ul className="subMenu">
                         <NavBarLink class="subMenuLink" link="/categoria/notebooks" name="Notebooks" onClick={closeMenu} />
-                        <NavBarLink class="subMenuLink" link="/categoria/celulares" name="Celulares" onClick={closeMenu} />
                         <NavBarLink class="subMenuLink" link="/categoria/computadoras" name="Computadoras" onClick={closeMenu} />
+                        <NavBarLink class="subMenuLink" link="/categoria/placasdevideo" name="Placas de Video" onClick={closeMenu} />
                     </ul>
                 </li>
                 <NavBarLink class="link" link="/" name="Nosotros" onClick={closeMenu}/>

@@ -1,45 +1,55 @@
 @import "../../../styles/base";
 
 .item{
-    margin: 1rem;
-    padding: 1rem;
+    @include flexColumn();
+    justify-content: space-between;
+    margin: 0.5rem;
     box-shadow: $boxShadow;
-    border-radius: 1.25rem;
+    border-radius: 0.5rem;
     text-align: center;
+    width: 15rem;
     .itemImage{
         width: 10rem;
-        margin-bottom: 0.5rem;
+        margin: 0rem auto;
     }
-    .itemTitle{
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-    }
-    .itemPrice{
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-    }
-    .itemButton{
-        @include button();
-        width: 100%;
-    }
-    .itemButton:hover{
-        background-color: $hoverPrimario;
-    }
+    .itemContent{
+        padding: 0.5rem 1rem 1rem 1rem;
+        .itemTitle{
+            font-size: 1rem;
+            margin-bottom: 0.6rem;
+            font-weight: 500;
+        }
+        div{
+            @include flexRow();
+            justify-content: space-between;
+            align-items: center;
+            .itemPrice{
+                font-size: 1rem;
+                font-weight: 400
+            }
+            .itemButton{
+                @include button();
+            }
+            .itemButton:hover{
+                background-color: $hoverPrimario;
+            }
+        }
+    } 
 }
 
 @media(max-width: 576px){
     .item{
-        .itemImage{
-            width: 14rem;
-        }
-        .itemTitle{
-            font-size: 1.2rem;
-        }
-        .itemPrice{
-            font-size: 1.2rem;
-        }
-        .itemButton{
-            width: 100%;
-        }
+        width: 16rem;
+        margin: 1rem auto;
+        .itemContent{
+            .itemTitle{
+                // font-size: 1.2rem;
+            }
+            div{
+                .itemPrice{
+                    font-size: 1.2rem;
+                }
+            }            
+        }   
     }
 }

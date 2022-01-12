@@ -4,11 +4,15 @@ import './_Item.scss'
 
 function Item(props) {
     return (      
-        <div key={props.id} className="item">      
+        <div key={props.id} className="item">     
             <img src={props.image} alt="Imágen de producto" className="itemImage"/>
-            <h3 className="itemTitle">{props.name}</h3>
-            <p className="itemPrice">${(props.price).toLocaleString('es')}</p>
-            <Link to={`/item/${props.id}`}><button className="itemButton">Ver Producto</button></Link>     
+            <div className="itemContent">
+                <h3 className="itemTitle">{props.name}</h3>
+                <div>
+                    <p className="itemPrice">${(props.price).toLocaleString('es')}</p>
+                    <Link to={`/item/${props.id}`}><button className="itemButton">Ver Producto</button></Link>
+                </div>
+            </div>
         </div>   
     )
 }

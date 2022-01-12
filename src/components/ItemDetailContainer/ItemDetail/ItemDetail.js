@@ -7,20 +7,20 @@ import "./_ItemDetail.scss"
 
 const ItemDetail = ({producto}) => {
 
-    let linkHaciaLaCategoria = `/categoria/${producto.categoria}`
+    let linkToCategory = `/categoria/${producto.categoria}`
 
     return (
         <>
             <BackButton />
-            <div className="itemDetail">        
+            <div className="itemDetail">     
                 <div className="itemImage">
                     <img src={producto.image}/>
                 </div>
                 <div className="itemDetails">
                     <div className="itemRoute">
-                        <Link to="/">Inicio</Link>
+                        <Link to="/">inicio</Link>
                         <span className="fas fa-angle-left"></span>
-                        <Link to={linkHaciaLaCategoria}>{producto.categoria}</Link>
+                        <Link to={linkToCategory}>{producto.categoria}</Link>
                         <span className="fas fa-angle-left"></span>
                         <p>{producto.name}</p>
                     </div>
