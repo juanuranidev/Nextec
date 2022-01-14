@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import BackButton from '../../buttons/BackButton/BackButton'
 import MercadoPago from '../../../images/mercadopago.png'
@@ -6,9 +7,17 @@ import ItemCount from '../ItemCount/ItemCount'
 import "./_ItemDetail.scss"
 
 const ItemDetail = ({producto}) => {
+    const [show, setShow] = useState(true)
+    const [stock, setStock] = useState(0)
+    // const {id, name, price, stock, categoria, image} = producto
 
     let linkToCategory = `/categoria/${producto.categoria}`
 
+    const addToCart = (counter) => {
+        setShow(false)
+        // addProductToCart({ ...producto, cantidad: counter})
+        setStock(counter)
+    }
     return (
         <>
             <BackButton />
@@ -30,7 +39,14 @@ const ItemDetail = ({producto}) => {
                         <p>Pagá con Mercado Pago y elegí una de sus distintas formas de pago</p>
                         <img src={MercadoPago} alt="imágen de los métodos de pago"/>
                     </div>
-                        <ItemCount stock={producto.stock}/>
+                    <div className="cartButtons">
+                        {show
+                        ? <ItemCount stock={producto.stock} addToCart={addToCart} />
+                        : <div>
+                            <Link to="/"><button className="goToHome">Volver al inicio</button></Link>
+                            <Link to="/cart"><button className="goToCart" >Ir al carrito</button></Link>
+                        </div>}
+                    </div>
                     <div className="itemHelpers">
                         <div className="itemHelper">
                             <span className="fas fa-check" />

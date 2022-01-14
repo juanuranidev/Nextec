@@ -10,7 +10,8 @@ const CategoryContainer = () => {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
     const {idCategoria} = useParams()
-    
+    console.log(data)
+
     useEffect(() => {
         if (idCategoria) {
                 getFetch 

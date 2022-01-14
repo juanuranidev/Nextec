@@ -12,6 +12,10 @@
     }
 }
 
-.backButton:hover{
+.buttonBody:hover{
     background-color: $hoverPrimario;
+}
+
+.buttonBody:active{
+    transform: scale(.95);
 }

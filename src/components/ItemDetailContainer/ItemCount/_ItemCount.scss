@@ -22,11 +22,17 @@
         .add:hover{
             color: $hoverPrimario;
         }
+        .add:active{
+            transform: scale(.95);
+        }
         .minus{
             @extend .add;
         }
         .minus:hover{
             @extend.add,:hover
+        }
+        .minus:active{
+            @extend.add,:active
         }
         .counter{
             width: 2rem;
@@ -38,6 +44,9 @@
     }
     button:hover{
         background-color: $hoverPrimario;
+    }
+    button:active{
+        transform: scale(.95);
     }
 }
 @media(max-width: 768px){
