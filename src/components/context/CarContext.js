@@ -14,23 +14,17 @@ export const CartContextProvider = ({children}) => {
 
     function addToCart(item) {
         const exist = cartList.find((product => product.id === item.id))
-        // exist
-        // ? setCartList(cartList.map((x) => x.id === item.id) ? {...exist, quantity: exist.quantity + 1} : null)
-        // : setCartList([...cartList, item])
-
         console.log(exist)
 
         if(exist){
             console.log("existe")
+            // setCartList(cartList.find(product => product.id === item.id) ? {...exist, quantity: exist.quantity + 1} : null)
             // setCartList(cartList.map((x) => x.id === item.id) ? {...exist, quantity: exist.quantity + 1} : null)
         } else {
             console.log("no existe")
             setCartList([...cartList, item])
         }
-
-        exist
-        ? console.log("existe")
-        : console.log("no existe")
+        console.log(cartList)
     }
 
     function emptyCart() {
