@@ -129,7 +129,7 @@ const products = [
  export const getFetch = new Promise((resolve, reject) => {
     let condicion = true
     if(condicion) {
-        setTimeout(() => resolve(products), 3000)
+        setTimeout(() => resolve(products), 1000)
     } else {
         reject('error')
     }

@@ -1,9 +1,13 @@
 import React from 'react'
+import { useCartContext } from '../context/CarContext'
 
 function Cart() {
+    const { cartList, emptyCart } = useCartContext()
+
     return (
         <div>
-            Cart
+            {cartList.map(prod => <li key={prod.id} >{prod.name}</li>)}
+            <button onClick={emptyCart} >Vaciar Carrito</button>
         </div>
     )
 }

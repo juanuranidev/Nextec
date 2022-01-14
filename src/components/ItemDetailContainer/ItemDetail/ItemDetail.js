@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useCartContext } from '../../context/CarContext'
 import BackButton from '../../buttons/BackButton/BackButton'
 import MercadoPago from '../../../images/mercadopago.png'
 import ItemCount from '../ItemCount/ItemCount'
@@ -8,16 +9,14 @@ import "./_ItemDetail.scss"
 
 const ItemDetail = ({producto}) => {
     const [show, setShow] = useState(true)
-    const [stock, setStock] = useState(0)
-    // const {id, name, price, stock, categoria, image} = producto
-
+    const {cartList, addToCart} = useCartContext()
     let linkToCategory = `/categoria/${producto.categoria}`
 
-    const addToCart = (counter) => {
+    const onAdd = (counter) => {
         setShow(false)
-        // addProductToCart({ ...producto, cantidad: counter})
-        setStock(counter)
+        addToCart( {...producto, quantity: counter})
     }
+
     return (
         <>
             <BackButton />
@@ -41,7 +40,7 @@ const ItemDetail = ({producto}) => {
                     </div>
                     <div className="cartButtons">
                         {show
-                        ? <ItemCount stock={producto.stock} addToCart={addToCart} />
+                        ? <ItemCount stock={producto.stock} onAdd={onAdd} />
                         : <div>
                             <Link to="/"><button className="goToHome">Volver al inicio</button></Link>
                             <Link to="/cart"><button className="goToCart" >Ir al carrito</button></Link>
