@@ -1,0 +1,22 @@
+@import '../../styles/base';
+
+.table{
+    margin: 2rem auto 0rem auto;
+    // border-spacing: 2rem;
+    text-align: center;
+    border-collapse: collapse;
+    border-radius: 0.25rem;
+    border: 1px solid black;
+    thead{
+        background-color: $primario;
+        
+        th{
+            padding: 1rem 1rem;
+            color: $secundario;
+        }
+        .itemName{
+            text-align: left;
+        }
+    }
+    
+}

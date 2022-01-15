@@ -14,7 +14,7 @@ function NavBar(){
     const closeMenu = () => setMenu(false)
     
     let navMenu = 'navLinks '
-    if(menu==true) {navMenu += 'active'}
+    if(menu===true) {navMenu += 'active'}
     
     return(
     <nav>

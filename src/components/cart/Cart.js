@@ -1,15 +1,31 @@
 import React from 'react'
-import { useCartContext } from '../context/CarContext'
+import CartItem from './CartItem/CartItem'
+import './_Cart.scss'
 
 function Cart() {
-    const { cartList, emptyCart } = useCartContext()
 
     return (
-        <div>
-            {cartList.map(prod => <li key={prod.id} >{prod.name}</li>)}
-            <button onClick={emptyCart} >Vaciar Carrito</button>
-        </div>
+        <section className='cartSection'>
+            <table className='table'>
+                <thead>
+                    <tr>
+                        <th><span className="fas fa-times" /></th>
+                        <th className="itemImage">Imágen</th>
+                        <th className="itemName">Nombre</th>
+                        <th className="itemPrice">Precio</th>
+                        <th className="itemQuantity">Cantidad</th>
+                        <th className="itemTotal">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <CartItem /> 
+                </tbody>
+            </table>
+        </section>
+        
     )
 }
 
 export default Cart
+
+
