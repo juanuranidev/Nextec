@@ -1,22 +1,43 @@
 @import '../../styles/base';
 
-.table{
-    margin: 2rem auto 0rem auto;
-    // border-spacing: 2rem;
-    text-align: center;
-    border-collapse: collapse;
-    border-radius: 0.25rem;
-    border: 1px solid black;
-    thead{
-        background-color: $primario;
-        
-        th{
-            padding: 1rem 1rem;
-            color: $secundario;
-        }
-        .itemName{
-            text-align: left;
+.cartSection{
+    .table{
+        width: 45rem;
+        margin: 2rem auto 1rem auto;
+        text-align: center;
+        border-collapse: collapse;       
+        thead{
+            background-color: $primario;
+            tr{
+                th{
+                    font-size: 1rem;
+                    padding: 1rem;
+                    color: $secundario;
+                }
+            }  
         }
     }
-    
+    .emptyCart{
+        width: 45rem;
+        margin: 1rem auto;
+    }
+}
+
+@media(max-width: 768px){
+    .cartSection{
+        .table{
+            width: 90%;
+            thead{
+                tr{
+                    th{
+                        font-size: 0.8rem;
+                        padding: 1rem 0.2rem;
+                    }
+                }  
+            }
+        }
+        .emptyCart{
+            width: 90%;
+        }
+    }   
 }

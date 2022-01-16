@@ -1,5 +1,7 @@
 import React from 'react'
 import CartItem from './CartItem/CartItem'
+import CartPayment from './CartPayment/CartPayment'
+import EmptyCartButton from './EmptyCartButton/EmptyCartButton'
 import './_Cart.scss'
 
 function Cart() {
@@ -18,9 +20,13 @@ function Cart() {
                     </tr>
                 </thead>
                 <tbody>
-                <CartItem /> 
+                    <CartItem /> 
                 </tbody>
             </table>
+            <div className="emptyCart">
+                <EmptyCartButton />
+            </div>   
+            <CartPayment />
         </section>
         
     )

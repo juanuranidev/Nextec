@@ -9,7 +9,7 @@ import "./_ItemDetail.scss"
 
 const ItemDetail = ({producto}) => {
     const [show, setShow] = useState(true)
-    const {cartList, addToCart} = useCartContext()
+    const { addToCart } = useCartContext()
     let linkToCategory = `/categoria/${producto.categoria}`
 
     const onAdd = (counter) => {

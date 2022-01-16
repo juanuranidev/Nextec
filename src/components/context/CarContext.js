@@ -13,9 +13,8 @@ export const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
 
     function addToCart(item) {
-        // Se fija si el item está en el carrito
-        const exist = cartList.find((product => product.id === item.id))
-        if(exist){
+        const isInCart = cartList.find((product => product.id === item.id))
+        if(isInCart){
             // Reconocer el array del cart en busca del item para aumentarle la cantidad
             const oldCart = cartList.map(element => {
                 // Si el id del elemento del array es igual al id del elemento que quiero agregar al carro
@@ -33,6 +32,14 @@ export const CartContextProvider = ({children}) => {
         console.log(cartList)
     }
 
+    function removeItem(e) {
+        const product = cartList.find((product => product.id === e.target.id))
+
+        product.quantity === 1
+        ? setCartList(cartList.filter((x) => x.id !== product.id))
+        : setCartList(cartList.map((x) => x.id === product.id ? { ...product, quantity: product.quantity - 1 }: x))
+    }
+
     function emptyCart() {
         setCartList([])
     }
@@ -41,6 +48,7 @@ export const CartContextProvider = ({children}) => {
         <CartContext.Provider value={{
             cartList,
             addToCart,
+            removeItem,
             emptyCart
         }} >
             {children}
