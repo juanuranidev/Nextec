@@ -20,7 +20,7 @@ function Cart() {
                     </tr>
                 </thead>
                 <tbody>
-                    <CartItem /> 
+                    {/* <CartItem />  */}
                 </tbody>
             </table>
             <div className="emptyCart">
