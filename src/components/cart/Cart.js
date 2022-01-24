@@ -1,10 +1,19 @@
 import React from 'react'
+import { useCartContext } from '../context/CarContext'
 import CartItem from './CartItem/CartItem'
+import CartMessage from './CartMessage/CartMessage'
 import CartPayment from './CartPayment/CartPayment'
 import EmptyCartButton from './EmptyCartButton/EmptyCartButton'
 import './_Cart.scss'
 
 function Cart() {
+    const { cartList, removeItem } = useCartContext()
+    
+    if(cartList.length===0){
+        return(
+            <CartMessage />
+        )
+    }
 
     return (
         <section className='cartSection'>
@@ -20,7 +29,7 @@ function Cart() {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* <CartItem />  */}
+                    <CartItem /> 
                 </tbody>
             </table>
             <div className="emptyCart">
