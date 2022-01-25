@@ -42,7 +42,7 @@ function NavBar(){
                 <NavBarLink class="link" link="/" name="Contacto" onClick={closeMenu}/>
             </ul>
         </div>
-        <div className="navCart"><Link to="/cart"><CarWidget  onClick={closeMenu}/></Link></div>
+        <div className="navCart"><CarWidget  onClick={closeMenu}/></div>
     </nav>
     )
 }

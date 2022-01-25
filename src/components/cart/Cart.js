@@ -7,7 +7,7 @@ import EmptyCartButton from './EmptyCartButton/EmptyCartButton'
 import './_Cart.scss'
 
 function Cart() {
-    const { cartList, removeItem } = useCartContext()
+    const { cartList } = useCartContext()
     
     if(cartList.length===0){
         return(

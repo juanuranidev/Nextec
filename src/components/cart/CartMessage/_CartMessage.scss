@@ -32,3 +32,28 @@
         }
     }
 }
+
+@media(max-width: 768px){
+    .cartMessage{
+        width: 90%;
+        .cartMessage_h2{
+            font-size: 1.5rem;
+        }
+        .cartMessage_p{
+            font-size: 1rem;
+        }
+        .cartMessage_a{
+            .cartMessage_a_button{
+                @include button();
+                box-shadow: none;
+                border: 2px solid $hoverPrimario;
+            }
+            .cartMessage_a_button:hover{
+                background-color: $primario;
+            }
+            .cartMessage_a_button:active{
+                transform: scale(0.96);
+            }
+        }
+    }
+}
