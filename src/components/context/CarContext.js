@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 
 const CartContext = createContext([])
 
@@ -7,9 +7,7 @@ export function useCartContext() {
     return useContext(CartContext)
 }
 
-// Creación del componente que maneja el contexto
 export const CartContextProvider = ({children}) => {
-    // estados y funciones globales
     const [cartList, setCartList] = useState([])
 
     function addToCart(item) {
@@ -29,7 +27,6 @@ export const CartContextProvider = ({children}) => {
             // Si no estaba se agrega al array del carrito
             setCartList([...cartList, item])
         }
-        console.log(cartList)
     }
 
     function removeItem(e) {
@@ -43,6 +40,17 @@ export const CartContextProvider = ({children}) => {
     function emptyCart() {
         setCartList([])
     }
+
+    useEffect(() => {
+        let cartList = localStorage.getItem("cartList")
+        if (cartList) {
+            setCartList(JSON.parse(cartList))
+          }
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem('cartList', JSON.stringify(cartList))
+    }, [cartList])
 
     return(
         <CartContext.Provider value={{
