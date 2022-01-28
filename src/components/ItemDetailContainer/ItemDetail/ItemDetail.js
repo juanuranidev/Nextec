@@ -7,40 +7,38 @@ import MercadoPago from '../../../images/mercadopago.png'
 import ItemCount from '../ItemCount/ItemCount'
 import "./_ItemDetail.scss"
 
-const ItemDetail = ({producto}) => {
+const ItemDetail = ({product}) => {
     const [show, setShow] = useState(true)
     const { addToCart } = useCartContext()
-    let linkToCategory = `/categoria/${producto.categoria}`
+    let linkToCategory = `/categoria/${product.category}`
 
     const onAdd = (counter) => {
         setShow(false)
-        addToCart( {...producto, quantity: counter})
+        addToCart( {...product, quantity: counter})
     }
-
+    console.log(product)
     return (
         <>
             <BackButton />
             <div className="itemDetail">     
                 <div className="itemImage">
-                    <img src={producto.image}/>
+                    <img src={product.image}/>
                 </div>
                 <div className="itemDetails">
                     <div className="itemRoute">
                         <Link to="/">inicio</Link>
                         <span className="fas fa-angle-left"></span>
-                        <Link to={linkToCategory}>{producto.categoria}</Link>
-                        <span className="fas fa-angle-left"></span>
-                        <p>{producto.name}</p>
+                        <Link to={linkToCategory}>{product.category}</Link>
                     </div>
-                    <h2 className="itemTitle">{producto.name}</h2>
-                    <p className="itemPrice">${(producto.price).toLocaleString('es')}</p>
+                    <h2 className="itemTitle">{product.name}</h2>
+                    <p className="itemPrice">${product.price}</p>
                     <div className="itemPaymentMethods">
                         <p>Pagá con Mercado Pago y elegí una de sus distintas formas de pago</p>
                         <img src={MercadoPago} alt="imágen de los métodos de pago"/>
                     </div>
                     <div className="cartButtons">
                         {show
-                        ? <ItemCount stock={producto.stock} onAdd={onAdd} />
+                        ? <ItemCount stock={product.stock} onAdd={onAdd} />
                         : <div>
                             <Link to="/"><button className="goToHome">Volver al inicio</button></Link>
                             <Link to="/cart"><button className="goToCart" >Ir al carrito</button></Link>
@@ -58,6 +56,10 @@ const ItemDetail = ({producto}) => {
                     </div>
                 </div>
             </div>
+                <div className="itemDescription">
+                    <h2 className="itemDescription_h2">Descripción</h2>
+                    <p>{product.description}</p>
+                </div>
         </>
     )
 }

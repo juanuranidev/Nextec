@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { getFetch } from "../products"
+import { collection, getDocs, getFirestore, query } from 'firebase/firestore'
 import Header from '../header/Header'
 import Titulo from '../titulo/Titulo'
 import ItemList from './ItemList/ItemList'
@@ -12,10 +12,13 @@ function ItemListContainer() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        getFetch 
-        .then(response => setData(response))
-        .catch(error => console.log(error))
+        const db = getFirestore()
+        const queryCollection = query(collection(db, 'items'))
+        getDocs(queryCollection)
+        .then(res => setData(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
+        .catch(err => err)
         .finally(() => setLoading(false))
+        
     }, [])
 
     return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 import { useParams } from 'react-router-dom'
-import {getFetch} from '../products'
 import BackButton from '../buttons/BackButton/BackButton'
 import PageLoader from '../pageLoader/PageLoader'
 import ItemList from '../ItemListContainer/ItemList/ItemList'
@@ -10,22 +10,15 @@ const CategoryContainer = () => {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
     const {idCategoria} = useParams()
-    console.log(data)
 
     useEffect(() => {
-        if (idCategoria) {
-                getFetch 
-                .then(response => setData(response.filter(prod => prod.categoria === idCategoria)))
-                .catch(error => console.log(error))
-                .finally(() => setLoading(false))
-        } else {
-                getFetch 
-                .then(response => setData(response))
-                .catch(error => console.log(error))
-                .finally(() => setLoading(false))
-        }
-    }, [idCategoria])
-
+        const db = getFirestore()
+        const queryCollection = query(collection(db, 'items'), where('category', '==', idCategoria))
+        getDocs(queryCollection)
+        .then(res => setData(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
+        .catch(err => err)
+        .finally(() => setLoading(false))
+    }, [])
 
     return (
         <>

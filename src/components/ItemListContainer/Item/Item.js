@@ -9,7 +9,7 @@ function Item(props) {
             <div className="itemContent">
                 <h3 className="itemTitle">{props.name}</h3>
                 <div>
-                    <p className="itemPrice">${(props.price).toLocaleString('es')}</p>
+                    <p className="itemPrice">${props.price}</p>
                     <Link to={`/item/${props.id}`}><button className="itemButton">Ver Producto</button></Link>
                 </div>
             </div>
