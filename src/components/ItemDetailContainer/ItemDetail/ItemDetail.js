@@ -16,7 +16,7 @@ const ItemDetail = ({product}) => {
         setShow(false)
         addToCart( {...product, quantity: counter})
     }
-    console.log(product)
+
     return (
         <>
             <BackButton />
@@ -56,10 +56,11 @@ const ItemDetail = ({product}) => {
                     </div>
                 </div>
             </div>
-                <div className="itemDescription">
-                    <h2 className="itemDescription_h2">Descripción</h2>
-                    <p>{product.description}</p>
-                </div>
+            {product.description &&
+            <div className="itemDescription">
+                <h2 className="itemDescription_h2">Descripción</h2>
+                <p>{product.description}</p>
+            </div>}
         </>
     )
 }

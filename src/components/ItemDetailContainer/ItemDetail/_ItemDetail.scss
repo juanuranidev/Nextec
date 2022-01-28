@@ -94,7 +94,6 @@
             }
         }
     }
-     
 }
 .itemDescription{
     margin: 1rem;
@@ -121,6 +120,10 @@
     .itemDetail{
         .itemDetails{
             width: 90%;
+            .itemTitle{
+               font-size: 1.4rem;
+               margin-bottom: 1rem;
+            }
         }
     }
 }
