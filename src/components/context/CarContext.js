@@ -47,8 +47,8 @@ export const CartContextProvider = ({children}) => {
     }
 
     const purchase = async (inputs) => {
+        // Create order
         let order = {}
-
         order.buyer = {
             name: inputs.name,
             lastName: inputs.lastName,
@@ -58,10 +58,6 @@ export const CartContextProvider = ({children}) => {
             streetNumber: inputs.streetNumber,
             zipCode: inputs.zipCode
         }
-           
-
-        order.total = cartTotal;
-        
         order.items = cartList.map(cartItem => {
             const id = cartItem.id;
             const name = cartItem.name;
@@ -69,50 +65,31 @@ export const CartContextProvider = ({children}) => {
             const quantity = cartItem.quantity;
             return {id, name, price, quantity}
         })
-        console.log(order)      
-        setPaymentFinished(true)
-        setCartList([])
+        order.total = cartTotal;
 
 
+        // Send order
         const db = getFirestore()
         const orderCollection = collection(db, 'orders') 
         await addDoc(orderCollection, order)
         .then (resp => console.log(resp.id))
         .catch(err => console.log(err))
-        .finally (() => console.log('cargando'))
-
+        .finally (() => setPaymentFinished(true))
+        .finall (() => setCartList([])) 
   
-        // Actualizar carrito
-        // const orderDoc = doc(db, 'items', '6eM60FtSwRMzywcrTonv')
-        // updateDog (orderDoc, {
-        //     stock: 98
-        // })
 
+        // Update cart
         const queryCollection = collection(db, 'items')
-        
-
-        const queryUpdateStock = query(
-            queryCollection, where(documentId(), 'in', cartList.map(it => it.id))
-        )
-
+        const queryUpdateStock = query(queryCollection, where(documentId(), 'in', cartList.map(it => it.id)))
         const batch = writeBatch(db)    
-
         await getDocs (queryUpdateStock)
         .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
-            stock: res.data().stock - cartList.find(item => item.id === res.id).cantidad
+            stock: res.data().stock - cartList.find(item => item.id === res.id).stock
         })
         ))
         .catch(err => console.log(err))
         .finally (() => console.log('Stock actualizado'))
-
         batch.commit()
-        // getDocs(queryCollection)
-        // .then(res => setData(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
-        // .catch(err => err)
-        // .finally(() => setLoading(false))
-
-
-
     }
 
     useEffect(() => {
