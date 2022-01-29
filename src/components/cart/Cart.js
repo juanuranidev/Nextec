@@ -4,11 +4,16 @@ import CartItem from './CartItem/CartItem'
 import CartMessage from './CartMessage/CartMessage'
 import CartPayment from './CartPayment/CartPayment'
 import EmptyCartButton from './EmptyCartButton/EmptyCartButton'
+import InfoPayment from '../PaymentContainer/PaymentsDetails/PaymentsDetails'
 import './_Cart.scss'
 
 function Cart() {
-    const { cartList } = useCartContext()
+    const { cartList, paymentProcess, paymentFinished } = useCartContext()
     
+    if (paymentFinished === true){
+        <h1>Test</h1>
+    }
+
     if(cartList.length===0){
         return(
             <CartMessage />

@@ -7,6 +7,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Cart from './components/cart/Cart';
 import NavBar from './components/navbar/NavBar';
 import CategoryContainer from './components/CategoryContainer/CategoryContainer';
+import PaymentContainer from './components/PaymentContainer/PaymentContainer';
 
 getFirestoreApp()
 
@@ -20,10 +21,19 @@ function App() {
           <Route exact path='/categoria/:idCategoria' element={ <CategoryContainer />}/>
           <Route exact path='/item/:idItem' element={<ItemDetailContainer />}/>
           <Route exact path='/cart' element={<Cart />}/> 
+          <Route exact path='/payment' element={<PaymentContainer />} />
         </Routes>
       </BrowserRouter>
     </CartContextProvider>
   )
 }
 
-export default App;
+export default App; 
+
+/*
+Falta
+- Categorías, Nosotros, Contacto, Finalizar compra
+- Cargar más productos
+- Filtros en los productos
+- Favoritos
+*/

@@ -24,6 +24,15 @@
         }
         .cartButtons{
             @include flexColumn();
+            .cartButtons_button{
+                @include button();
+            }
+            .cartButtons_button:hover{
+                background-color: $hoverPrimario;
+            }
+            .cartButtons_button:active{
+                transform: scale(.95);
+            }
             .moreProducts{
                 margin-top: 0.5rem;
                 font-size: 0.6rem;
