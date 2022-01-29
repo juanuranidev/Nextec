@@ -47,6 +47,7 @@ export const CartContextProvider = ({children}) => {
     }
 
     const purchase = async (inputs) => {
+        setCartList([])
         // Create order
         let order = {}
         order.buyer = {
@@ -66,6 +67,7 @@ export const CartContextProvider = ({children}) => {
             return {id, name, price, quantity}
         })
         order.total = cartTotal;
+        
 
 
         // Send order
@@ -75,7 +77,6 @@ export const CartContextProvider = ({children}) => {
         .then (resp => console.log(resp.id))
         .catch(err => console.log(err))
         .finally (() => setPaymentFinished(true))
-        .finall (() => setCartList([])) 
   
 
         // Update cart
