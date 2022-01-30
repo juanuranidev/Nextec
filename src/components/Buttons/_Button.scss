@@ -1,0 +1,11 @@
+@import '../../styles/base';
+
+.button{
+    @include button();
+}
+.button:hover{
+    background-color: $hoverPrimario;
+}
+.button:active{
+    transform: scale(.95);
+} 
