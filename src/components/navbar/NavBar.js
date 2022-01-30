@@ -9,40 +9,36 @@ import "./_NavBar.scss"
 
 function NavBar(){
     const[menu, setMenu] = useState(false)
-
+    
     const openMenu = () => setMenu(true)
     const closeMenu = () => setMenu(false)
     
-    let navMenu = 'navLinks '
-    if(menu===true) {navMenu += 'active'}
-    
     return(
-    <nav>
+    <nav className="nav">
         <OpenMenuWidget onClick={openMenu} />
         <div className="navLogo">
-            <Link to="/" className="navLogoLink" onClick={closeMenu} >Savage Store</Link>
+            <Link to="/" className="navLogo_a" onClick={closeMenu}>Savage Store</Link>
         </div>
-        <div className={navMenu} >
+        <div className={menu===false?'navLinks':'navLinks active'} >
             <div className="sidebarLogo">
                 <h2>SavageStore</h2>
                 <CloseMenuWidget onClick={closeMenu} />
             </div>
-            <ul className="links">
-                <NavBarLink class="link" link="/" name="Inicio" onClick={closeMenu}/>
-                
-                <li className="link">
-                <Link to="/">Categorías<i className="fas fa-chevron-down arrow" /></Link>
-                    <ul className="subMenu">
-                        <NavBarLink class="subMenuLink" link="/categoria/notebooks" name="Notebooks" onClick={closeMenu} />
-                        <NavBarLink class="subMenuLink" link="/categoria/placasdevideo" name="Placas de Video" onClick={closeMenu} />
-                        <NavBarLink class="subMenuLink" link="/categoria/computadoras" name="Computadoras" onClick={closeMenu} />
+            <ul className="navLinks_ul">
+                <NavBarLink class="navLinks_ul_li" link="/" name="Inicio" onClick={closeMenu}/>
+                <li className="navLinks_ul_li">
+                <Link to="/">Categorías<span className="fas fa-chevron-down arrow navLinks_ul_li_span" /></Link>
+                    <ul className="navLinks_ul_li_ul">
+                        <NavBarLink class="navLinks_ul_li_ul_li" link="/categoria/notebooks" name="Notebooks" onClick={closeMenu} />
+                        <NavBarLink class="navLinks_ul_li_ul_li" link="/categoria/placasdevideo" name="Placas de Video" onClick={closeMenu} />
+                        <NavBarLink class="navLinks_ul_li_ul_li" link="/categoria/computadoras" name="Computadoras" onClick={closeMenu} />
                     </ul>
                 </li>
-                <NavBarLink class="link" link="/" name="Nosotros" onClick={closeMenu}/>
-                <NavBarLink class="link" link="/" name="Contacto" onClick={closeMenu}/>
+                <NavBarLink class="navLinks_ul_li" link="/" name="Nosotros" onClick={closeMenu}/>
+                <NavBarLink class="navLinks_ul_li" link="/" name="Contacto" onClick={closeMenu}/>
             </ul>
         </div>
-        <div className="navCart"><CarWidget  onClick={closeMenu}/></div>
+        <div className="navCart"><CarWidget onClick={closeMenu}/></div>
     </nav>
     )
 }

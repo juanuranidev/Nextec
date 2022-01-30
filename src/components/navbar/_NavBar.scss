@@ -1,24 +1,23 @@
-@import "../../styles/base";
-
-nav{
-  @include flexRow();
+.nav{
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   overflow: hidden;
   padding: 0rem 1rem;
-  background-color: $primario;
+  background-color: #3498db;
   width: 100%;
-  box-shadow: $boxShadow;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   .openMenu{
     display: none;
   }
   .navLogo{
     width: 25%;
     text-align: left;
-    .navLogoLink{
+    .navLogo_a{
       font-size: 1.5rem;
-      color: #fff;
+      color: #ffffff;
       text-decoration: none;
       font-weight: 600;
     }
@@ -29,11 +28,13 @@ nav{
     .sidebarLogo{
       display: none;
     }
-    .links{
-      @include flexRow();
+    .navLinks_ul{
+      display: flex;
+      flex-direction: row;
       justify-content: center;
-      .link{
-        @include flexRow();
+      .navLinks_ul_li{
+        display: flex;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         list-style: none;
@@ -42,9 +43,9 @@ nav{
         a{
           text-decoration: none;
           font-weight: 500;
-          color: $secundario;
-          .arrow{
-            color: $secundario;
+          color: #ffffff;
+          .navLinks_ul_li_span{
+            color: #ffffff;
             width: 1rem;
             text-align: center;
             line-height: 4.4rem;
@@ -54,19 +55,20 @@ nav{
         a:hover{ 
             text-decoration: underline;
         }
-        .subMenu{
+        .navLinks_ul_li_ul{
           position: absolute;
           top: 5rem;
-          background-color: $primario;
-          box-shadow: $boxShadow;
-          border-top: 0.2rem solid $secundario;
+          background-color: #3498db;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          border-top: 0.2rem solid #ffffff;
           opacity: 0;
           visibility: hidden;
           text-align: left;
           border-bottom-left-radius: 0.25rem;
           border-bottom-right-radius: 0.25rem;
-          .subMenuLink{
-            @include flexRow();
+          .navLinks_ul_li_ul_li{
+            display: flex;
+            flex-direction: row;
             justify-content: flex-start;
             padding: 1rem;
             width: 100%;
@@ -74,7 +76,7 @@ nav{
           }
         }
       }
-      .link:hover > ul{
+      .navLinks_ul_li:hover > ul{
         top: 4.4rem;
         opacity: 1;
         visibility: visible;
@@ -84,21 +86,20 @@ nav{
   }
   .navCart{
     width: 25%;
-    text-align: right;
-    
+    text-align: right;    
     .cartIcon{
       width: 2.5rem;
-      color: $secundario;
+      color: #ffffff;
     }
   }
 }
 
 @media (max-width: 768px){
-  nav{
+  .nav{
     padding: 1rem;
     .openMenu{
       display: block;
-      color: $secundario;
+      color: #ffffff;
       width: 25%;
     }
     .navLogo{
@@ -112,34 +113,40 @@ nav{
       display: block;
       width: 100%;
       max-width: 20rem;
-      background-color:  $primario;
+      background-color:  #3498db;
       padding: 1rem;
-      box-shadow: $boxShadow;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       transition: all 0.5s ease;
       z-index: 1;
       .sidebarLogo{
-        @include flexRow();
+        display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: space-between;
         h2{
-          color: $secundario;
+          color: #ffffff;
         }
         .closeMenu{
           display: flex;
-          color: $secundario;
+          color: #ffffff;
         }
       }
-      .links{
+      .navLinks_ul{
         display: block;
         margin-top: 1rem;
-        .link{
+        .navLinks_ul_li{
           display: block;
           padding: 0rem;
           line-height: 4rem;
+          a{
+            .navLinks_ul_li_span{
+              display: none;
+            }
+          }
           a:hover{ 
               text-decoration: none;
           }
-          .subMenu{
+          .navLinks_ul_li_ul{
             position: relative;
             top: 0rem;
             box-shadow: none;
@@ -147,17 +154,14 @@ nav{
             border: none;
             opacity: 1;
             visibility: visible;
-            .subMenuLink{
+            .navLinks_ul_li_ul_li{
               border-bottom: none;
               padding: 0rem 0rem 0rem 2rem;
             }
           }
         }
-        .link:hover > ul{
+        .navLinks_ul_li:hover > ul{
           top: 0rem;
-          // opacity: 1;
-          // visibility: visible;
-          // transition: .2s linear;
         }
       }
     }

@@ -1,12 +1,12 @@
 import React from 'react'
-import { getFirestoreApp } from './components/firebase/dbConfig'
+import { getFirestoreApp } from './components/Firebase/dbConfig'
 import { CartContextProvider } from './components/Context/CarContext'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import NavBar from './components/navbar/NavBar'
-import CartContainer from './components/Pages/CartContainer/CartContainer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import NavBar from './components/Navbar/NavBar'
+import ItemListContainer from './components/Pages/ItemListContainer/ItemListContainer'
 import CategoryContainer from './components/Pages/CategoryContainer/CategoryContainer'
 import ItemDetailContainer from './components/Pages/ItemDetailContainer/ItemDetailContainer'
-import ItemListContainer from './components/Pages/ItemListContainer/ItemListContainer'
+import CartContainer from './components/Pages/CartContainer/CartContainer'
 import PaymentContainer from './components/Pages/PaymentContainer/PaymentContainer'
 
 getFirestoreApp()

@@ -1,22 +1,21 @@
-@import '../../../styles/base';
-
 .carWidget{
-    @include flexRow();
+    display: flex;
+    flex-direction: row;
     justify-content: flex-end;
-    .cartIcon{
+    .carWidget_a{
         text-decoration: none;
     }
-    .cartQuantity{
-        background-color: $hoverPrimario;
+    .carWidget_a_empty{
+        opacity: 0.6;
+    }
+    .carWidget_span{
+        background-color: #196fa8;
         border-radius: 0.5rem;
         margin-left: 0.2rem;
         padding: 0.4rem;
-        color: $secundario;
+        color: #ffffff;
         text-align: center;
         font-size: 1rem;
         font-weight: 500;
-    }
-    .empty{
-        opacity: 0.6;
     }
 }
