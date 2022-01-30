@@ -1,0 +1,129 @@
+@import "../../../../styles/base";
+
+.itemDetail{
+    @include flexRow();
+    justify-content: center;
+    margin: 1rem;
+    .itemImage{
+        @include flexRow();
+        align-items: center;
+        justify-content: center;
+        img{
+            width: 80%;
+        }
+    }
+    .itemDetails{
+        width: 40%;
+        .itemRoute{
+            @include flexRow();
+            align-items: baseline;
+            margin-bottom: 1rem;
+            a{
+                margin-right: 0.2rem;
+                font-size: 1rem;
+                text-decoration: none;
+                color: $terciario;
+                opacity: 0.6;
+            }
+            a:hover{
+                color: $hoverSecundario;
+            }
+            span, p{
+                margin-right: 0.2rem;
+                font-size: 1rem;
+                text-decoration: none;
+                color: $terciario;
+            }
+        }
+        .itemTitle{
+           font-size: 2rem;
+           margin-bottom: 1rem;
+        }
+        .itemPrice{
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: $primario;
+            font-weight: 500;
+        }
+        .itemPaymentMethods{
+            margin-bottom: 1rem;
+            img{
+                height: 6rem;
+            }
+            p{
+                margin-bottom: 0.5rem;
+            }
+        }
+        .cartButtons{
+            margin-bottom: 1rem;
+            div{
+                .goToHome{
+                    @include button();
+                    margin-right: 1rem;
+                }
+                .goToHome:hover{
+                    background-color: $hoverPrimario;
+                }
+                .goToHome:active{
+                    transform: scale(.95);
+                }
+                .goToCart{
+                    @include button();
+                }
+                .goToCart:hover{
+                    background-color: $hoverPrimario;
+                }
+                .goToCart:active{
+                    transform: scale(.95);
+                }
+            }
+            
+        }
+        .itemHelpers{
+            margin-bottom: 1rem;
+            .itemHelper{
+                @include flexRow();
+                margin-bottom: 0.5rem;
+                span{
+                    margin-right: 0.5rem;
+                    color: $primario;
+                }
+                p{
+                    font-size: 0.8rem
+                }
+            }
+        }
+    }
+}
+.itemDescription{
+    margin: 1rem;
+    .itemDescription_h2{
+        margin-bottom: 0.5rem;
+    }
+} 
+
+@media(max-width: 992px){
+    .itemDetail{
+        @include flexColumn();
+        align-items: center;
+        .itemImage{
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        .itemDetails{
+            width: 80%;
+        }
+    }
+}
+
+@media(max-width: 576px){
+    .itemDetail{
+        .itemDetails{
+            width: 90%;
+            .itemTitle{
+               font-size: 1.4rem;
+               margin-bottom: 1rem;
+            }
+        }
+    }
+}

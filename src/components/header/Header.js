@@ -5,13 +5,12 @@ function Header() {
     return (
         <header className="header">
             <div className="headerContent">
-                <h1>Bienvenido a nuestra tienda</h1>
+                <h1 className="headerContent_h1">Bienvenido a nuestra tienda</h1>
             </div>
             <div className="headerArrow">
-            <a href='#catalogo'><span className="fas fa-chevron-down fa-4x arrow" /></a>
+                <a href='#catalogo' className="headerArrow_a"><span className="fas fa-chevron-down fa-4x headerArrow_a_span" /></a>
             </div>
         </header>
-        
     )
 }
 

@@ -1,13 +1,13 @@
 import React from 'react'
-import { getFirestoreApp } from './components/firebase/dbConfig';
-import { CartContextProvider } from './components/context/CarContext'
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import Cart from './components/cart/Cart';
-import NavBar from './components/navbar/NavBar';
-import CategoryContainer from './components/CategoryContainer/CategoryContainer';
-import PaymentContainer from './components/PaymentContainer/PaymentContainer';
+import { getFirestoreApp } from './components/firebase/dbConfig'
+import { CartContextProvider } from './components/Context/CarContext'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import NavBar from './components/navbar/NavBar'
+import CartContainer from './components/Pages/CartContainer/CartContainer'
+import CategoryContainer from './components/Pages/CategoryContainer/CategoryContainer'
+import ItemDetailContainer from './components/Pages/ItemDetailContainer/ItemDetailContainer'
+import ItemListContainer from './components/Pages/ItemListContainer/ItemListContainer'
+import PaymentContainer from './components/Pages/PaymentContainer/PaymentContainer'
 
 getFirestoreApp()
 
@@ -20,7 +20,7 @@ function App() {
           <Route exact path='/' element={<ItemListContainer />}/>
           <Route exact path='/categoria/:idCategoria' element={ <CategoryContainer />}/>
           <Route exact path='/item/:idItem' element={<ItemDetailContainer />}/>
-          <Route exact path='/cart' element={<Cart />}/> 
+          <Route exact path='/cart' element={<CartContainer />}/> 
           <Route exact path='/payment' element={<PaymentContainer />} />
         </Routes>
       </BrowserRouter>

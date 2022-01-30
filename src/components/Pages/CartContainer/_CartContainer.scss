@@ -1,0 +1,44 @@
+@import '../../../styles/base';
+
+.cartSection{
+    .table{
+        width: 45rem;
+        margin: 2rem auto 1rem auto;
+        text-align: center;
+        border-collapse: collapse;       
+        thead{
+            background-color: $primario;
+            tr{
+                th{
+                    font-size: 1rem;
+                    padding: 1rem;
+                    color: $secundario;
+                }
+            }  
+        }
+    }
+    .emptyCart{
+        width: 45rem;
+        margin: 1rem auto;
+        text-align: right;
+    }
+}
+
+@media(max-width: 768px){
+    .cartSection{
+        .table{
+            width: 90%;
+            thead{
+                tr{
+                    th{
+                        font-size: 0.8rem;
+                        padding: 1rem 0.2rem;
+                    }
+                }  
+            }
+        }
+        .emptyCart{
+            width: 90%;
+        }
+    }   
+}

@@ -1,0 +1,18 @@
+@import '../../../../styles/base';
+
+.emptyCartButton{
+    @include button();
+    font-size: 0.8rem;
+}
+.emptyCartButton:hover{
+    background-color: $hoverPrimario;
+}
+.emptyCartButton:active{
+    transform: scale(.95);
+}
+@media(max-width: 768px){
+    .emptyCartButton{
+        font-size: 0.7rem;
+        padding: 0.6rem 0.8rem;
+    }
+}

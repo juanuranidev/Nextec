@@ -4,7 +4,7 @@ import './_BackButton.scss'
 
 const BackButton = () => {
     return (
-            <button className="buttonBody"><Link to="/" className="buttonLink">Volver</Link></button>
+        <button className="button"><Link to="/" className="button_a">Volver</Link></button>
     )
 }
 

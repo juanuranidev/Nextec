@@ -1,9 +1,7 @@
-@import '../../styles/base';
-
 .loader {
     border: 1rem solid #f3f3f3;
     border-radius: 50%;
-    border-top: 16px solid $primario;
+    border-top: 16px solid #3498db;
     width: 5rem;
     height: 5rem;
     -webkit-animation: spin 1s linear infinite; /* Safari */

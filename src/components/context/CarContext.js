@@ -1,6 +1,6 @@
 import { createContext } from 'react'
 import { useState, useContext, useEffect } from 'react'
-import { collection, getDocs, getFirestore, query, addDoc, writeBatch, queryCollection, where, documentId } from 'firebase/firestore'
+import { collection, getDocs, getFirestore, query, addDoc, writeBatch, where, documentId } from 'firebase/firestore'
 
 const CartContext = createContext([])
 
@@ -47,7 +47,6 @@ export const CartContextProvider = ({children}) => {
     }
 
     const purchase = async (inputs) => {
-        setCartList([])
         // Create order
         let order = {}
         order.buyer = {
@@ -69,12 +68,10 @@ export const CartContextProvider = ({children}) => {
         order.total = cartTotal;
         
 
-
         // Send order
         const db = getFirestore()
         const orderCollection = collection(db, 'orders') 
         await addDoc(orderCollection, order)
-        .then (resp => console.log(resp.id))
         .catch(err => console.log(err))
         .finally (() => setPaymentFinished(true))
   
@@ -85,11 +82,11 @@ export const CartContextProvider = ({children}) => {
         const batch = writeBatch(db)    
         await getDocs (queryUpdateStock)
         .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
-            stock: res.data().stock - cartList.find(item => item.id === res.id).stock
+            stock: res.data().stock - cartList.find(item => item.id === res.id).quantity
         })
         ))
         .catch(err => console.log(err))
-        .finally (() => console.log('Stock actualizado'))
+        .finally (() => setCartList([]))
         batch.commit()
     }
 

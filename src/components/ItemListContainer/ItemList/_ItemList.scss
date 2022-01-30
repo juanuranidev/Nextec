@@ -1,7 +1,0 @@
-@import "../../../styles/base";
-
-.items{
-    @include flexRow();
-    justify-content: center;
-    flex-wrap: wrap;
-}
