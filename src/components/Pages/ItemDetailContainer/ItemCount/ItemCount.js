@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import "./_ItemCount.scss"
 
-function ItemCount({stock, onAdd}) {
+function ItemCount({stock, handleAddToCart}) {
     const [amount, setAmount] = useState(1)   
 
     const handleDecrement = () => amount > 1 ? setAmount(prev => prev - 1) :  console.log("Elija una cantidad mínima")   
@@ -10,12 +10,12 @@ function ItemCount({stock, onAdd}) {
 
     return (
         <div className="itemCount">
-            <div>
-                <i className="fas fa-minus minus" onClick={handleDecrement} />         
-                <p className="counter">{amount}</p>
-                <i className="fas fa-plus add" onClick={handleIncrement} />
+            <div className="item_counter">
+                <span className="fas fa-minus item_counter_span" onClick={handleDecrement} />         
+                <p className="item_counter_p">{amount}</p>
+                <span className="fas fa-plus item_counter_span" onClick={handleIncrement} />
             </div>
-            <button onClick={() => onAdd(amount)}>Agregar al carrito</button> 
+            <button className="itemCount_button" onClick={() => handleAddToCart(amount)}>Agregar al carrito</button> 
         </div>
     )
 }

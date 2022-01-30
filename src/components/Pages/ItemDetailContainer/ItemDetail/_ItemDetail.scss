@@ -1,95 +1,98 @@
-@import "../../../../styles/base";
-
 .itemDetail{
-    @include flexRow();
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     margin: 1rem;
     .itemImage{
-        @include flexRow();
+        display: flex;
+    flex-direction: row;
         align-items: center;
         justify-content: center;
-        img{
+        .itemImage_img{
             width: 80%;
         }
     }
     .itemDetails{
         width: 40%;
         .itemRoute{
-            @include flexRow();
+            display: flex;
+            flex-direction: row;
             align-items: baseline;
             margin-bottom: 1rem;
-            a{
+            .itemRoute_a{
                 margin-right: 0.2rem;
                 font-size: 1rem;
                 text-decoration: none;
-                color: $terciario;
+                color: #000000;
                 opacity: 0.6;
             }
-            a:hover{
-                color: $hoverSecundario;
+            .itemRoute_a:hover{
+                color: #aaaaaa;
             }
-            span, p{
+            .itemRoute_span{
                 margin-right: 0.2rem;
                 font-size: 1rem;
                 text-decoration: none;
-                color: $terciario;
+                color: #000000;
             }
         }
-        .itemTitle{
+        .itemDetails_h2{
            font-size: 2rem;
            margin-bottom: 1rem;
         }
-        .itemPrice{
+        .itemDetails_p{
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: $primario;
+            color: #3498db;
             font-weight: 500;
         }
         .itemPaymentMethods{
             margin-bottom: 1rem;
-            img{
-                height: 6rem;
-            }
-            p{
+            .itemPaymentMethods_p{
                 margin-bottom: 0.5rem;
+            }
+            .itemPaymentMethods_img{
+                height: 6rem;
             }
         }
         .cartButtons{
             margin-bottom: 1rem;
-            div{
-                .goToHome{
-                    @include button();
-                    margin-right: 1rem;
+            .cartGoToButtons{
+                display: flex;
+                .cartGoToButtons_button{
+                    display: flex;
+                    background: #3498db;
+                    border-radius: 0.5rem;
+                    font-weight: 500;
+                    text-align: center;
+                    border: none;
+                    box-shadow:  0 2px 4px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
+                    cursor: pointer;
+                    margin: 0rem 0.5rem;
+                    .cartGoToButtons_button_a{
+                        color: #ffffff;
+                        text-decoration: none;
+                        padding: 1rem;
+                        font-size: 1rem;
+                    }
                 }
-                .goToHome:hover{
-                    background-color: $hoverPrimario;
+                .goTocartGoToButtons_buttonHome:hover{
+                    background-color: #196fa8;
                 }
-                .goToHome:active{
-                    transform: scale(.95);
-                }
-                .goToCart{
-                    @include button();
-                }
-                .goToCart:hover{
-                    background-color: $hoverPrimario;
-                }
-                .goToCart:active{
+                .cartGoToButtons_button:active{
                     transform: scale(.95);
                 }
             }
-            
         }
         .itemHelpers{
             margin-bottom: 1rem;
             .itemHelper{
-                @include flexRow();
+                display: flex;
+                flex-direction: row;
                 margin-bottom: 0.5rem;
-                span{
+                .itemHelper_span{
                     margin-right: 0.5rem;
-                    color: $primario;
-                }
-                p{
-                    font-size: 0.8rem
+                    color: #3498db;
                 }
             }
         }
@@ -104,7 +107,8 @@
 
 @media(max-width: 992px){
     .itemDetail{
-        @include flexColumn();
+        display: flex;
+        flex-direction: column;
         align-items: center;
         .itemImage{
             width: 100%;
@@ -120,9 +124,14 @@
     .itemDetail{
         .itemDetails{
             width: 90%;
-            .itemTitle{
+            .itemDetails_h2{
                font-size: 1.4rem;
                margin-bottom: 1rem;
+            }
+        }
+        .cartButtons{
+            .cartGoToButtons{
+                justify-content: center;
             }
         }
     }

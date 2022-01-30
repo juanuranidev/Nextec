@@ -2,11 +2,10 @@ import React from 'react'
 import Item from '../Item/Item'
 import './_ItemList.scss'
 
-
 function ItemList(props) {
     return (
         <div className="items" id="catalogo">
-            {props.products.map(producto => <Item name={producto.name} id={producto.id} key={producto.id} stock={producto.stock} price={producto.price} image={producto.image}/>)}
+            {props.products.map(product => <Item name={product.name} id={product.id} key={product.id} stock={product.stock} price={product.price} image={product.image}/>)}
         </div>
     )
 }

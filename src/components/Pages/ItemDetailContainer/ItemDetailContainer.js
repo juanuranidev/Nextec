@@ -1,7 +1,7 @@
 import React from 'react'
-import { getDoc, getFirestore, doc } from 'firebase/firestore'
-import {useEffect, useState} from 'react'
+import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { getFirestore, doc, getDoc } from 'firebase/firestore'
 import PageLoader from '../../PageLoader/PageLoader'
 import ItemDetail from './ItemDetail/ItemDetail'
 
@@ -15,15 +15,16 @@ const ItemDetailContainer = () => {
     const queryProd = doc (db, 'items', idItem)
     getDoc(queryProd)
     .then(resp => setProduct({id: resp.id, ...resp.data()}))
-    .catch(err => err)
+    .catch(err => console.log(err))
     .finally(setLoading(false))
   }, [])
+  
     return (
-        <div>
+        <section>
           {loading
-                ? <PageLoader />
-                : <ItemDetail product={product} />}
-        </div>
+          ? <PageLoader />
+          : <ItemDetail product={product} />}
+        </section>
     )
 } 
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { collection, getDocs, getFirestore, query } from 'firebase/firestore'
+import { getFirestore, query, collection, getDocs } from 'firebase/firestore'
 import Header from '../../Header/Header'
 import Title from '../../Title/Title'
-import ItemList from './ItemList/ItemList'
 import PageLoader from '../../PageLoader/PageLoader'
+import ItemList from './ItemList/ItemList'
 import "./_ItemListContainer.scss"
 
 function ItemListContainer() {
@@ -22,11 +22,13 @@ function ItemListContainer() {
     }, [])
 
     return (
-        <main>
+        <>
             <Header />
-            <Title text="Catálogo"/>
-            {loading    ? <PageLoader />    : <ItemList products={data}/>}
-        </main>
+            <main>
+                <Title text="Catálogo"/>
+                {loading    ? <PageLoader />    : <ItemList products={data}/>}
+            </main>
+        </>
     )
 }
 
