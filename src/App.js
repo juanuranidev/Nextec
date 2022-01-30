@@ -1,5 +1,5 @@
 import React from 'react'
-import { getFirestoreApp } from './components/Firebase/dbConfig'
+import { getFirestoreApp } from './components/firebase/dbConfig'
 import { CartContextProvider } from './components/Context/CarContext'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NavBar from './components/Navbar/NavBar'
