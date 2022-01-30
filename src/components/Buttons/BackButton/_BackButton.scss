@@ -1,4 +1,4 @@
-.button{
+.backButton{
     display: flex;
     margin: 1rem;
     padding: 0rem;
@@ -10,7 +10,7 @@
     border: none;
     box-shadow:  0 2px 4px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
     cursor: pointer;
-    .button_a{
+    .backButton_a{
         color: #ffffff;
         text-decoration: none;
         padding: 0.8rem 1.6rem;   
@@ -18,10 +18,18 @@
     }
 }
 
-.button:hover{
+.backButton:hover{
     background-color: #196fa8;
 }
 
-.button:active{
+.backButton:active{
     transform: scale(.95);
+}
+
+@media(max-width: 768px){
+    .backButton{
+        .backButton_a{
+            font-size: 0.8rem;
+        }
+    }
 }
