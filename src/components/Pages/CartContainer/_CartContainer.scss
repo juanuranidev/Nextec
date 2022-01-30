@@ -1,18 +1,16 @@
-@import '../../../styles/base';
-
 .cartSection{
-    .table{
+    .cartSection_table{
         width: 45rem;
         margin: 2rem auto 1rem auto;
         text-align: center;
         border-collapse: collapse;       
         thead{
-            background-color: $primario;
+            background-color: #3498db;
             tr{
                 th{
                     font-size: 1rem;
                     padding: 1rem;
-                    color: $secundario;
+                    color: #ffffff;
                 }
             }  
         }
@@ -26,7 +24,7 @@
 
 @media(max-width: 768px){
     .cartSection{
-        .table{
+        .cartSection_table{
             width: 90%;
             thead{
                 tr{

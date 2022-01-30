@@ -4,6 +4,7 @@ import './_EmptyCartButton.scss'
 
 const EmptyCartButton = () => {
     const { emptyCart } = useCartContext()
+    
     return (
             <button onClick={emptyCart} className="emptyCartButton">Vaciar Carrito</button>   
     )

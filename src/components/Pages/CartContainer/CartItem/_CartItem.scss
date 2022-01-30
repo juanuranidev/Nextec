@@ -1,17 +1,24 @@
-@import '../../../../styles/base';
-
-tr{
+.itemCart{
     box-shadow: 0px 1px 0px 0px #dddfe2;
-    td{
+    .itemCart_td{
         font-size: 1rem;
         padding: 1rem;
-        .removeItemButton{
-            @include button();
+        .itemCart_td_button{
+            display: flex;
+            background: #3498db;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-align: center;
+            border: none;
+            box-shadow:  0 2px 4px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
+            padding: 1rem;
+            color: #ffffff;
+            cursor: pointer;
         }
-        .removeItemButton:hover{
-            background-color: $hoverPrimario;
+        .itemCart_td_button:hover{
+            background-color: #196fa8;
         }
-        .removeItemButton:active{
+        .itemCart_td_button:active{
             transform: scale(.95);
         }
     }
@@ -19,19 +26,20 @@ tr{
         text-align: left;
     }
 }
+
 @media(max-width: 768px){
-    tr{
-        td{
+    .itemCart{
+        .itemCart_td{
             font-size: 0.8rem;
             padding: 1rem 0.2rem;
         }
     }
 }
+
 @media(max-width: 576px){
-    tr{
-        td{
+    .itemCart{
+        .itemCart_td{
             font-size: 0.6rem;
         }
     }
 }
-

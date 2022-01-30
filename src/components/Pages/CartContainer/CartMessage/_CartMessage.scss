@@ -4,31 +4,40 @@
     width: 45rem;
     margin: 5rem auto;
     padding: 2rem;
-    background-color: $primario;
+    background-color: #3498db;
     border-radius: 0.5rem;
-    box-shadow: $boxShadow;
-    color: $secundario;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: #ffffff;
     text-align: center;
     .cartMessage_h2{
-        font-size: $tituloSeccion;
+        font-size: 2rem;
         margin-bottom: 1rem;
     }
     .cartMessage_p{
-        font-size: $parrafo;
+        font-size: 1.2rem;
         margin-bottom: 1rem;
         font-weight: 500;
     }
     .cartMessage_a{
         .cartMessage_a_button{
-            @include button();
+            background: #3498db;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-align: center;
+            border: none;
+            box-shadow:  0 2px 4px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
+            cursor: pointer;
+            padding: 1rem;
+            color: #ffffff;
+            font-size: 1rem;
             box-shadow: none;
-            border: 2px solid $hoverPrimario;
+            border: 2px solid #196fa8;
         }
         .cartMessage_a_button:hover{
-            background-color: $hoverPrimario;
+            background-color: #196fa8;
         }
         .cartMessage_a_button:active{
-            transform: scale(0.96);
+            transform: scale(0.95);
         }
     }
 }
@@ -41,19 +50,6 @@
         }
         .cartMessage_p{
             font-size: 1rem;
-        }
-        .cartMessage_a{
-            .cartMessage_a_button{
-                @include button();
-                box-shadow: none;
-                border: 2px solid $hoverPrimario;
-            }
-            .cartMessage_a_button:hover{
-                background-color: $primario;
-            }
-            .cartMessage_a_button:active{
-                transform: scale(0.96);
-            }
         }
     }
 }

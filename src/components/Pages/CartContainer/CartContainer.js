@@ -1,9 +1,9 @@
 import React from 'react'
 import { useCartContext } from '../../Context/CarContext'
-import CartItem from './CartItem/CartItem'
 import CartMessage from './CartMessage/CartMessage'
-import CartPayment from './CartPayment/CartPayment'
+import CartItem from './CartItem/CartItem'
 import EmptyCartButton from './EmptyCartButton/EmptyCartButton'
+import CartPayment from './CartPayment/CartPayment'
 import './_CartContainer.scss'
 
 function CartContainer() {
@@ -17,15 +17,15 @@ function CartContainer() {
 
     return (
         <section className='cartSection'>
-            <table className='table'>
+            <table className='cartSection_table'>
                 <thead>
                     <tr>
                         <th><span className="fas fa-times" /></th>
-                        <th className="itemImage">Imágen</th>
-                        <th className="itemName">Nombre</th>
-                        <th className="itemPrice">Precio</th>
-                        <th className="itemQuantity">Cantidad</th>
-                        <th className="itemTotal">Total</th>
+                        <th>Imágen</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,11 +36,8 @@ function CartContainer() {
                 <EmptyCartButton />
             </div>   
             <CartPayment />
-        </section>
-        
+        </section>     
     )
 }
 
 export default CartContainer
-
-
