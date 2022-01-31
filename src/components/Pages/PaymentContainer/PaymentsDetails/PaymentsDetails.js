@@ -3,7 +3,8 @@ import { useCartContext } from '../../../Context/CarContext'
 import './_PaymentsDetails.scss'
 
 const PaymentsDetails = () => {
-    const { purchase, inputs, setInputs } = useCartContext()
+    const { purchase, inputs, setInputs, cartList } = useCartContext()
+    const required = [inputs.name, inputs.lastName, inputs.document, inputs.mail, inputs.country, inputs.city, inputs.street, inputs.streetNumber, inputs.zipCode]
 
     const handleChange = (e) => {
       setInputs({
@@ -123,7 +124,10 @@ const PaymentsDetails = () => {
             className="inputContainer_label"
           />
         </div>
-        <button className="paymentsDetails_form_button" type="submit" onClick={() => purchase(inputs)} >Enviar</button>
+        {required.includes("")
+        ? <button className="paymentsDetails_form_button" onClick={() => console.log("Completa todos los campos")} >Enviar</button>
+        : <button className="paymentsDetails_form_button" type="submit" onClick={() => purchase(inputs)} disabled={cartList.length===0} >Enviar</button>
+        }
       </form>
     </section>
     )

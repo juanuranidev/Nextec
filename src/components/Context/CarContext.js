@@ -23,6 +23,7 @@ export const CartContextProvider = ({children}) => {
         streetNumber: '',
         departament: '',
         zipCode: '',
+        orderId: ''
     })
 
     function addToCart(item) {
@@ -74,11 +75,12 @@ export const CartContextProvider = ({children}) => {
             return {id, name, price, quantity}
         })
         order.total = cartTotal;
-        order.orderId = Math.floor(Math.random() + Date.now() + 1000000);
+
         // Send order
         const db = getFirestore()
         const orderCollection = collection(db, 'orders') 
         await addDoc(orderCollection, order)
+        .then(resp => setInputs({...inputs, orderId: resp.id}))
         .catch(err => console.log(err))
         .finally (() => setCartList([]))
   
@@ -92,7 +94,7 @@ export const CartContextProvider = ({children}) => {
         })
         ))
         .catch(err => console.log(err))
-        .finally (() => setPaymentFinished(true))
+        .finally(() => setPaymentFinished(true))
         batch.commit()
     }
 
