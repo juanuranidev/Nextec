@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore'
-import BackButton from '../../Buttons/BackButton/BackButton'
+import BackButton from '../../BackButton/BackButton'
 import PageLoader from '../../PageLoader/PageLoader'
 import ItemList from '../ItemListContainer/ItemList/ItemList'
 

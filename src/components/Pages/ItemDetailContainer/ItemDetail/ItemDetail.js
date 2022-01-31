@@ -2,8 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import { useCartContext } from '../../../Context/CarContext'
 import { Link } from 'react-router-dom'
-import BackButton from '../../../Buttons/BackButton/BackButton'
-import MercadoPago from '../../../../images/mercadopago.png'
+import BackButton from '../../../BackButton/BackButton'
+import MercadoPago from './mercadopago.png'
 import ItemCount from '../ItemCount/ItemCount'
 import "./_ItemDetail.scss"
 

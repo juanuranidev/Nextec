@@ -4,14 +4,20 @@
     margin: 2rem auto;
     color: #ffffff;
     text-align: center;
-    width: 20rem;
+    width: 45rem;
     padding: 1rem;
     .paymentFinished_h2{
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    .paymentFinished_p{
+        font-size: 1rem;
         margin-bottom: 1rem;
+        font-weight: 500;
     }
     .paymentFinished_button{
         display: flex;
-        margin: 1rem auto;
+        margin: 0rem auto;
         background-color: #196fa8;
         color:#ffffff;
         border-radius: 0.5rem;
@@ -34,6 +40,7 @@
 
 @media(max-width: 768px){
     .paymentFinished{
+        width: 90%;
         .paymentFinished_button{
             .paymentFinished_button_a{
                 font-size: 0.8rem;

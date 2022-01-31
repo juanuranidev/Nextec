@@ -12,6 +12,19 @@ export const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
     const [cartTotal, setCartTotal] = useState()
     const [paymentFinished, setPaymentFinished] = useState(false)
+    const [inputs, setInputs] = useState({
+        name: '',
+        lastName: '',
+        document: '',
+        mail: '',
+        country: '',
+        city: '',
+        street: '',
+        streetNumber: '',
+        departament: '',
+        zipCode: '',
+        orderId: Math.floor(Math.random() + Date.now() + 1000000)
+    })
 
     function addToCart(item) {
         setPaymentFinished(false)
@@ -46,11 +59,13 @@ export const CartContextProvider = ({children}) => {
         order.buyer = {
             name: inputs.name,
             lastName: inputs.lastName,
+            mail: inputs.mail,
             country: inputs.country,
             city: inputs.city,
             street: inputs.street,
             streetNumber: inputs.streetNumber,
-            zipCode: inputs.zipCode
+            departament: inputs.departament,
+            zipCode: inputs.zipCode,
         }
         order.items = cartList.map(cartItem => {
             const id = cartItem.id;
@@ -60,7 +75,7 @@ export const CartContextProvider = ({children}) => {
             return {id, name, price, quantity}
         })
         order.total = cartTotal;
-        
+        order.orderId = inputs.orderId
 
         // Send order
         const db = getFirestore()
@@ -69,7 +84,6 @@ export const CartContextProvider = ({children}) => {
         .catch(err => console.log(err))
         .finally (() => setPaymentFinished(true))
   
-
         // Update stock
         const queryCollection = collection(db, 'items')
         const queryUpdateStock = query(queryCollection, where(documentId(), 'in', cartList.map(it => it.id)))
@@ -103,6 +117,8 @@ export const CartContextProvider = ({children}) => {
             setCartTotal,
             paymentFinished,
             setPaymentFinished,
+            inputs,
+            setInputs,
             addToCart,
             removeItem,
             emptyCart,

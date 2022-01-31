@@ -3,19 +3,7 @@ import { useCartContext } from '../../../Context/CarContext'
 import './_PaymentsDetails.scss'
 
 const PaymentsDetails = () => {
-    const { purchase } = useCartContext()
-    const [inputs, setInputs] = useState({
-        name: '',
-        lastName: '',
-        document: '',
-        number: '',
-        country: '',
-        city: '',
-        street: '',
-        streetNumber: '',
-        departament: '',
-        zipCode: ''
-    })
+    const { purchase, inputs, setInputs } = useCartContext()
 
     const handleChange = (e) => {
       setInputs({
@@ -27,18 +15,18 @@ const PaymentsDetails = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       setInputs({
-        name: '',
-        lastName: '',
-        document: '',
-        number: '',
-        country: '',
-        city: '',
-        street: '',
-        streetNumber: '',
-        departament: '',
-        zipCode: ''
+        name: inputs.name,
+        lastName: inputs.lastName,
+        document: inputs.document,
+        mail: inputs.mail,
+        country: inputs.country,
+        city: inputs.city,
+        street: inputs.street,
+        streetNumber: inputs.streetNumber,
+        departament: inputs.departament,
+        zipCode: inputs.zipCode,
+        orderId: Math.floor(Math.random() + Date.now() + 1000000)
       })
-      console.log(inputs)
     }
 
     return (
@@ -73,10 +61,10 @@ const PaymentsDetails = () => {
             className="inputContainer_label"
           />
           <input 
-          type="number" 
-          name="number" 
-          placeholder='Número de celular'
-          value={inputs.number} 
+          type="text" 
+          name="mail" 
+          placeholder="Correo electrónico"
+          value={inputs.mail} 
           onChange={handleChange}
           className="inputContainer_label"
         />
