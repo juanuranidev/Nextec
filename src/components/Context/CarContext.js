@@ -1,6 +1,7 @@
 import { createContext } from 'react'
 import { useState, useContext, useEffect } from 'react'
 import { collection, getDocs, getFirestore, query, addDoc, writeBatch, where, documentId } from 'firebase/firestore'
+import { toast } from 'react-toastify'
 
 const CartContext = createContext([])
 
@@ -25,6 +26,9 @@ export const CartContextProvider = ({children}) => {
         zipCode: '',
         orderId: ''
     })
+
+    const successfulPurchase = () => toast.success("Compra realizada con éxito")
+    const cartEmptied = () => toast.success("Carrito vaciado")
 
     function addToCart(item) {
         setPaymentFinished(false)
@@ -51,6 +55,7 @@ export const CartContextProvider = ({children}) => {
 
     function emptyCart() {
         setCartList([])
+        cartEmptied()
     }
 
     const purchase = async (inputs) => {
@@ -94,7 +99,10 @@ export const CartContextProvider = ({children}) => {
         })
         ))
         .catch(err => console.log(err))
-        .finally(() => setPaymentFinished(true))
+        .finally(() => {
+            setPaymentFinished(true);
+            successfulPurchase()
+        })
         batch.commit()
     }
 

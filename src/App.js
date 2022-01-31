@@ -8,7 +8,8 @@ import CategoryContainer from './components/Pages/CategoryContainer/CategoryCont
 import ItemDetailContainer from './components/Pages/ItemDetailContainer/ItemDetailContainer'
 import CartContainer from './components/Pages/CartContainer/CartContainer'
 import PaymentContainer from './components/Pages/PaymentContainer/PaymentContainer'
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 getFirestoreApp()
 
 function App() {
@@ -24,6 +25,17 @@ function App() {
           <Route exact path='/payment' element={<PaymentContainer />} />
         </Routes>
       </BrowserRouter>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="colored"/> 
     </CartContextProvider>
   )
 }

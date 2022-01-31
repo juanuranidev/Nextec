@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useCartContext } from '../../../Context/CarContext'
+import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom'
 import BackButton from '../../../BackButton/BackButton'
 import MercadoPago from './mercadopago.png'
@@ -12,9 +13,12 @@ const ItemDetail = ({product}) => {
     const { addToCart } = useCartContext()
     let linkToCategory = `/categoria/${product.category}`
 
+    const addedToCart = () => toast.success("Agregado al carrito")
+
     const handleAddToCart = (counter) => {
         setShowAddToCart(false)
         addToCart( {...product, quantity: counter})
+        addedToCart()
     }
 
     return (
