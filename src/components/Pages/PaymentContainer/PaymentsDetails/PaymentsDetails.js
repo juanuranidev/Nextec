@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { useCartContext } from '../../../Context/CarContext'
 import './_PaymentsDetails.scss'
 
@@ -25,7 +25,6 @@ const PaymentsDetails = () => {
         streetNumber: inputs.streetNumber,
         departament: inputs.departament,
         zipCode: inputs.zipCode,
-        orderId: Math.floor(Math.random() + Date.now() + 1000000)
       })
     }
 

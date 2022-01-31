@@ -23,7 +23,6 @@ export const CartContextProvider = ({children}) => {
         streetNumber: '',
         departament: '',
         zipCode: '',
-        orderId: Math.floor(Math.random() + Date.now() + 1000000)
     })
 
     function addToCart(item) {
@@ -66,7 +65,6 @@ export const CartContextProvider = ({children}) => {
             streetNumber: inputs.streetNumber,
             departament: inputs.departament,
             zipCode: inputs.zipCode,
-            orderId: inputs.orderId,
         }
         order.items = cartList.map(cartItem => {
             const id = cartItem.id;
@@ -76,7 +74,7 @@ export const CartContextProvider = ({children}) => {
             return {id, name, price, quantity}
         })
         order.total = cartTotal;
-
+        order.orderId = Math.floor(Math.random() + Date.now() + 1000000);
         // Send order
         const db = getFirestore()
         const orderCollection = collection(db, 'orders') 
