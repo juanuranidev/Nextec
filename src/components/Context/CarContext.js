@@ -66,6 +66,7 @@ export const CartContextProvider = ({children}) => {
             streetNumber: inputs.streetNumber,
             departament: inputs.departament,
             zipCode: inputs.zipCode,
+            idOrder: inputs.idOrder,
         }
         order.items = cartList.map(cartItem => {
             const id = cartItem.id;
@@ -75,7 +76,6 @@ export const CartContextProvider = ({children}) => {
             return {id, name, price, quantity}
         })
         order.total = cartTotal;
-        order.orderId = inputs.orderId
 
         // Send order
         const db = getFirestore()
