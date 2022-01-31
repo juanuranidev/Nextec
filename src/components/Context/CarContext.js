@@ -80,7 +80,7 @@ export const CartContextProvider = ({children}) => {
         const orderCollection = collection(db, 'orders') 
         await addDoc(orderCollection, order)
         .catch(err => console.log(err))
-        .finally (() => setPaymentFinished(true))
+        .finally (() => setCartList([]))
   
         // Update stock
         const queryCollection = collection(db, 'items')
@@ -92,7 +92,7 @@ export const CartContextProvider = ({children}) => {
         })
         ))
         .catch(err => console.log(err))
-        .finally (() => setCartList([]))
+        .finally (() => setPaymentFinished(true))
         batch.commit()
     }
 
