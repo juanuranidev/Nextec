@@ -66,7 +66,7 @@ export const CartContextProvider = ({children}) => {
             streetNumber: inputs.streetNumber,
             departament: inputs.departament,
             zipCode: inputs.zipCode,
-            idOrder: inputs.idOrder,
+            orderId: inputs.orderId,
         }
         order.items = cartList.map(cartItem => {
             const id = cartItem.id;
