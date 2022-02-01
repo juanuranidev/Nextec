@@ -1,9 +1,11 @@
-# Required Libraries
+# Techno Store
 
-###`React-toastify for notifications`
-npm install --save react-toastify
+## Required Libraries
+
+###React-toastify for notifications<br/>
+npm install --save react-toastify<br/>
 https://fkhadra.github.io/react-toastify/introduction
 
-# Data
-Database: Firebase
+## Data
+Database: Firebase<br/>
 Products stealed from: https://www.venex.com.ar
