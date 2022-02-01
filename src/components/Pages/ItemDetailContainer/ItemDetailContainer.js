@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { getFirestore, doc, getDoc } from 'firebase/firestore'
 import PageLoader from '../../PageLoader/PageLoader'
 import ItemDetail from './ItemDetail/ItemDetail'
+import './_ItemDetailContainer.scss'
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({})
@@ -20,7 +21,7 @@ const ItemDetailContainer = () => {
   }, [])
   
     return (
-        <section>
+        <section className="itemDetailContainer">
           {loading
           ? <PageLoader />
           : <ItemDetail product={product} />}

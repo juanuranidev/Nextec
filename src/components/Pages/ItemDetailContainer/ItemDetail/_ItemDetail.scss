@@ -1,15 +1,17 @@
 .itemDetail{
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: center;
-    margin: 1rem;
+    margin: 1rem auto;
+    width: 90%;
     .itemImage{
         display: flex;
-    flex-direction: row;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         .itemImage_img{
-            width: 80%;
+            width: 90%;
         }
     }
     .itemDetails{
@@ -99,7 +101,8 @@
     }
 }
 .itemDescription{
-    margin: 1rem;
+    margin: 1rem auto;
+    width: 90%;
     .itemDescription_h2{
         margin-bottom: 0.5rem;
     }
