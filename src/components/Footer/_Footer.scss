@@ -1,0 +1,18 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: #ffffff;
+    background-color: #3498db;
+    .footer_span{
+        margin-right: 0.5rem;
+    }
+    .footer_p{
+        font-size: 1rem;
+        font-weight: 500;
+        .footer_p_a{
+            color: #ffffff
+        }
+    }
+}

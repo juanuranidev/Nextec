@@ -26,7 +26,7 @@ const ItemDetail = ({product}) => {
             <BackButton />
             <div className="itemDetail">     
                 <div className="itemImage">
-                    <img src={product.image} className="itemImage_img"/>
+                    <img src={product.image} className="itemImage_img" alt="Imágen del producto"/>
                 </div>
                 <div className="itemDetails">
                     <div className="itemRoute">
@@ -38,7 +38,7 @@ const ItemDetail = ({product}) => {
                     <p className="itemDetails_p">${product.price}</p>
                     <div className="itemPaymentMethods">
                         <p className="itemPaymentMethods_p">Pagá con Mercado Pago y elegí una de sus distintas formas de pago</p>
-                        <img src={MercadoPago} alt="imágen de los métodos de pago" className="itemPaymentMethods_img"/>
+                        <img src={MercadoPago} alt="Imágen de los métodos de pago" className="itemPaymentMethods_img"/>
                     </div>
                     <div className="cartButtons">
                         {showAddToCart

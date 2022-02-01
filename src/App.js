@@ -9,6 +9,7 @@ import CategoryContainer from './components/Pages/CategoryContainer/CategoryCont
 import ItemDetailContainer from './components/Pages/ItemDetailContainer/ItemDetailContainer'
 import CartContainer from './components/Pages/CartContainer/CartContainer'
 import PaymentContainer from './components/Pages/PaymentContainer/PaymentContainer'
+import Footer from './components/Footer/Footer';
 import 'react-toastify/dist/ReactToastify.css';
 
 getFirestoreApp()
@@ -25,6 +26,7 @@ function App() {
           <Route exact path='/cart' element={<CartContainer />}/> 
           <Route exact path='/payment' element={<PaymentContainer />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
       <ToastContainer
         position="bottom-right"
@@ -47,7 +49,7 @@ export default App;
 
 /*
 Falta
-- Categorías, Nosotros, Contacto
+- Nosotros, Contacto
 - Cargar más productos
 - Filtros en los productos
 - Favoritos
