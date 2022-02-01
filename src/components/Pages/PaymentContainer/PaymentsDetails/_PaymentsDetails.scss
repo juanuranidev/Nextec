@@ -46,6 +46,9 @@
     .paymentsDetails_form_button:active{
         transform: scale(0.95);
     }
+    .opacity{
+        opacity: 0.4;
+    }
 }
 
 @media(max-width: 768px){

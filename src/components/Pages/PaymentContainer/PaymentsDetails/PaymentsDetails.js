@@ -128,7 +128,7 @@ const PaymentsDetails = () => {
           />
         </div>
         {requiredInputs.includes("")
-        ? <button className="paymentsDetails_form_button" onClick={() => emptyValues()} >Enviar no</button>
+        ? <button className="paymentsDetails_form_button opacity" onClick={() => emptyValues()} >Enviar</button>
         : <button className="paymentsDetails_form_button" type="submit" onClick={() => purchase(inputs)} disabled={cartList.length===0} >Enviar</button>
         }
       </form>

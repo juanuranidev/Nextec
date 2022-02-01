@@ -20,7 +20,7 @@ const ItemDetail = ({product}) => {
         addToCart( {...product, quantity: counter})
         addedToCart()
     }
-
+    
     return (
         <>
             <BackButton />
