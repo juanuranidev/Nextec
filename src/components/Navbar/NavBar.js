@@ -17,7 +17,7 @@ function NavBar(){
     <nav className="nav">
         <OpenMenuWidget onClick={openMenu} />
         <div className="navLogo">
-            <Link to="/" className="navLogo_a" onClick={closeMenu}>Savage Store</Link>
+            <Link to="/" className="navLogo_a" onClick={closeMenu}>Techno Store</Link>
         </div>
         <div className={menu===false?'navLinks':'navLinks active'} >
             <div className="sidebarLogo">

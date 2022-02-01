@@ -22,6 +22,12 @@
             transform: scale(.95);
         }
     }
+    .itemImage{
+        padding: 0rem;
+        .itemImage_img{
+            width: 5rem;
+        }
+    }
     .itemName{
         text-align: left;
     }
