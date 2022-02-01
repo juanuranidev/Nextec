@@ -5,6 +5,7 @@ import { getFirestore, query, collection, where, getDocs } from 'firebase/firest
 import BackButton from '../../BackButton/BackButton'
 import PageLoader from '../../PageLoader/PageLoader'
 import ItemList from '../ItemListContainer/ItemList/ItemList'
+import './_CategoryContainer.scss'
 
 const CategoryContainer = () => {
     const [data, setData] = useState([])
@@ -21,12 +22,12 @@ const CategoryContainer = () => {
     }, [idCategoria])
 
     return (
-        <>
+        <section className="categoryContainer">
             <BackButton />
             {loading
             ? <PageLoader />
             : <ItemList products={data}/>}
-        </>
+        </section>
     )
 }
 
