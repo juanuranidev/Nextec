@@ -11,7 +11,9 @@ function CartContainer() {
     
     if(cartList.length===0){
         return(
-            <CartMessage />
+            <section className='cartSection'>
+                <CartMessage />
+            </section>
         )
     }
 

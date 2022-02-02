@@ -6,13 +6,13 @@ import { ToastContainer, Zoom } from 'react-toastify';
 import NavBar from './components/Navbar/NavBar'
 import ItemListContainer from './components/Pages/ItemListContainer/ItemListContainer'
 import CategoryContainer from './components/Pages/CategoryContainer/CategoryContainer'
+import ContactContainer from './components/Pages/ContactContainer/ContactContainer';
 import ItemDetailContainer from './components/Pages/ItemDetailContainer/ItemDetailContainer'
 import CartContainer from './components/Pages/CartContainer/CartContainer'
 import PaymentContainer from './components/Pages/PaymentContainer/PaymentContainer'
+import PageNotFound from './components/Pages/PageNotFound/PageNotFound';
 import Footer from './components/Footer/Footer';
 import 'react-toastify/dist/ReactToastify.css';
-import PageNotFound from './components/Pages/PageNotFound/PageNotFound';
-import Contact from './components/Pages/Contact/Contact';
 
 getFirestoreApp()
 
@@ -24,7 +24,7 @@ function App() {
         <Routes> 
           <Route exact path='/' element={<ItemListContainer />}/>
           <Route exact path='/categoria/:idCategoria' element={ <CategoryContainer />}/>
-          <Route exact path='/contact' element={<Contact />}/>
+          <Route exact path='/contact' element={<ContactContainer />}/>
           <Route exact path='/item/:idItem' element={<ItemDetailContainer />}/>
           <Route exact path='/cart' element={<CartContainer />}/> 
           <Route exact path='/payment' element={<PaymentContainer />} />

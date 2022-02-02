@@ -16,7 +16,7 @@ npm install --save react-toastify<br>
 https://fkhadra.github.io/react-toastify/introduction
 
 **React Google Recaptcha for reCaptcha**<br>
-npm install --save react-google-recaptcha
+npm install --save react-google-recaptcha<br>
 https://www.npmjs.com/package/react-google-recaptcha
 
 ## Data

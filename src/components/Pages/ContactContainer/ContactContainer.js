@@ -1,15 +1,13 @@
 import React from 'react';
 import ContactDetails from './ContactDetails/ContactDetails';
+import './_ContactContainer.scss';
 
-const Contact = () => {
-
-
-
+const ContactContainer = () => {
   return (
-    <section>
+    <section className="contactContainer">
         <ContactDetails />
     </section>
   );
 };
 
-export default Contact;
+export default ContactContainer;

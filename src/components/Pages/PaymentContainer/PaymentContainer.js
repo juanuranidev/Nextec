@@ -2,19 +2,23 @@ import React from 'react';
 import { useCartContext } from '../../Context/CarContext';
 import PaymentFinished from './PaymentFinished/PaymentFinished';
 import PaymentsDetails from './PaymentsDetails/PaymentsDetails';
-
+import './_PaymentContainer.scss'
 
 const PaymentContainer = () => {
     const { paymentFinished } = useCartContext()
 
     if(paymentFinished === true){
         return(
-            <PaymentFinished />    
+            <section className="paymentContainer">
+                <PaymentFinished />    
+            </section>
         )
     }
 
-  return (
-    <PaymentsDetails />
+    return (
+        <section className="paymentContainer">
+            <PaymentsDetails />
+        </section>
     );
 };
 
