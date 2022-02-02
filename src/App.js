@@ -12,6 +12,7 @@ import PaymentContainer from './components/Pages/PaymentContainer/PaymentContain
 import Footer from './components/Footer/Footer';
 import 'react-toastify/dist/ReactToastify.css';
 import PageNotFound from './components/Pages/PageNotFound/PageNotFound';
+import Contact from './components/Pages/Contact/Contact';
 
 getFirestoreApp()
 
@@ -23,6 +24,7 @@ function App() {
         <Routes> 
           <Route exact path='/' element={<ItemListContainer />}/>
           <Route exact path='/categoria/:idCategoria' element={ <CategoryContainer />}/>
+          <Route exact path='/contact' element={<Contact />}/>
           <Route exact path='/item/:idItem' element={<ItemDetailContainer />}/>
           <Route exact path='/cart' element={<CartContainer />}/> 
           <Route exact path='/payment' element={<PaymentContainer />} />

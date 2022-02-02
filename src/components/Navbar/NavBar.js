@@ -35,7 +35,7 @@ function NavBar(){
                     </ul>
                 </li>
                 <NavBarLink class="navLinks_ul_li" link="/" name="Nosotros" onClick={closeMenu}/>
-                <NavBarLink class="navLinks_ul_li" link="/" name="Contacto" onClick={closeMenu}/>
+                <NavBarLink class="navLinks_ul_li" link="/contact" name="Contacto" onClick={closeMenu}/>
             </ul>
         </div>
         <div className="navCart"><CarWidget onClick={closeMenu}/></div>
