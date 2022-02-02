@@ -34,6 +34,7 @@ const PaymentsDetails = () => {
 
     return (
     <section className="paymentsDetails">
+      <h2 className="paymentsDetails_h2">Información de pago</h2>
       <form className="paymentsDetails_form" onSubmit={handleSubmit}>
         <label className="paymentsDetails_form_label">Datos Principales</label>
         <div className="inputContainer">

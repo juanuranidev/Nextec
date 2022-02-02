@@ -1,5 +1,5 @@
 # Techno Store
-Electronic store made with ReactJS, SASS and Firebase for the final project of the ReactJS course at CoderHouse. <br/>
+Electronic store made with ReactJS, SASS and Firebase for the final project of the ReactJS course at CoderHouse. <br>
 
 https://user-images.githubusercontent.com/96846723/151917684-4db85f11-c0b0-45a2-b3ae-bdee699dffd1.mp4
 
@@ -11,10 +11,14 @@ https://user-images.githubusercontent.com/96846723/151917684-4db85f11-c0b0-45a2-
 <img src="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7" alt="netlify">
 
 ## Libraries
-**React-toastify for notifications**<br/>
-npm install --save react-toastify<br/>
+**React Toastify for notifications**<br>
+npm install --save react-toastify<br>
 https://fkhadra.github.io/react-toastify/introduction
 
+**React Google Recaptcha for reCaptcha**<br>
+npm install --save react-google-recaptcha
+https://www.npmjs.com/package/react-google-recaptcha
+
 ## Data
-Database: Firebase<br/>
+Database: Firebase<br>
 Products stolen from: <a href="https://www.venex.com.ar" target="_blank">Venex</a> ❤️

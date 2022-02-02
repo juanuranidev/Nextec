@@ -53,7 +53,7 @@ export default App;
 
 /*
 Falta
-- Nosotros, Contacto
+- Nosotros
 - Filtros en los productos
 - Favoritos
 */
