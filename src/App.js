@@ -14,6 +14,7 @@ import CartContainer from './components/Pages/CartContainer/CartContainer'
 import PaymentContainer from './components/Pages/PaymentContainer/PaymentContainer'
 import PageNotFound from './components/Pages/PageNotFound/PageNotFound'
 import Footer from './components/Footer/Footer'
+import './styles/_base.scss'
 import 'react-toastify/dist/ReactToastify.css'
 
 getFirestoreApp()

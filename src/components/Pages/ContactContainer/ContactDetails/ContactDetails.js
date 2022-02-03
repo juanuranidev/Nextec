@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { collection, getFirestore, addDoc } from 'firebase/firestore'
 import { toast } from 'react-toastify'
 import ReCAPTCHA from "react-google-recaptcha";
-import MessageSent from '../MessageSent/MessageSent';
+import Message from '../../../Message/Message'
 import './_ContactDetails.scss'
 
 const ContactDetails = () => {
@@ -58,7 +58,7 @@ const ContactDetails = () => {
 
     if(messageSent===true){
         return (
-            <MessageSent />
+            <Message h2={"Mensaje enviado"} p={"¡Pronto nos pondremos en contacto!"} />
         )
     }
 

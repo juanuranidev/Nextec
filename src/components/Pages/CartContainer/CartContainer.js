@@ -1,6 +1,6 @@
 import React from 'react'
 import { useCartContext } from '../../Context/CarContext'
-import CartMessage from './CartMessage/CartMessage'
+import Message from '../../Message/Message'
 import CartItem from './CartItem/CartItem'
 import EmptyCartButton from './EmptyCartButton/EmptyCartButton'
 import CartPayment from './CartPayment/CartPayment'
@@ -12,7 +12,7 @@ function CartContainer() {
     if(cartList.length===0){
         return(
             <section className='cartSection'>
-                <CartMessage />
+                <Message h2={"Carrito vacío"} p={"¡Agrega productos al carrito!"} />
             </section>
         )
     }
