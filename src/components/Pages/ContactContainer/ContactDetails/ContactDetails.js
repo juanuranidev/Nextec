@@ -64,7 +64,6 @@ const ContactDetails = () => {
 
     return (
         <div className="contactDetails">
-            <h2 className="contactDetails_h2">¿Tienes alguna duda? Contáctanos</h2>
             <div className="contactForm">
             <form onSubmit={handleSubmit} className="contactForm_form">
             <label className="contactForm_form_label">Nombre</label>

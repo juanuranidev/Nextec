@@ -7,10 +7,6 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     color: #ffffff;
     text-align: center;
-    .contactDetails_h2{
-        font-size: 2rem;
-        margin: 1rem auto 2rem auto;
-    }
     .contactForm{
         .contactForm_form{
             display: flex;
@@ -64,9 +60,6 @@
 @media(max-width: 768px){
     .contactDetails{
         width: 90%;
-        .contactDetails_h2{
-            font-size: 1.8rem;
-        }
         .contactForm{
             .contactForm_form{
                 .contactForm_form_label{

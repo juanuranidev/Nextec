@@ -23,7 +23,7 @@ function ItemListContainer() {
 
     return (
         <>
-            <Header />
+            <Header text={"¡Bienvenido a nuestra tienda!"}/>
             <main>
                 <Title text="Catálogo"/>
                 {loading
