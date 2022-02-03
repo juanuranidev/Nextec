@@ -12,14 +12,14 @@ https://user-images.githubusercontent.com/96846723/151917684-4db85f11-c0b0-45a2-
 
 ## Features
 **Database**
-Display products from the database
-Contact message is sent and saved in the database
-Buyer information is sent and stored in the database
+Display products from the database<br>
+Contact message is sent and saved in the database<br>
+Buyer information is sent and stored in the database<br>
 Subtract stock when purchasing a product
 
 **Products**
-Add products to cart
-Clean cart
+Add products to cart<br>
+Clean cart<br>
 Add products to favorites
 
 ## Libraries
