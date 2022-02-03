@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 import OpenMenuWidget from './OpenMenuWidget/OpenMenuWidget'
 import CloseMenuWidget from './CloseMenuWidget/CloseMenuWidget'
 import NavBarLink from './NavbarLink/NavBarLink'
-import CarWidget from './CarWidget/CarWidget'
-import "./_NavBar.scss"
 import FavoritesWidget from './FavoritesWidget/FavoritesWidget'
+import CartWidget from './CartWidget/CartWidget'
+import "./_NavBar.scss"
 
 function NavBar(){
     const[menu, setMenu] = useState(false)
@@ -35,14 +35,14 @@ function NavBar(){
                         <NavBarLink class="navLinks_ul_li_ul_li" link="/categoria/computadoras" name="Computadoras" onClick={closeMenu} />
                     </ul>
                 </li>
-                <NavBarLink class="navLinks_ul_li" link="/" name="Nosotros" onClick={closeMenu}/>
+                <NavBarLink class="navLinks_ul_li" link="/about" name="Nosotros" onClick={closeMenu}/>
                 <NavBarLink class="navLinks_ul_li" link="/contact" name="Contacto" onClick={closeMenu}/>
             </ul>
         </div>
         
         <div className="navCart">
         <FavoritesWidget onClick={closeMenu}/>
-        <CarWidget onClick={closeMenu}/>
+        <CartWidget onClick={closeMenu}/>
         </div>
     </nav>
     )

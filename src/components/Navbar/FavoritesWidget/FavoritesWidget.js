@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useFavoritesContext } from '../../Context/FavoritesContext';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { useFavoritesContext } from '../../Context/FavoritesContext'
 import './_FavoritesWidget.scss'
 
 const FavoritesWidget = ({onClick}) => {

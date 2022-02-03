@@ -7,6 +7,7 @@ import { ToastContainer, Zoom } from 'react-toastify'
 import NavBar from './components/Navbar/NavBar'
 import ItemListContainer from './components/Pages/ItemListContainer/ItemListContainer'
 import CategoryContainer from './components/Pages/CategoryContainer/CategoryContainer'
+import AboutContainer from './components/Pages/AboutContainer/AboutContainer'
 import ContactContainer from './components/Pages/ContactContainer/ContactContainer'
 import ItemDetailContainer from './components/Pages/ItemDetailContainer/ItemDetailContainer'
 import FavoritesContainer from './components/Pages/FavoritesContainer/FavoritesContainer'
@@ -28,6 +29,7 @@ function App() {
           <Routes> 
             <Route exact path='/' element={<ItemListContainer />}/>
             <Route exact path='/categoria/:idCategoria' element={ <CategoryContainer />}/>
+            <Route exact path='/about' element={<AboutContainer/>}/>
             <Route exact path='/contact' element={<ContactContainer />}/>
             <Route exact path='/item/:idItem' element={<ItemDetailContainer />}/>
             <Route exact path='/favorites' element={<FavoritesContainer />}/>
