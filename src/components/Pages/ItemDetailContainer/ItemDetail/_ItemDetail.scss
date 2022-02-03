@@ -16,6 +16,14 @@
     }
     .itemDetails{
         width: 40%;
+        .itemDetails_favoriteButton{
+            color: #3498db;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+        .itemDetails_favoriteButton:active{
+            transform: scale(.95);
+        }
         .itemRoute{
             display: flex;
             flex-direction: row;

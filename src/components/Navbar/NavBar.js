@@ -6,6 +6,7 @@ import CloseMenuWidget from './CloseMenuWidget/CloseMenuWidget'
 import NavBarLink from './NavbarLink/NavBarLink'
 import CarWidget from './CarWidget/CarWidget'
 import "./_NavBar.scss"
+import FavoritesWidget from './FavoritesWidget/FavoritesWidget'
 
 function NavBar(){
     const[menu, setMenu] = useState(false)
@@ -38,7 +39,11 @@ function NavBar(){
                 <NavBarLink class="navLinks_ul_li" link="/contact" name="Contacto" onClick={closeMenu}/>
             </ul>
         </div>
-        <div className="navCart"><CarWidget onClick={closeMenu}/></div>
+        
+        <div className="navCart">
+        <FavoritesWidget onClick={closeMenu}/>
+        <CarWidget onClick={closeMenu}/>
+        </div>
     </nav>
     )
 }

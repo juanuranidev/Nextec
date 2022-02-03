@@ -26,7 +26,9 @@ function ItemListContainer() {
             <Header />
             <main>
                 <Title text="Catálogo"/>
-                {loading    ? <PageLoader />    : <ItemList products={data}/>}
+                {loading
+                ? <PageLoader />
+                : <ItemList products={data}/>}
             </main>
         </>
     )

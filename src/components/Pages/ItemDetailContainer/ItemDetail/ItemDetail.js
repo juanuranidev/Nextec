@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import { useCartContext } from '../../../Context/CarContext'
-import { toast } from 'react-toastify';
+import { useFavoritesContext } from '../../../Context/FavoritesContext'
+import { toast } from 'react-toastify'
 import { Link } from 'react-router-dom'
 import BackButton from '../../../BackButton/BackButton'
 import MercadoPago from './mercadopago.png'
@@ -11,9 +12,16 @@ import "./_ItemDetail.scss"
 const ItemDetail = ({product}) => {
     const [showAddToCart, setShowAddToCart] = useState(true)
     const { addToCart } = useCartContext()
+    const { favorites, handleFavorites } = useFavoritesContext()
     let linkToCategory = `/categoria/${product.category}`
-
+    
     const addedToCart = () => toast.success("Agregado al carrito")
+    
+    function isInFavorites(product) {
+        return favorites.some(function(x) {
+          return x.id === product.id;
+        }); 
+    }
 
     const handleAddToCart = (counter) => {
         setShowAddToCart(false)
@@ -29,6 +37,9 @@ const ItemDetail = ({product}) => {
                     <img src={product.image} className="itemImage_img" alt="Imágen del producto"/>
                 </div>
                 <div className="itemDetails">
+                    {isInFavorites(product)
+                    ? <span className=" fas fa-heart fa-2x itemDetails_favoriteButton" onClick={() => handleFavorites(product)}/>
+                    : <span className="far fa-heart fa-2x itemDetails_favoriteButton" onClick={() => handleFavorites(product)}/>}
                     <div className="itemRoute">
                         <Link to="/" className="itemRoute_a">inicio</Link>
                         <span className="fas fa-angle-left itemRoute_span"></span>

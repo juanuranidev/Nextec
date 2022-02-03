@@ -86,6 +86,8 @@
     }
   }
   .navCart{
+    display: flex;
+    justify-content: flex-end;
     width: 25%;
     text-align: right;    
     .cartIcon{
