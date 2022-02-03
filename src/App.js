@@ -3,18 +3,18 @@ import { getFirestoreApp } from './components/Firebase/dbConfig'
 import { CartContextProvider } from './components/Context/CarContext'
 import { FavoritesContextProvider } from './components/Context/FavoritesContext'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { ToastContainer, Zoom } from 'react-toastify';
+import { ToastContainer, Zoom } from 'react-toastify'
 import NavBar from './components/Navbar/NavBar'
 import ItemListContainer from './components/Pages/ItemListContainer/ItemListContainer'
 import CategoryContainer from './components/Pages/CategoryContainer/CategoryContainer'
-import ContactContainer from './components/Pages/ContactContainer/ContactContainer';
+import ContactContainer from './components/Pages/ContactContainer/ContactContainer'
 import ItemDetailContainer from './components/Pages/ItemDetailContainer/ItemDetailContainer'
-import FavoritesContainer from './components/Pages/FavoritesContainer/FavoritesContainer';
+import FavoritesContainer from './components/Pages/FavoritesContainer/FavoritesContainer'
 import CartContainer from './components/Pages/CartContainer/CartContainer'
 import PaymentContainer from './components/Pages/PaymentContainer/PaymentContainer'
-import PageNotFound from './components/Pages/PageNotFound/PageNotFound';
-import Footer from './components/Footer/Footer';
-import 'react-toastify/dist/ReactToastify.css';
+import PageNotFound from './components/Pages/PageNotFound/PageNotFound'
+import Footer from './components/Footer/Footer'
+import 'react-toastify/dist/ReactToastify.css'
 
 getFirestoreApp()
 
@@ -60,5 +60,4 @@ export default App;
 Falta
 - Nosotros
 - Filtros en los productos
-- Favoritos
 */

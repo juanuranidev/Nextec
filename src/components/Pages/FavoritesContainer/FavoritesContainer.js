@@ -1,13 +1,13 @@
 import React from 'react'
 import { useFavoritesContext } from '../../Context/FavoritesContext'
 import BackButton from './../../BackButton/BackButton'
-import Title from '../../Title/Title';
+import Title from '../../Title/Title'
 import ItemList from '../ItemListContainer/ItemList/ItemList'
 import './_FavoritesContainer.scss'
 
 const FavoritesContainer = () => {
   const { favorites } = useFavoritesContext()
-  console.log(favorites)
+
   return (
     <section className="favoritesContainer">
       <BackButton />
