@@ -1,6 +1,5 @@
-import { createContext } from 'react'
-import { useState, useContext, useEffect } from 'react'
-import { toast } from 'react-toastify'
+import { createContext, useState, useContext, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 const FavoritesContext = createContext([])
 
@@ -11,17 +10,15 @@ export function useFavoritesContext() {
 export const FavoritesContextProvider = ({children}) => {
     const [favorites, setFavorites] = useState([])
     
-    const addedToFavorites = () => toast.success("Agregado a favoritos")
-    const removedFromFavorites = () => toast.success("Eliminado de favoritos")
-
     function handleFavorites(product){
-        const isInFavorites = favorites.find((x => x.id === product.id))
-
+        const isInFavorites = favorites.find((favorite => favorite.id === product.id))
         if(isInFavorites){
-            setFavorites(favorites.filter((x) => x.id !== product.id))
+            setFavorites(favorites.filter(favorite => favorite.id !== product.id))
+            const removedFromFavorites = () => toast.success("Eliminado de favoritos")
             removedFromFavorites()
         } else {
             setFavorites([...favorites, product])
+            const addedToFavorites = () => toast.success("Agregado a favoritos")
             addedToFavorites()
         }
     }
@@ -31,14 +28,14 @@ export const FavoritesContextProvider = ({children}) => {
     }
 
     useEffect(() => {
-        let favorites = localStorage.getItem("favorites")
-        if (favorites) {
-            setFavorites(JSON.parse(favorites))
+        let favoritesProducts = localStorage.getItem("favoritesProducts")
+        if (favoritesProducts) {
+            setFavorites(JSON.parse(favoritesProducts))
           }
     }, [])
 
     useEffect(() => {
-        localStorage.setItem('favorites', JSON.stringify(favorites))
+        localStorage.setItem('favoritesProducts', JSON.stringify(favorites))
     }, [favorites])
 
     return(
@@ -51,6 +48,4 @@ export const FavoritesContextProvider = ({children}) => {
             {children}
         </FavoritesContext.Provider>
     )
-
 }
-

@@ -1,9 +1,8 @@
 .header{
-    background-image: url('./header.png');
+    background-image: url('./img/header.png');
     width: 100%;
     height: 60vh;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    text-transform: capitalize;
     .headerContent{
         height: 85%;
         .headerContent_h1{
@@ -50,8 +49,8 @@
     .header{
         .headerContent{
             .headerContent_h1{
-                margin: auto 5rem;
-                font-size: 2rem;
+                margin: auto 1rem;
+                font-size: 2.5rem;
             }
         }
     }

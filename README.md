@@ -1,7 +1,10 @@
 # Techno Store
-Electronic store made with ReactJS, SASS and Firebase for the final project of the ReactJS course at CoderHouse. <br>
+Electronic store made with ReactJS, SASS and Firebase for the final project of the ReactJS course at CoderHouse.<br>
 
 https://user-images.githubusercontent.com/96846723/151917684-4db85f11-c0b0-45a2-b3ae-bdee699dffd1.mp4
+
+# Demo
+https://tiendaelectronica.netlify.app/<br>
 
 ## Main Technologies
 <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="react"><br>
@@ -23,14 +26,29 @@ Clean cart<br>
 Add products to favorites
 
 ## Libraries
-**React Toastify for notifications**<br>
+**React Router Dom for routing 6.2.1**<br>
+npm install react-router-dom@6<br>
+https://reactrouter.com/
+
+**Firebase for database 9.6.5**<br>
+npm install firebase<br>
+https://firebase.google.com/docs/web/setup?hl=es
+
+**SASS for styles 1.45.2**<br>
+npm install sass<br>
+https://create-react-app.dev/docs/adding-a-sass-stylesheet/
+
+**React Toastify for notifications 8.1.0**<br>
 npm install --save react-toastify<br>
 https://fkhadra.github.io/react-toastify/introduction
 
-**React Google Recaptcha for reCaptcha**<br>
+**React Google Recaptcha for reCaptcha 2.1.0**<br>
 npm install --save react-google-recaptcha<br>
 https://www.npmjs.com/package/react-google-recaptcha
 
 ## Data
 Database: Firebase<br>
 Products stolen from: <a href="https://www.venex.com.ar" target="_blank">Venex</a> ❤️
+
+## My Portfolio
+https://juanuranidev.github.io/portfolio/<br>

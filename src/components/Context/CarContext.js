@@ -1,7 +1,6 @@
-import { createContext } from 'react'
-import { useState, useContext, useEffect } from 'react'
-import { collection, getDocs, getFirestore, query, addDoc, writeBatch, where, documentId } from 'firebase/firestore'
-import { toast } from 'react-toastify'
+import { createContext, useState, useContext, useEffect } from 'react';
+import { collection, getDocs, getFirestore, query, addDoc, writeBatch, where, documentId } from 'firebase/firestore';
+import { toast } from 'react-toastify';
 
 const CartContext = createContext([])
 
@@ -27,8 +26,8 @@ export const CartContextProvider = ({children}) => {
         orderId: ''
     })
 
-    const successfulPurchase = () => toast.success("Compra realizada con éxito")
-    const cartEmptied = () => toast.success("Carrito vaciado")
+    const successfulPurchase = () => toast.success('Compra realizada con éxito')
+    
 
     function addToCart(item) {
         setPaymentFinished(false)
@@ -55,6 +54,7 @@ export const CartContextProvider = ({children}) => {
 
     function emptyCart() {
         setCartList([])
+        const cartEmptied = () => toast.success('Carrito vaciado')
         cartEmptied()
     }
 
@@ -107,7 +107,7 @@ export const CartContextProvider = ({children}) => {
     }
 
     useEffect(() => {
-        let cartList = localStorage.getItem("cartList")
+        let cartList = localStorage.getItem('cartList')
         if (cartList) {
             setCartList(JSON.parse(cartList))
           }
