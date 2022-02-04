@@ -1,19 +1,15 @@
-import React from 'react'
-import { useState } from 'react'
-import { collection, getFirestore, addDoc } from 'firebase/firestore'
-import { toast } from 'react-toastify'
-import ReCAPTCHA from "react-google-recaptcha";
-import Message from '../../../Message/Message'
-import './_ContactDetails.scss'
+import { React, useState} from 'react';
+import { collection, getFirestore, addDoc } from 'firebase/firestore';
+import { toast } from 'react-toastify';
+import ReCAPTCHA from 'react-google-recaptcha';
+import Message from '../../../Message/Message';
+import './_ContactDetails.scss';
 
 const ContactDetails = () => {
     const [messageSent, setMessageSent] = useState(false)
     const [captchaValue, setCaptchaValue] = useState(false)
     const [userInfo, setUserInfo] = useState({name: '', mail: '', message: '',})
     const requiredInputs = [userInfo.name, userInfo.mail, userInfo.message]
-
-    const emptyValues = () => toast.warn("Completa todos los campos obligatorios")
-    const invalidCaptcha = () => toast.warn("Completa el captcha")
 
     const handleChange = (e) => {
         setUserInfo({
@@ -37,70 +33,53 @@ const ContactDetails = () => {
         message.mail = userInfo.mail
         message.content = userInfo.message
 
-        const db = getFirestore()
-        const messageCollection = collection(db, 'messages') 
+        const dataBase = getFirestore()
+        const messageCollection = collection(dataBase, 'messages') 
         await addDoc(messageCollection, message)
         .catch(err => console.log(err))
         .finally (() => setMessageSent(true))
     }
 
-    function onChange(value) {
+    const onChange = (value) => {
         value!==null
         ? setCaptchaValue(true)
         : setCaptchaValue(false)
     }
     
-    function alert(){
-        captchaValue===false
-        ? invalidCaptcha()
-        : emptyValues()
+    const alert = () => {
+        if(captchaValue===false){
+            const invalidCaptcha = () => toast.warn('Completa el captcha')
+            invalidCaptcha()
+        } else {
+            const emptyValues = () => toast.warn('Completa todos los campos obligatorios')
+            emptyValues()
+        }
     }
 
     if(messageSent===true){
         return (
-            <Message h2={"Mensaje enviado"} p={"¡Pronto nos pondremos en contacto!"} />
+            <Message h2={'Mensaje enviado'} p={'¡Pronto nos pondremos en contacto!'} />
         )
     }
 
     return (
-        <div className="contactDetails">
-            <div className="contactForm">
-            <form onSubmit={handleSubmit} className="contactForm_form">
-            <label className="contactForm_form_label">Nombre</label>
-            <input 
-            type="text" 
-            name="name" 
-            placeholder='Nombre*'
-            value={userInfo.name} 
-            onChange={handleChange}
-            className="contactForm_form_input"/>
-            <label className="contactForm_form_label">Correo</label>
-            <input 
-            type="text" 
-            name="mail" 
-            placeholder='Correo electrónico*'
-            value={userInfo.mail} 
-            onChange={handleChange}
-            className="contactForm_form_input"/>
-            <label className="contactForm_form_label">Mensaje</label>
-            <textarea
-            type="textarea" 
-            name="message" 
-            placeholder='Mensaje*'
-            value={userInfo.message} 
-            onChange={handleChange}
-            className="contactForm_form_input textarea"/>
-            <div className="contactDetails_captcha">
-            <ReCAPTCHA
-                sitekey="6LdHNlMeAAAAAPYxij6HQL-YkX_UlECRLenn-l9v"
-                onChange={onChange}
-                onExpired={onchange} />
-            </div>
-            {captchaValue===false || requiredInputs.includes("")
-            ?  <button className="contactDetails_button opacity" onClick={() => alert()}> No Enviar</button>
-            :  <button className="contactDetails_button" type="submit" onClick={() => purchase(userInfo)}>Enviar</button>
-            }
-            </form>
+        <div className='contactDetails'>
+            <div className='contactForm'>
+                <form onSubmit={handleSubmit} className='contactForm_form'>
+                    <label className='contactForm_form_label'>Nombre</label>
+                        <input type='text' name='name' placeholder='Nombre*' value={userInfo.name} onChange={handleChange} className='contactForm_form_input'/>
+                    <label className='contactForm_form_label'>Correo</label>
+                        <input type='text' name='mail' placeholder='Correo electrónico*' value={userInfo.mail} onChange={handleChange} className='contactForm_form_input'/>
+                    <label className='contactForm_form_label'>Mensaje</label>
+                        <textarea type='textarea' name='message' placeholder='Mensaje*' value={userInfo.message} onChange={handleChange} className='contactForm_form_input textarea'/>
+                <div className='contactDetails_captcha'>
+                    <ReCAPTCHA sitekey='6LdHNlMeAAAAAPYxij6HQL-YkX_UlECRLenn-l9v' onChange={onChange} onExpired={onchange} />
+                </div>
+                {captchaValue===false || requiredInputs.includes('')
+                ?  <button className='contactDetails_button opacity' onClick={() => alert()}> No Enviar</button>
+                :  <button className='contactDetails_button' type='submit' onClick={() => purchase(userInfo)}>Enviar</button>
+                }
+                </form>
             </div>
         </div>
     );

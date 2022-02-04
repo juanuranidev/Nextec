@@ -30,9 +30,9 @@ function NavBar(){
                 <li className="navLinks_ul_li">
                 <Link to="/">Categorías<span className="fas fa-chevron-down arrow navLinks_ul_li_span" /></Link>
                     <ul className="navLinks_ul_li_ul">
-                        <NavBarLink class="navLinks_ul_li_ul_li" link="/categoria/notebooks" name="Notebooks" onClick={closeMenu} />
-                        <NavBarLink class="navLinks_ul_li_ul_li" link="/categoria/placasdevideo" name="Placas de Video" onClick={closeMenu} />
-                        <NavBarLink class="navLinks_ul_li_ul_li" link="/categoria/computadoras" name="Computadoras" onClick={closeMenu} />
+                        <NavBarLink class="navLinks_ul_li_ul_li" link="/category/notebooks" name="Notebooks" onClick={closeMenu} />
+                        <NavBarLink class="navLinks_ul_li_ul_li" link="/category/placasdevideo" name="Placas de Video" onClick={closeMenu} />
+                        <NavBarLink class="navLinks_ul_li_ul_li" link="/category/computadoras" name="Computadoras" onClick={closeMenu} />
                     </ul>
                 </li>
                 <NavBarLink class="navLinks_ul_li" link="/about" name="Nosotros" onClick={closeMenu}/>

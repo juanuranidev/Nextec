@@ -1,10 +1,10 @@
-import React from 'react'
-import { useCartContext } from '../../Context/CarContext'
-import Message from '../../Message/Message'
-import CartItem from './CartItem/CartItem'
-import EmptyCartButton from './EmptyCartButton/EmptyCartButton'
-import CartPayment from './CartPayment/CartPayment'
-import './_CartContainer.scss'
+import React from 'react';
+import { useCartContext } from '../../Context/CartContext';
+import Message from '../../Message/Message';
+import CartItem from './CartItem/CartItem';
+import EmptyCartButton from './EmptyCartButton/EmptyCartButton';
+import CartPayment from './CartPayment/CartPayment';
+import './_CartContainer.scss';
 
 function CartContainer() {
     const { cartList } = useCartContext()
@@ -12,7 +12,7 @@ function CartContainer() {
     if(cartList.length===0){
         return(
             <section className='cartSection'>
-                <Message h2={"Carrito vacío"} p={"¡Agrega productos al carrito!"} />
+                <Message h2={'Carrito vacío'} p={'¡Agrega productos al carrito!'} />
             </section>
         )
     }
@@ -22,7 +22,7 @@ function CartContainer() {
             <table className='cartSection_table'>
                 <thead>
                     <tr>
-                        <th><span className="fas fa-times" /></th>
+                        <th><span className='fas fa-times' /></th>
                         <th>Imágen</th>
                         <th>Nombre</th>
                         <th>Precio</th>
@@ -34,7 +34,7 @@ function CartContainer() {
                     <CartItem /> 
                 </tbody>
             </table>
-            <div className="emptyCart">
+            <div className='emptyCart'>
                 <EmptyCartButton />
             </div>   
             <CartPayment />
@@ -42,4 +42,4 @@ function CartContainer() {
     )
 }
 
-export default CartContainer
+export default CartContainer;

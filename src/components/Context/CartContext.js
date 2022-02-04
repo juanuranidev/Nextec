@@ -12,22 +12,7 @@ export const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
     const [cartTotal, setCartTotal] = useState()
     const [paymentFinished, setPaymentFinished] = useState(false)
-    const [inputs, setInputs] = useState({
-        name: '',
-        lastName: '',
-        document: '',
-        mail: '',
-        country: '',
-        city: '',
-        street: '',
-        streetNumber: '',
-        departament: '',
-        zipCode: '',
-        orderId: ''
-    })
-
-    const successfulPurchase = () => toast.success('Compra realizada con éxito')
-    
+    const [inputs, setInputs] = useState({ name: '', lastName: '', document: '', mail: '', country: '', city: '', street: '', streetNumber: '', departament: '', zipCode: '', orderId: ''})
 
     function addToCart(item) {
         setPaymentFinished(false)
@@ -82,27 +67,25 @@ export const CartContextProvider = ({children}) => {
         order.total = cartTotal;
 
         // Send order
-        const db = getFirestore()
-        const orderCollection = collection(db, 'orders') 
+        const dataBase = getFirestore()
+        const orderCollection = collection(dataBase, 'orders') 
         await addDoc(orderCollection, order)
-        .then(resp => setInputs({...inputs, orderId: resp.id}))
-        .catch(err => console.log(err))
-        .finally (() => setCartList([]))
+            .then(resp => setInputs({...inputs, orderId: resp.id}))
+            .catch(err => console.log(err))
+            .finally (() => setCartList([]))
   
         // Update stock
-        const queryCollection = collection(db, 'items')
+        const queryCollection = collection(dataBase, 'items')
         const queryUpdateStock = query(queryCollection, where(documentId(), 'in', cartList.map(it => it.id)))
-        const batch = writeBatch(db)    
+        const batch = writeBatch(dataBase)    
         await getDocs (queryUpdateStock)
-        .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
-            stock: res.data().stock - cartList.find(item => item.id === res.id).quantity
-        })
-        ))
-        .catch(err => console.log(err))
-        .finally(() => {
+            .then(resp => resp.docs.forEach(res => batch.update(res.ref, {stock: res.data().stock - cartList.find(item => item.id === res.id).quantity})))
+            .catch(err => console.log(err))
+            .finally(() => {
             setPaymentFinished(true);
+            const successfulPurchase = () => toast.success('Compra realizada con éxito');
             successfulPurchase()
-        })
+            })
         batch.commit()
     }
 

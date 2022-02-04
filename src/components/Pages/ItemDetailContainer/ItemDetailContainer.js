@@ -1,10 +1,9 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { getFirestore, doc, getDoc } from 'firebase/firestore'
-import PageLoader from '../../PageLoader/PageLoader'
-import ItemDetail from './ItemDetail/ItemDetail'
-import './_ItemDetailContainer.scss'
+import { React, useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import PageLoader from '../../PageLoader/PageLoader';
+import ItemDetail from './ItemDetail/ItemDetail';
+import './_ItemDetailContainer.scss';
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({})
@@ -12,16 +11,16 @@ const ItemDetailContainer = () => {
   const {idItem} = useParams()
 
   useEffect(() => {
-    const db = getFirestore()
-    const queryProd = doc (db, 'items', idItem)
+    const dataBase = getFirestore()
+    const queryProd = doc (dataBase, 'items', idItem)
     getDoc(queryProd)
-    .then(resp => setProduct({id: resp.id, ...resp.data()}))
-    .catch(err => console.log(err))
-    .finally(() => setLoading(false))
+      .then(resp => setProduct({id: resp.id, ...resp.data()}))
+      .catch(err => console.log(err))
+      .finally(() => setLoading(false))
   }, [idItem])
   
     return (
-        <section className="itemDetailContainer">
+        <section className='itemDetailContainer'>
           {loading
           ? <PageLoader />
           : <ItemDetail product={product} />}
@@ -29,4 +28,4 @@ const ItemDetailContainer = () => {
     )
 } 
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

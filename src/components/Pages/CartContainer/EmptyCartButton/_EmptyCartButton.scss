@@ -16,6 +16,7 @@
 .emptyCartButton:active{
     transform: scale(.95);
 }
+
 @media(max-width: 768px){
     .emptyCartButton{
         font-size: 0.8rem;

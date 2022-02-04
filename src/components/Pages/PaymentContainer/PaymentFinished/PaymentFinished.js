@@ -1,10 +1,11 @@
-import React from 'react'
-import { useCartContext } from '../../../Context/CarContext'
-import { Link } from 'react-router-dom'
-import './_PaymentFinished.scss'
+import React from 'react';
+import { useCartContext } from '../../../Context/CartContext';
+import { Link } from 'react-router-dom';
+import './_PaymentFinished.scss';
 
 const PaymentFinished = () => {
-    const {setPaymentFinished, inputs} = useCartContext()
+  const {setPaymentFinished, inputs} = useCartContext()
+
   return (
     <div className="paymentFinished">
         <h2 className="paymentFinished_h2">¡Pago realizado!</h2>

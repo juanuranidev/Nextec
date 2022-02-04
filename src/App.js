@@ -1,6 +1,6 @@
 import React from 'react';
 import { getFirestoreApp } from './components/Firebase/dbConfig';
-import { CartContextProvider } from './components/Context/CarContext';
+import { CartContextProvider } from './components/Context/CartContext';
 import { FavoritesContextProvider } from './components/Context/FavoritesContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ToastContainer, Zoom } from 'react-toastify';
@@ -28,7 +28,7 @@ function App() {
           <NavBar />
           <Routes> 
             <Route exact path='/' element={<ItemListContainer />}/>
-            <Route exact path='/categoria/:idCategoria' element={ <CategoryContainer />}/>
+            <Route exact path='/category/:idCategory' element={ <CategoryContainer />}/>
             <Route exact path='/about' element={<AboutContainer/>}/>
             <Route exact path='/contact' element={<ContactContainer />}/>
             <Route exact path='/item/:idItem' element={<ItemDetailContainer />}/>
