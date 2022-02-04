@@ -4,7 +4,7 @@ import { useFavoritesContext } from '../../../Context/FavoritesContext';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import BackButton from '../../../BackButton/BackButton';
-import MercadoPago from './mercadopago.png';
+import MercadoPago from './img/mercadopago.png';
 import ItemCount from '../ItemCount/ItemCount';
 import './_ItemDetail.scss';
 

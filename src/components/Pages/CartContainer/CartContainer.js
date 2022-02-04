@@ -16,7 +16,7 @@ function CartContainer() {
             <>
                 <Header text={"Carrito"} />
                 <section className='cartSection'>
-                    <Message h2={'Carrito vacío'} p={'¡Agrega productos al carrito!'} />
+                    <Message h2={'Carrito vacío'} p={'¡Agrega nuevos productos!'} />
                 </section>
             </>
         )
