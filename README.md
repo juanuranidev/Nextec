@@ -47,7 +47,6 @@ npm install --save react-google-recaptcha<br>
 https://www.npmjs.com/package/react-google-recaptcha
 
 ## Data
-Database: Firebase<br>
 Products stolen from: <a href="https://www.venex.com.ar" target="_blank">Venex</a> ❤️
 
 ## My Portfolio
