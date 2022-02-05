@@ -1,0 +1,39 @@
+.footerSubscribe{
+    text-align: center;
+    padding: 1rem;
+    width: 33%;
+    .footerSubscribe_h3{
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    .footerSubscribe_div{
+        .footerSubscribe_div_input{
+            border: none;
+            margin-right: 0.5rem;
+            height: 2rem;
+            padding: 0.2rem;
+            border-radius: 0.5rem;
+        }
+        .footerSubscribe_div_button{
+            background-color: #196fa8;
+            color:#ffffff;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-align: center;
+            border: none;
+            box-shadow:  0 2px 4px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
+            cursor: pointer;
+        }
+        .footerSubscribe_div_button:active{
+            transform: scale(.95);
+        }
+    }
+}
+
+@media(max-width: 992px){
+    .footerSubscribe{
+        width: 100%;
+        margin: 1rem auto;
+    }
+}

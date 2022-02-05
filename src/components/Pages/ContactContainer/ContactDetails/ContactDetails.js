@@ -27,7 +27,7 @@ const ContactDetails = () => {
         })
     }
 
-    const purchase = async (userInfo) => {
+    const sendMessage = async (userInfo) => {
         let message = {}
         message.name = userInfo.name
         message.mail = userInfo.mail
@@ -77,7 +77,7 @@ const ContactDetails = () => {
                 </div>
                 {captchaValue===false || requiredInputs.includes('')
                 ?  <button className='contactDetails_button opacity' onClick={() => alert()}> No Enviar</button>
-                :  <button className='contactDetails_button' type='submit' onClick={() => purchase(userInfo)}>Enviar</button>
+                :  <button className='contactDetails_button' type='submit' onClick={() => sendMessage(userInfo)}>Enviar</button>
                 }
                 </form>
             </div>

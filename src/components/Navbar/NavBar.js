@@ -22,7 +22,7 @@ function NavBar(){
         </div>
         <div className={menu===false?'navLinks':'navLinks active'} >
             <div className="sidebarLogo">
-                <h2>SavageStore</h2>
+                <h2>Techno Store</h2>
                 <CloseMenuWidget onClick={closeMenu} />
             </div>
             <ul className="navLinks_ul">
