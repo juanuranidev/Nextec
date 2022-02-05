@@ -33,6 +33,7 @@ function NavBar(){
                         <NavBarLink class="navLinks_ul_li_ul_li" link="/category/notebooks" name="Notebooks" onClick={closeMenu} />
                         <NavBarLink class="navLinks_ul_li_ul_li" link="/category/placasdevideo" name="Placas de Video" onClick={closeMenu} />
                         <NavBarLink class="navLinks_ul_li_ul_li" link="/category/computadoras" name="Computadoras" onClick={closeMenu} />
+                        <NavBarLink class="navLinks_ul_li_ul_li" link="/category/monitores" name="Monitores" onClick={closeMenu} />
                     </ul>
                 </li>
                 <NavBarLink class="navLinks_ul_li" link="/about" name="Nosotros" onClick={closeMenu}/>

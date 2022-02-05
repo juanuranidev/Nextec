@@ -31,7 +31,7 @@ function MainContainer() {
                         <CategoryCard link='notebooks' text='Notebooks' />
                         <CategoryCard link='placasdevideo' text='Placas de video' />
                         <CategoryCard link='computadoras' text='Computadoras' />
-                        <CategoryCard link='notebooks' text='Notebooks' />
+                        <CategoryCard link='monitores' text='Monitores' />
                     </div>
                 </section>
                 <main className='mainContainer'>
