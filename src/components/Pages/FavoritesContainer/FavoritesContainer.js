@@ -4,7 +4,7 @@ import Header from '../../Header/Header';
 import Message from '../../Message/Message';
 import BackButton from './../../BackButton/BackButton';
 import Title from '../../Title/Title';
-import ItemList from '../ItemListContainer/ItemList/ItemList';
+import ItemList from '../../ItemList/ItemList';
 import './_FavoritesContainer.scss';
 
 const FavoritesContainer = () => {

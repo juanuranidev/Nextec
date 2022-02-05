@@ -5,7 +5,7 @@ import { FavoritesContextProvider } from './components/Context/FavoritesContext'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ToastContainer, Zoom } from 'react-toastify';
 import NavBar from './components/Navbar/NavBar';
-import ItemListContainer from './components/Pages/ItemListContainer/ItemListContainer';
+import MainContainer from './components/Pages/MainContainer/MainContainer';
 import CategoryContainer from './components/Pages/CategoryContainer/CategoryContainer';
 import AboutContainer from './components/Pages/AboutContainer/AboutContainer';
 import ContactContainer from './components/Pages/ContactContainer/ContactContainer'
@@ -27,7 +27,7 @@ function App() {
         <BrowserRouter>
           <NavBar />
           <Routes> 
-            <Route exact path='/' element={<ItemListContainer />}/>
+            <Route exact path='/' element={<MainContainer />}/>
             <Route exact path='/category/:idCategory' element={ <CategoryContainer />}/>
             <Route exact path='/about' element={<AboutContainer/>}/>
             <Route exact path='/contact' element={<ContactContainer />}/>
