@@ -22,7 +22,7 @@ const FooterSubscribe = () => {
           email.email = userEmail.email
 
         const dataBase = getFirestore()
-        const emailCollection = collection(dataBase, 'Newsletter') 
+        const emailCollection = collection(dataBase, 'newsletter') 
         await addDoc(emailCollection, email)
         .catch(err => console.log(err))
         .finally (() => {
