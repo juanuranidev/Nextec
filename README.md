@@ -51,4 +51,7 @@ https://www.npmjs.com/package/react-google-recaptcha
 Products stolen from: <a href="https://www.venex.com.ar" target="_blank">Venex</a> ❤️
 
 # My Portfolio
-https://juanuranidev.github.io/portfolio/<br>
+https://juanuranidev.github.io/portfolio/
+
+# My LinkedIn
+https://www.linkedin.com/in/juanurani/
