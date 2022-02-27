@@ -1,5 +1,5 @@
 # Techno Store
-Electronic store made with ReactJS, SASS and Firebase for the final project of the ReactJS course at CoderHouse.<br>
+Electronic store made with ReactJS, SASS and Firebase for the final project of the ReactJS course at CoderHouse.
 
 # Demo
 https://tiendaelectronica.netlify.app/<br>
@@ -51,7 +51,7 @@ https://www.npmjs.com/package/react-google-recaptcha
 Products stolen from: <a href="https://www.venex.com.ar" target="_blank">Venex</a> ❤️
 
 # My Portfolio
-https://juanuranidev.github.io/portfolio/
+https://juanurani.netlify.app/
 
 # My LinkedIn
 https://www.linkedin.com/in/juanurani/

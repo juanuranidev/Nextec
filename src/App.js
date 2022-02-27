@@ -46,8 +46,3 @@ function App() {
 }
 
 export default App; 
-
-/*
-Falta
-- Filtros en los productos
-*/

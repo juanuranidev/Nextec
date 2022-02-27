@@ -13,8 +13,7 @@ const Footer = () => {
         <FooterSubscribe />
       </div>
       <div className='footerSecondContent'>
-        <span className='fas fa-code footerSecondContent_span' />
-        <p className='footerSecondContent_p'>by <a href='https://juanuranidev.github.io/portfolio/' target='_blank' rel='noreferrer' className='footerSecondContent_p_a'>Juan</a></p>
+        <p className='footerSecondContent_p'>Made with <span className='fa fa-heart footerSecondContent_p_span'/> by <a href='https://juanurani.netlify.app/' target='_blank' rel='noopener noreferrer' className='footerSecondContent_p_a' >Juan</a></p>
       </div>
     </footer>
   );
