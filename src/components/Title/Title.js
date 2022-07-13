@@ -1,9 +1,9 @@
 import React from 'react';
-import './_Title.scss';
+import './Title.scss';
 
-function Title(props) {
+function Title({text}) {
     return (
-        <h2 className='title' id='title'>{props.text}</h2>
+        <h2 className='title' id='title'>{text}</h2>
     )
 }
 

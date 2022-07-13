@@ -3,10 +3,7 @@
     padding: 0rem 1rem 2rem 1rem;
     text-align: center;
     color: #3498db;
-}
-
-@media(max-width: 768px){
-    .title{
+    @media(max-width: 768px){
         font-size: 2rem;
     }
 }
