@@ -1,5 +1,5 @@
 import React from 'react';
-import './_PageLoader.scss';
+import './PageLoader.scss';
 
 const PageLoader = () => {
     return (
