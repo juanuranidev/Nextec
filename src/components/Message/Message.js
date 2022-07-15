@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './_Message.scss';
+import './Message.scss';
 
 const Message = (props) => {
   return (
