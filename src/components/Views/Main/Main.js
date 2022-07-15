@@ -7,7 +7,7 @@ import CategoryCard from '../../CategoryCard/CategoryCard';
 import PageLoader from '../../PageLoader/PageLoader';
 import ItemList from '../../ItemList/ItemList';
 import InfoItem from '../../InfoItem/InfoItem';
-import './_MainContainer.scss';
+import './Main.scss';
 
 function MainContainer() {
     const [data, setData] = useState([])

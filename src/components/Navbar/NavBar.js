@@ -6,7 +6,7 @@ import CloseMenuWidget from './CloseMenuWidget/CloseMenuWidget'
 import NavBarLink from './NavbarLink/NavBarLink'
 import FavoritesWidget from './FavoritesWidget/FavoritesWidget'
 import CartWidget from './CartWidget/CartWidget'
-import "./_NavBar.scss"
+// import "./_NavBar.scss"
 
 function NavBar(){
     const[menu, setMenu] = useState(false)

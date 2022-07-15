@@ -1,20 +1,21 @@
 import React from 'react';
-import { getFirestoreApp } from './components/Firebase/dbConfig';
-import { CartContextProvider } from './components/Context/CartContext';
-import { FavoritesContextProvider } from './components/Context/FavoritesContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { FavoritesContextProvider } from './components/Context/FavoritesContext';
 import { ToastContainer, Zoom } from 'react-toastify';
-import NavBar from './components/Navbar/NavBar';
-import MainContainer from './components/Pages/MainContainer/MainContainer';
-import CategoryContainer from './components/Pages/CategoryContainer/CategoryContainer';
-import AboutContainer from './components/Pages/AboutContainer/AboutContainer';
-import ContactContainer from './components/Pages/ContactContainer/ContactContainer'
-import ItemDetailContainer from './components/Pages/ItemDetailContainer/ItemDetailContainer';
-import FavoritesContainer from './components/Pages/FavoritesContainer/FavoritesContainer';
-import CartContainer from './components/Pages/CartContainer/CartContainer';
-import PaymentContainer from './components/Pages/PaymentContainer/PaymentContainer';
-import PageNotFound from './components/Pages/PageNotFound/PageNotFound';
+import { CartContextProvider } from './components/Context/CartContext';
+import { getFirestoreApp } from './components/Firebase/dbConfig';
 import Footer from './components/Footer/Footer';
+import NavBar from './components/Navbar/NavBar';
+import Navbar from './components/Navbar/Navbar2'
+import PageNotFound from './components/Views/PageNotFound/PageNotFound';
+import MainContainer from './components/Views/Main/Main';
+import CartContainer from './components/Views/CartContainer/CartContainer';
+import AboutContainer from './components/Views/AboutContainer/AboutContainer';
+import PaymentContainer from './components/Views/PaymentContainer/PaymentContainer';
+import ContactContainer from './components/Views/ContactContainer/ContactContainer'
+import CategoryContainer from './components/Views/CategoryContainer/CategoryContainer';
+import FavoritesContainer from './components/Views/FavoritesContainer/FavoritesContainer';
+import ItemDetailContainer from './components/Views/ItemDetailContainer/ItemDetailContainer';
 import './styles/_base.scss';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -25,7 +26,8 @@ function App() {
     <FavoritesContextProvider>
       <CartContextProvider >
         <BrowserRouter>
-          <NavBar />
+          {/* <NavBar /> */}
+          <Navbar/>
           <Routes> 
             <Route exact path='/' element={<MainContainer />}/>
             <Route exact path='/category/:idCategory' element={ <CategoryContainer />}/>
@@ -39,7 +41,20 @@ function App() {
           </Routes>
           <Footer />
         </BrowserRouter>
-        <ToastContainer position="bottom-right" autoClose={4000} hideProgressBar={true} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover={false} theme="colored" transition={Zoom} limit={3}/> 
+        <ToastContainer 
+          position="bottom-right" 
+          autoClose={4000} 
+          hideProgressBar={true} 
+          newestOnTop={false} 
+          closeOnClick 
+          rtl={false} 
+          pauseOnFocusLoss 
+          draggable 
+          pauseOnHover={false} 
+          theme="colored" 
+          transition={Zoom} 
+          limit={3}
+        /> 
       </CartContextProvider>
     </FavoritesContextProvider>
   )
