@@ -1,0 +1,23 @@
+.categoryCard{
+    background-color: #3498db;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    width: calc(50% - 2rem);
+}
+.categoryCard:hover{
+    background-color: #196fa8;
+}
+.categoryCard:active{
+    transform: scale(.95);
+}
+
+@media(max-width: 768px){
+    .categoryCard{
+        margin: 0rem 0rem 1rem 0rem;
+        width: 100%;
+    }
+}

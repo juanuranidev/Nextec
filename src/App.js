@@ -1,23 +1,24 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { FavoritesContextProvider } from './components/Context/FavoritesContext';
+import { FavoritesContextProvider } from './Components/Context/FavoritesContext';
 import { ToastContainer, Zoom } from 'react-toastify';
-import { CartContextProvider } from './components/Context/CartContext';
-import { getFirestoreApp } from './components/Firebase/dbConfig';
-import Footer from './components/Footer/Footer';
-import NavBar from './components/Navbar/NavBar';
-import Navbar from './components/Navbar/Navbar2'
-import PageNotFound from './components/Views/PageNotFound/PageNotFound';
-import MainContainer from './components/Views/Main/Main';
-import CartContainer from './components/Views/CartContainer/CartContainer';
-import AboutContainer from './components/Views/AboutContainer/AboutContainer';
-import PaymentContainer from './components/Views/PaymentContainer/PaymentContainer';
-import ContactContainer from './components/Views/ContactContainer/ContactContainer'
-import CategoryContainer from './components/Views/CategoryContainer/CategoryContainer';
-import FavoritesContainer from './components/Views/FavoritesContainer/FavoritesContainer';
-import ItemDetailContainer from './components/Views/ItemDetailContainer/ItemDetailContainer';
+import { CartContextProvider } from './Components/Context/CartContext';
+import { getFirestoreApp } from './Components/Firebase/dbConfig';
+import Footer from './Components/Footer/Footer';
+import NavBar from './Components/Navbar/NavBar';
+import Navbar from './Components/Navbar/Navbar2'
+import PageNotFound from './Components/Views/PageNotFound/PageNotFound';
+import MainContainer from './Components/Views/Main/Main';
+import CartContainer from './Components/Views/CartContainer/CartContainer';
+import AboutContainer from './Components/Views/AboutContainer/AboutContainer';
+import PaymentContainer from './Components/Views/PaymentContainer/PaymentContainer';
+import ContactContainer from './Components/Views/ContactContainer/ContactContainer'
+import CategoryContainer from './Components/Views/CategoryContainer/CategoryContainer';
+import FavoritesContainer from './Components/Views/FavoritesContainer/FavoritesContainer';
+import ItemDetailContainer from './Components/Views/ItemDetailContainer/ItemDetailContainer';
 import './styles/_base.scss';
 import 'react-toastify/dist/ReactToastify.css';
+import Products from './Components/Views/Products/Products';
 
 getFirestoreApp()
 
@@ -30,6 +31,7 @@ function App() {
           <Navbar/>
           <Routes> 
             <Route exact path='/' element={<MainContainer />}/>
+            <Route exact path='/products' element={<Products />}/>
             <Route exact path='/category/:idCategory' element={ <CategoryContainer />}/>
             <Route exact path='/about' element={<AboutContainer/>}/>
             <Route exact path='/contact' element={<ContactContainer />}/>

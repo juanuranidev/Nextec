@@ -1,0 +1,83 @@
+.paymentsDetails{
+    width: 45rem;
+    margin: 5rem auto;
+    padding: 1rem;
+    background-color: #3498db;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: #ffffff;
+    text-align: left;
+    .paymentsDetails_h2{
+        font-size: 2rem;
+        margin: 1rem auto 2rem auto;
+        text-align: center;
+    }
+    .paymentsDetails_form{
+        display: flex;
+        flex-direction: column;
+        .paymentsDetails_form_label{
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .inputContainer{
+            display: flex;
+            justify-content: center;
+            .inputContainer_label{
+                height: 2rem;
+                padding: 0rem 0.4rem;
+                width: 100%;
+                border: none;
+                border-radius: 0.5rem;
+                margin: 0rem 1rem 0.5rem 1rem;
+            }
+        }
+    }
+    .paymentsDetails_form_button{
+            background: #196fa8;
+            width: 6rem;
+            margin: 1rem auto 0rem auto;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-align: center;
+            box-shadow:  0 2px 4px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
+            padding: 1rem 0rem;
+            color: #ffffff;
+            font-size: 1rem;
+            box-shadow: none;
+            border: 2px solid #196fa8;
+            cursor: pointer;
+    }
+    .paymentsDetails_form_button:active{
+        transform: scale(0.95);
+    }
+    .opacity{
+        opacity: 0.4;
+    }
+}
+
+@media(max-width: 768px){
+    .paymentsDetails{
+        width: 90%;
+        .paymentsDetails_h2{
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .paymentsDetails_form{
+            .paymentsDetails_form_label{
+                font-size: 1.8rem;
+                margin: 1rem 0rem;
+            }
+            .inputContainer{
+                flex-direction: column;
+                .inputContainer_label{
+                    margin: 0.5rem 0rem 0rem 0rem;
+                }
+            }
+        }
+        .paymentsDetails_form_button{                
+                margin: 1rem auto 0.5rem auto;
+                font-size: 0.8rem;
+        }
+    }
+}

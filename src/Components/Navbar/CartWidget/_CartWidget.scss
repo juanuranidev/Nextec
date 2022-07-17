@@ -1,0 +1,23 @@
+.carWidget{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    .carWidget_a{
+        text-decoration: none;
+        color: #ffffff;
+    }
+    .carWidget_a_empty{
+        opacity: 0.4;
+        color: #ffffff;
+    }
+    .carWidget_span{
+        background-color: #196fa8;
+        border-radius: 0.5rem;
+        margin-left: 0.2rem;
+        padding: 0.4rem;
+        color: #ffffff;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}

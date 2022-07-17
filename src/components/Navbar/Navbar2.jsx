@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className='bottomNav'>
             <ul className='bottomNav_ul'>
                 <Link to="/" className='bottomNav_ul_a'><li className='bottomNav_ul_a_li'>Inicio</li></Link>
-                <Link to="/" className='bottomNav_ul_a'><li className='bottomNav_ul_a_li'>Productos</li></Link>
+                <Link to="/products" className='bottomNav_ul_a'><li className='bottomNav_ul_a_li'>Productos</li></Link>
                 <Link to="/about" className='bottomNav_ul_a'><li className='bottomNav_ul_a_li'>Nosotros</li></Link>
                 <Link to="/contact" className='bottomNav_ul_a'><li className='bottomNav_ul_a_li'>Contacto</li></Link>
                 <Link to="/contact" className='bottomNav_ul_a'><li className='bottomNav_ul_a_li'>Arma tu PC</li></Link>
