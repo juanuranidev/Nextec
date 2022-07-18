@@ -5,8 +5,7 @@ import { ToastContainer, Zoom } from 'react-toastify';
 import { CartContextProvider } from './Components/Context/CartContext';
 import { getFirestoreApp } from './Components/Firebase/dbConfig';
 import Footer from './Components/Footer/Footer';
-import NavBar from './Components/Navbar/NavBar';
-import Navbar from './Components/Navbar/Navbar2'
+import Navbar from './Components/Navbar/Navbar'
 import PageNotFound from './Components/Views/PageNotFound/PageNotFound';
 import MainContainer from './Components/Views/Main/Main';
 import CartContainer from './Components/Views/CartContainer/CartContainer';
@@ -27,7 +26,6 @@ function App() {
     <FavoritesContextProvider>
       <CartContextProvider >
         <BrowserRouter>
-          {/* <NavBar /> */}
           <Navbar/>
           <Routes> 
             <Route exact path='/' element={<MainContainer />}/>
@@ -35,7 +33,7 @@ function App() {
             <Route exact path='/category/:idCategory' element={ <CategoryContainer />}/>
             <Route exact path='/about' element={<AboutContainer/>}/>
             <Route exact path='/contact' element={<ContactContainer />}/>
-            <Route exact path='/item/:idItem' element={<ItemDetailContainer />}/>
+            <Route exact path='/products/:idItem' element={<ItemDetailContainer />}/>
             <Route exact path='/favorites' element={<FavoritesContainer />}/>
             <Route exact path='/cart' element={<CartContainer />}/> 
             <Route exact path='/payment' element={<PaymentContainer />} />

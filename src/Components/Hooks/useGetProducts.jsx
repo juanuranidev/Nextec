@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
-import { ProductModel } from '../Context/CartContext';
 
 const useGetProducts = (parameter1, parameter2, parameter3 ) => {
   const [loader, setLoader] = useState(true);

@@ -180,7 +180,6 @@
 
 
 .nav{
-    padding: 2.5rem 0rem 1.5rem 0rem;
     background-color: #202036;
     .topNav{
         display: flex;
@@ -189,6 +188,7 @@
         margin: auto;
         text-align: center;
         width: 80%;
+        padding: 2.5rem 0rem;
         .topNav_span{
             width: 20%;
             color: #ffffff;
@@ -230,6 +230,33 @@
                 margin-left: -2.2rem;
                 cursor: pointer;
             }
+            .topNav_searchBar_results{
+                position: absolute;
+                width: 40%;
+                top: 10%;
+                margin: auto;
+                background-color: #202036;
+                padding: 0rem 1rem;
+                max-height: 20rem;
+                overflow-y: scroll;
+                box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%);
+                .searchBar_product{
+                    text-decoration: none;
+                    .searchBar_product_div{
+                        display: flex;
+                        padding: 0.5rem 0rem;
+                        .searchBar_product_div_img{
+                            width: 5rem;
+                            padding-right: 1rem;
+                        }
+                        .searchBar_product_div_h2{
+                            font-size: 1rem;
+                            color: #ffffff;
+                            text-align: left;
+                        }
+                    }
+                }
+            }
         }
         .topNav_icons{
             width: 20%;
@@ -244,7 +271,8 @@
         }
     }
     .bottomNav{
-        padding-top: 2.5rem;
+        padding: 1.5rem;
+        background-color: #3C3C50;
         .bottomNav_ul{
             list-style-type: none;
             display: flex;

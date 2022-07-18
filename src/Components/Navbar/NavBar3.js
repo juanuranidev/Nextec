@@ -8,7 +8,7 @@ import FavoritesWidget from './FavoritesWidget/FavoritesWidget'
 import CartWidget from './CartWidget/CartWidget'
 // import "./_NavBar.scss"
 
-function NavBar(){
+function NavBar3(){
     const[menu, setMenu] = useState(false)
     
     const openMenu = () => setMenu(true)
@@ -49,4 +49,4 @@ function NavBar(){
     )
 }
 
-export default NavBar;
+export default NavBar3;
