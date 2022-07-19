@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../../Header/Header';
+import Header from '../Main/Header/Header';
 import Title from '../../Title/Title';
 import AboutContent from './AboutContent/AboutContent';
 import Adn from './img/adn.jpg';
@@ -11,7 +11,7 @@ import './_AboutContainer.scss';
 const AboutContainer = () => {
   return (
     <>
-    <Header text={'Nosotros'} />
+  
     <section className='aboutContainer'>
         <Title text={'Nuestra empresa'} />
         <AboutContent img={Adn}/>

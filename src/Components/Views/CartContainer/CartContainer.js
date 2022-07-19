@@ -1,6 +1,5 @@
 import React from 'react';
 import { useCartContext } from '../../Context/CartContext';
-import Header from '../../Header/Header';
 import Title from '../../Title/Title';
 import Message from '../../Message/Message';
 import CartItem from './CartItem/CartItem';
@@ -14,7 +13,6 @@ function CartContainer() {
     if(cartList.length===0){
         return(
             <>
-                <Header text={"Carrito"} />
                 <section className='cartSection'>
                     <Message h2={'Carrito vacío'} p={'¡Agrega nuevos productos!'} />
                 </section>
@@ -24,7 +22,6 @@ function CartContainer() {
 
     return (
         <>
-            <Header text={"Carrito"} />
             <section className='cartSection'>
             <Title text={"Tu carrito de compras"} />
                 <table className='cartSection_table'>

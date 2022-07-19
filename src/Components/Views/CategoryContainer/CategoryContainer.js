@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
-import Header from '../../Header/Header';
+import Header from '../Main/Header/Header';
 import BackButton from '../../BackButton/BackButton';
 import Title from '../../Title/Title';
 import PageLoader from '../../PageLoader/PageLoader';
@@ -24,7 +24,6 @@ const CategoryContainer = () => {
 
     return (
         <>
-        <Header text={'Por categoría'} />
         <section className='categoryContainer'>
             <BackButton />
             <Title text={`Mirando sólo ${idCategory}`} />
