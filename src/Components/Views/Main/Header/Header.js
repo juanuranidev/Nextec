@@ -12,7 +12,7 @@ function Header() {
                 <a href='#title' className='header_arrow_a'><span className='fas fa-chevron-down fa-4x header_arrow_span' /></a>
             </div>
         </header>
-    )
-}
+    );
+};
 
 export default Header;
