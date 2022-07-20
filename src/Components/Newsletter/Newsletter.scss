@@ -1,0 +1,42 @@
+.newsletter{
+    .newsletter_h2{
+        color: #FFFFFF;
+        margin-bottom: 1.25rem;
+        &:first-child{
+            margin-bottom: 0.25rem;
+        }
+    }
+    .newsletter_p{
+        color: #FFFFFF;
+        margin: 0.5rem 0rem 1.5rem 0rem;
+        font-weight: 400;
+    }
+    .newsletter_div{
+        .newsletter_div_form{
+            .newsletter_div_form_input{
+                padding: 0.5rem 0.2rem;
+                border-radius: 0.25rem;
+                margin-right: 0.5rem;
+                border: 0.12rem solid #FFFFFF;
+                transition: background-color .25s cubic-bezier(.645,.045,.355,1);
+                &:focus{
+                    border: 0.12rem solid #51B3D8;
+                }
+            }
+            .newsletter_div_form_button{
+                padding: 0.5rem;
+                border-radius: 0.25rem;
+                font-weight: 600;
+                color: #FFFFFF;
+                border: 0.12rem solid #000000;
+                background: linear-gradient(90deg, rgba(155,66,244,1) 0%, rgba(254,1,170,1) 100%);
+                transition: all .10s linear; 
+                cursor: pointer;
+                &:active{
+                    transform: scale(.95);
+                    transition: all .10s linear; 
+                }
+            }
+        }
+    }
+}

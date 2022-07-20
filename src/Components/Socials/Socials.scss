@@ -1,0 +1,15 @@
+.socials{
+    .socials_a{
+        color: #FFFFFF;
+        transition: color .25s cubic-bezier(.645,.045,.355,1);
+        text-decoration: none;
+        margin: 0rem 0.5rem;
+        &:hover{
+            color: #51B3D8;
+            transition: color .25s cubic-bezier(.645,.045,.355,1);
+        }
+        &:first-child{
+            margin: 0rem 0.5rem 0rem 0rem;
+        }
+    }
+}

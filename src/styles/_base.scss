@@ -8,11 +8,14 @@
     scroll-behavior: smooth;
 }
 
-// Primario: #51B3D8
-// Secundario: #FE01AA
-// Degradado: #9B42F4, #FE01AA
- // color: hsla(270, 89%, 61%, 1);
-// Fondo1: #3C3C50
-// Fondo2: #202036
-// Fondo3: #5183D8
-// Textos: #FFFFFF
+$Primario: #51B3D8;
+$Secundario: #FE01AA;
+$Degradado: #9B42F4, #FE01AA;
+$color: hsla(270, 89%, 61%, 1);
+$Fondo1: #3C3C50;
+$Fondo2: #202036;
+$Fondo3: #141423;
+$Textos: #FFFFFF;
+
+
+// background: linear-gradient(90deg, rgba(155,66,244,1) 0%, rgba(254,1,170,1) 100%);

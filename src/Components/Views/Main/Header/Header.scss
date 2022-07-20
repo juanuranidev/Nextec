@@ -4,7 +4,7 @@
     height: 60vh;
     padding: 2.5rem;    
     .header_text{
-        height: 90%;
+        height: 100%;
         width: 80%;
         margin: auto;
         display: flex;
@@ -19,14 +19,6 @@
         .header_text_h2{
             @extend .header_text_h1;
             margin-bottom: 0rem;
-        }
-    }
-    .header_arrow{
-        height: 10%;
-        display: flex;
-        justify-content: center;
-        .header_arrow_a{
-            color: #ffffff;
         }
     }
 }

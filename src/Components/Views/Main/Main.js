@@ -23,9 +23,9 @@ function MainContainer() {
     }, [])
 
     return (
-        <>
+        <React.Fragment>
             <Header text={'¡Bienvenido a nuestra tienda!'}/>
-                <section className='categoriesContainer'>
+                {/* <section className='categoriesContainer'>
                     <Title text='Categorías'/>
                     <div className='categories'>
                         <CategoryCard link='notebooks' text='Notebooks' />
@@ -46,8 +46,8 @@ function MainContainer() {
                         <InfoItem span='fas fa-truck' p='Recibí tu producto en los más de 50 países que están disponibles' />
                         <InfoItem span='fas fa-clock' p='Elegí envío express para que tu pedido llegue mucho más rápido' />
                     </div>
-                </section>
-        </>
+                </section> */}
+        </React.Fragment>
     )
 }
 
