@@ -3,13 +3,30 @@
     padding: 2.5rem;
     display: flex;
     justify-content: space-between;
-//     padding: 1rem;
+    flex-wrap: wrap;
+    .footer_info{
+        width: 30%;
+        padding: 0rem 1rem;
+    }
+    .footer_links{
+        width: 30%;
+        padding: 0rem 1rem;
+    }
+    .footer_newsletter{
+        width: 40%;
+        padding: 0rem 1rem;
+    }
+
+
+
+
+//     padding: 0rem 1rem;
 //     color: #ffffff;
 //     background-color: #3498db;
 //     .footerMainContent{
 //         display: flex;
 //         justify-content: space-evenly;
-//         margin-bottom: 1rem;
+//         margin-bottom: 0rem 1rem;
 //     }
 //     .footerSecondContent{
 //         display: flex;
