@@ -1,12 +1,39 @@
 import React, { useState } from 'react';
+import { addDoc, getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
 import './Newsletter.scss';
 
 const Newsletter = () => {
     const [loader, setLoader] = useState(false)
-    const [isSuscribed, setIsSuscribed] = useState(false)
     const [userEmail, setUserEmail] = useState({email: ''})
+    const [isSuscribed, setIsSuscribed] = useState(false)
 
-    const handleSetUserEmail = (e) => setUserEmail({...userEmail, [e.target.name] : e.target.value})
+    const handleSubmit = async(e) => {
+        setLoader(true)
+        e.preventDefault()
+        
+        let emailObject = {}
+        emailObject.email = userEmail.email
+        
+        const dataBase = getFirestore()
+        
+        const emailCollection = collection(dataBase, 'newsletter') 
+        const queryCollection = query(emailCollection, where('email', '==', emailObject.email))
+        
+        try{
+          const data = await getDocs(queryCollection)
+          if(data.docs.length){
+            alert("Ya existe")
+          } else {
+            await addDoc(emailCollection, emailObject)
+            setIsSuscribed(true)
+            localStorage.setItem('alreadySuscribed', JSON.stringify(true));
+            setIsSuscribed(true)
+          }
+          setLoader(false)
+        } catch(error) {
+          console.log(error)
+        }
+      }
 
     if(loader){
       return(
@@ -28,14 +55,14 @@ const Newsletter = () => {
             <h2 className='newsletter_h2'>¿Nos acompañas?</h2>
             <p className='newsletter_p'>Suscríbete para recibir promociones, ingresos y torneos.</p>
             <div className='newsletter_div'>
-                <form className='newsletter_div_form'>
+                <form className='newsletter_div_form' onSubmit={(e) => handleSubmit(e)}>
                     <input 
                       name='email' 
                       type='email' 
                       placeholder='Email Gamer' 
                       value={userEmail.email} 
                       className='newsletter_div_form_input' 
-                      onChange={(e) => handleSetUserEmail(e)}
+                      onChange={(e) => setUserEmail({...userEmail, [e.target.name]: e.target.value})}
                     />    
                     <button
                         type='submit'
