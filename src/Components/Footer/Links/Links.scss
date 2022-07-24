@@ -1,15 +1,16 @@
 .links{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
         .links_h2{
             color: #FFFFFF;
             padding-bottom: 1.5rem;
             font-weight: 600;
+            font-size: 1.4rem;
         }
         .links_p{
             color: #FFFFFF;
             padding-bottom: 0.6rem;
             font-weight: 400;
+            font-size: 1rem;
         }
 }

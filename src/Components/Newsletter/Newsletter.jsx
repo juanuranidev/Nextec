@@ -24,15 +24,15 @@ const Newsletter = () => {
 
     return (
         <div className='newsletter'>
-            <h2 className='newsletter_h2'>Vamos a cambiar el mundo del gaming</h2>
+            <h2 className='newsletter_h2'>Vamos a cambiar el mundo</h2>
             <h2 className='newsletter_h2'>¿Nos acompañas?</h2>
-            <p className='newsletter_p'>Suscríbete para recibir promociones, nuevos ingresos, torneos y beneficios.</p>
+            <p className='newsletter_p'>Suscríbete para recibir promociones, ingresos y torneos.</p>
             <div className='newsletter_div'>
                 <form className='newsletter_div_form'>
                     <input 
                       name='email' 
                       type='email' 
-                      placeholder='Email Game                      ' 
+                      placeholder='Email Gamer' 
                       value={userEmail.email} 
                       className='newsletter_div_form_input' 
                       onChange={(e) => handleSetUserEmail(e)}
