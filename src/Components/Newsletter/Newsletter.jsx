@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { addDoc, getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
+import { toast } from 'react-toastify';
 import './Newsletter.scss';
 
 const Newsletter = () => {
     const [loader, setLoader] = useState(false)
     const [userEmail, setUserEmail] = useState({email: ''})
     const [isSuscribed, setIsSuscribed] = useState(false)
+
+    const successfulSubscription = () => toast.success('Suscripción realizada con éxito');
+    const errorSubscription = () => toast.error('Ya te encuentras registrado');
 
     const handleSubmit = async(e) => {
         setLoader(true)
@@ -20,39 +24,38 @@ const Newsletter = () => {
         const queryCollection = query(emailCollection, where('email', '==', emailObject.email))
         
         try{
-          const data = await getDocs(queryCollection)
-          if(data.docs.length){
-            alert("Ya existe")
-          } else {
-            await addDoc(emailCollection, emailObject)
-            setIsSuscribed(true)
-            localStorage.setItem('alreadySuscribed', JSON.stringify(true));
-            setIsSuscribed(true)
-          }
-          setLoader(false)
+            const data = await getDocs(queryCollection)
+            if(data.docs.length){
+                errorSubscription()
+            } else {
+                await addDoc(emailCollection, emailObject)
+                setIsSuscribed(true)
+                successfulSubscription()
+                localStorage.setItem('alreadySuscribed', JSON.stringify(true))
+            }
+            setLoader(false)
         } catch(error) {
-          console.log(error)
+            console.log(error)
         }
-      }
+    }
 
     if(loader){
-      return(
-        <p>Cargando</p>
-      )
+        return(
+            <p>Cargando</p>
+        )
     }
 
     if(isSuscribed){
         return(
             <div className='newsletter_suscribed'>
-                <p className='newsletter_suscribed_p'>Has sido suscrito a nuestro newsletter correctamente</p>
+                <h2 className='newsletter_suscribed_h2'>Has sido suscrito a nuestro newsletter correctamente</h2>
             </div>
         )
     }
 
     return (
         <div className='newsletter'>
-            <h2 className='newsletter_h2'>Vamos a cambiar el mundo</h2>
-            <h2 className='newsletter_h2'>¿Nos acompañas?</h2>
+            <h2 className='newsletter_h2'>Vamos a cambiar el mundo del gaming</h2>
             <p className='newsletter_p'>Suscríbete para recibir promociones, ingresos y torneos.</p>
             <div className='newsletter_div'>
                 <form className='newsletter_div_form' onSubmit={(e) => handleSubmit(e)}>

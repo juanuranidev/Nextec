@@ -177,111 +177,29 @@
 //     }
 //   } 
 // }
-
-
 .nav{
     background-color: #141423;
-    .topNav{
+    padding: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .nav_logo{
+        width: 25%;
         display: flex;
-        align-items: center;
         justify-content: center;
-        margin: auto;
-        text-align: center;
-        width: 80%;
-        padding: 2.5rem 0rem;
-        .topNav_span{
-            width: 20%;
+        .nav_logo_span{
             color: #ffffff;
-            display: flex;
-            justify-content: flex-end;
-        }
-        .topNav_searchBar{
-            width: 60%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            .topNav_searchBar_input{
-                border: 0.1rem solid #ffffff;
-                border-radius: 0.25rem;
-                color: #ffffff;
-                height: 3rem;
-                width: 80%;
-                padding: 0.2rem; 
-                background-color: #141423;
-                &::placeholder{
-                color: #ffffff;
-                padding: 0.2rem;
-                opacity: 0.5;
-                }
-                &:-ms-input-placeholder{
-                  color: #ffffff;
-                  padding: 0.2rem;
-                  opacity: 0.5;
-                }
-                &::-ms-input-placeholder{
-                  color: #ffffff;
-                  padding: 0.2rem;
-                  opacity: 0.5;
-                }
-            }
-            .topNav_searchBar_span{
-                color: #ffffff;
-                font-size: 1.5rem;
-                margin-left: -2.2rem;
-                cursor: pointer;
-            }
-            .topNav_searchBar_results{
-                position: absolute;
-                width: 40%;
-                top: 10%;
-                margin: auto;
-                background-color: #202036;
-                padding: 0rem 1rem;
-                max-height: 20rem;
-                overflow-y: scroll;
-                box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%);
-                .searchBar_product{
-                    text-decoration: none;
-                    .searchBar_product_div{
-                        display: flex;
-                        padding: 0.5rem 0rem;
-                        .searchBar_product_div_img{
-                            width: 5rem;
-                            padding-right: 1rem;
-                        }
-                        .searchBar_product_div_h2{
-                            font-size: 1rem;
-                            color: #ffffff;
-                            text-align: left;
-                        }
-                    }
-                }
-            }
-        }
-        .topNav_icons{
-            width: 20%;
-            display: flex;
-            justify-content: flex-start;
-            .topNav_icons_span{
-                color: #ffffff;
-                font-size: 1.5rem;
-                margin: 0rem 0.5rem;
-                transition: color .25s cubic-bezier(.645,.045,.355,1);
-                cursor: pointer;
-                &:hover{
-                    color: #51B3D8;
-                    transition: color .25s cubic-bezier(.645,.045,.355,1);
-                }
-            }
         }
     }
-    .bottomNav{
-        padding: 1.5rem;
-        .bottomNav_ul{
+    .nav_links{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        .nav_links_ul{
             list-style-type: none;
             display: flex;
             justify-content: center;
-            .bottomNav_ul_a{
+            .nav_links_ul_a{
                 margin: 0rem 1rem;
                 text-decoration: none;
                 color: #ffffff;
@@ -295,6 +213,137 @@
             }
         }
     }
+    .nav_icons{
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        .nav_icons_span{
+            color: #ffffff;
+            font-size: 1.8rem;
+            margin: 0rem 0.5rem;
+            transition: color .25s cubic-bezier(.645,.045,.355,1);
+            cursor: pointer;
+            &:hover{
+                color: #51B3D8;
+                transition: color .25s cubic-bezier(.645,.045,.355,1);
+            }
+        }
+    }
 }
 
 
+
+// .topNav{
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     margin: auto;
+    //     text-align: center;
+    //     width: 80%;
+    //     padding: 2.5rem 0rem;
+    //     .topNav_span{
+    //         width: 20%;
+    //         color: #ffffff;
+    //         display: flex;
+    //         justify-content: flex-end;
+    //     }
+    //     .topNav_searchBar{
+    //         width: 60%;
+    //         display: flex;
+    //         justify-content: center;
+    //         align-items: center;
+    //         .topNav_searchBar_input{
+    //             border: 0.1rem solid #ffffff;
+    //             border-radius: 0.25rem;
+    //             color: #ffffff;
+    //             height: 3rem;
+    //             width: 80%;
+    //             padding: 0.2rem; 
+    //             background-color: #141423;
+    //             &::placeholder{
+    //             color: #ffffff;
+    //             padding: 0.2rem;
+    //             opacity: 0.5;
+    //             }
+    //             &:-ms-input-placeholder{
+    //               color: #ffffff;
+    //               padding: 0.2rem;
+    //               opacity: 0.5;
+    //             }
+    //             &::-ms-input-placeholder{
+    //               color: #ffffff;
+    //               padding: 0.2rem;
+    //               opacity: 0.5;
+    //             }
+    //         }
+    //         .topNav_searchBar_span{
+    //             color: #ffffff;
+    //             font-size: 1.5rem;
+    //             margin-left: -2.2rem;
+    //             cursor: pointer;
+    //         }
+    //         .topNav_searchBar_results{
+    //             position: absolute;
+    //             width: 40%;
+    //             top: 10%;
+    //             margin: auto;
+    //             background-color: #202036;
+    //             padding: 0rem 1rem;
+    //             max-height: 20rem;
+    //             overflow-y: scroll;
+    //             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%);
+    //             .searchBar_product{
+    //                 text-decoration: none;
+    //                 .searchBar_product_div{
+    //                     display: flex;
+    //                     padding: 0.5rem 0rem;
+    //                     .searchBar_product_div_img{
+    //                         width: 5rem;
+    //                         padding-right: 1rem;
+    //                     }
+    //                     .searchBar_product_div_h2{
+    //                         font-size: 1rem;
+    //                         color: #ffffff;
+    //                         text-align: left;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     .topNav_icons{
+    //         width: 20%;
+    //         display: flex;
+    //         justify-content: flex-start;
+    //         .topNav_icons_span{
+    //             color: #ffffff;
+    //             font-size: 1.5rem;
+    //             margin: 0rem 0.5rem;
+    //             transition: color .25s cubic-bezier(.645,.045,.355,1);
+    //             cursor: pointer;
+    //             &:hover{
+    //                 color: #51B3D8;
+    //                 transition: color .25s cubic-bezier(.645,.045,.355,1);
+    //             }
+    //         }
+    //     }
+    // }
+    // .bottomNav{
+    //     padding: 1.5rem;
+    //     .bottomNav_ul{
+    //         list-style-type: none;
+    //         display: flex;
+    //         justify-content: center;
+    //         .bottomNav_ul_a{
+    //             margin: 0rem 1rem;
+    //             text-decoration: none;
+    //             color: #ffffff;
+    //             font-size: 1rem;
+    //             font-weight: 600;
+    //             transition: color .25s cubic-bezier(.645,.045,.355,1);
+    //             &:hover{
+    //                 color: #51B3D8;
+    //                 transition: color .25s cubic-bezier(.645,.045,.355,1);
+    //             }
+    //         }
+    //     }
+    // }
