@@ -3,7 +3,6 @@ import { useFavoritesContext } from '../../Context/FavoritesContext';
 import Header from '../Main/Header/Header';
 import Message from '../../Message/Message';
 import BackButton from './../../BackButton/BackButton';
-import Title from '../../Title/Title';
 import ItemList from '../../ItemList/ItemList';
 import './_FavoritesContainer.scss';
 
@@ -22,7 +21,6 @@ const FavoritesContainer = () => {
     <>   
       <section className="favoritesContainer">
         <BackButton />
-        <Title text={"Productos favoritos"} />
         <ItemList products={favorites}/>
       </section>
     </>

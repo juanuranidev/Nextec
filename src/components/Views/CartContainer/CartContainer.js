@@ -1,6 +1,5 @@
 import React from 'react';
 import { useCartContext } from '../../Context/CartContext';
-import Title from '../../Title/Title';
 import Message from '../../Message/Message';
 import CartItem from './CartItem/CartItem';
 import EmptyCartButton from './EmptyCartButton/EmptyCartButton';
@@ -23,7 +22,6 @@ function CartContainer() {
     return (
         <>
             <section className='cartSection'>
-            <Title text={"Tu carrito de compras"} />
                 <table className='cartSection_table'>
                     <thead>
                         <tr>

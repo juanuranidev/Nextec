@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from '../Main/Header/Header';
-import Title from '../../Title/Title';
 import AboutContent from './AboutContent/AboutContent';
 import Adn from './img/adn.jpg';
 import Mission from './img/mission.jpg';
@@ -13,7 +12,6 @@ const AboutContainer = () => {
     <>
   
     <section className='aboutContainer'>
-        <Title text={'Nuestra empresa'} />
         <AboutContent img={Adn}/>
         <AboutContent img={Mission} h3={'Misión'} p={'Brindar a nuestros clientes un servicio de confianza y excelencia  tanto en la venta como en la post venta, proporcionando comodidad y precios competitivos para la compra de los mejores productos tecnológicos del mercado.'} />
         <AboutContent img={Vision} h3={'Visión'} p={'Ser una empresa percibida en el mercado Argentino por la calidad de sus servicios y el respeto hacia sus clientes.'} />

@@ -2,7 +2,6 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { getFirestore, query, collection, getDocs } from 'firebase/firestore';
 import Header from './Header/Header';
-import Title from '../../Title/Title';
 import CategoryCard from '../../CategoryCard/CategoryCard';
 import PageLoader from '../../PageLoader/PageLoader';
 import ItemList from '../../ItemList/ItemList';
@@ -26,7 +25,6 @@ function MainContainer() {
         <React.Fragment>
             <Header text={'¡Bienvenido a nuestra tienda!'}/>
                 {/* <section className='categoriesContainer'>
-                    <Title text='Categorías'/>
                     <div className='categories'>
                         <CategoryCard link='notebooks' text='Notebooks' />
                         <CategoryCard link='placasdevideo' text='Placas de video' />
@@ -35,7 +33,6 @@ function MainContainer() {
                     </div>
                 </section>
                 <main className='mainContainer'>
-                    <Title text='Catálogo'/>
                     {loading
                     ? <PageLoader />
                     : <ItemList products={data}/>}
