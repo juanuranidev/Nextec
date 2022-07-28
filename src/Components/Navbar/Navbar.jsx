@@ -5,7 +5,8 @@ import './Navbar.scss';
 
 const Navbar = () => {
     const [searchBar, setSearchBar] = useState(false)
-
+    const [openMenu, setOpenMenu] = useState(false)
+    
     return (
         <React.Fragment>
             <nav className='nav'>
