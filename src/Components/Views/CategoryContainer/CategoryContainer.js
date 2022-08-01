@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
 import Header from '../Main/Header/Header';
 import BackButton from '../../BackButton/BackButton';
-import PageLoader from '../../PageLoader/PageLoader';
 import ItemList from '../../ItemList/ItemList';
 import './_CategoryContainer.scss';
 
@@ -25,9 +24,7 @@ const CategoryContainer = () => {
         <>
         <section className='categoryContainer'>
             <BackButton />
-            {loading
-            ? <PageLoader />
-            : <ItemList products={data}/>}
+            <ItemList products={data}/>
         </section>
         </>
 

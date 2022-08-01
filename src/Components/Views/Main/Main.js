@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { getFirestore, query, collection, getDocs } from 'firebase/firestore';
 import Header from './Header/Header';
 import CategoryCard from '../../CategoryCard/CategoryCard';
-import PageLoader from '../../PageLoader/PageLoader';
 import ItemList from '../../ItemList/ItemList';
 import InfoItem from '../../InfoItem/InfoItem';
 import './Main.scss';
