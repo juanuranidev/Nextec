@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import useDebouncer from '../../Hooks/useDebouncer'
 import './SearchBar.scss';
 
-const SearchBar = ({setSearchBar}) => {
+const SearchBar = () => {
     const [products, setProducts] = useState(null)
     const [inputText, setInputText] = useState("")
     
@@ -40,7 +40,7 @@ const SearchBar = ({setSearchBar}) => {
                     } else if(product.name.includes(debouncedValue.toUpperCase())){
                         return product
                 }}).map(product => (
-                    <Link to={`/products/${product.id}`} className="searchBar_product" key={product.id} onClick={() =>{setInputText(""); setSearchBar(false)}}>
+                    <Link to={`/products/${product.id}`} className="searchBar_product" key={product.id} onClick={() =>{setInputText("")}}>
                         <div className="searchBar_product_div">
                             <img src={product.image} className="searchBar_product_div_img"/>
                             <h2 className='searchBar_product_div_h2'>{product.name}</h2>

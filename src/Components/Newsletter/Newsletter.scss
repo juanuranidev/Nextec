@@ -29,9 +29,9 @@
                 padding: 0.5rem;
                 border-radius: 0.25rem;
                 font-weight: 600;
-                color: #FFFFFF;
+                color: #000000;
                 border: 0.12rem solid #000000;
-                background: linear-gradient(90deg, rgba(155,66,244,1) 0%, rgba(254,1,170,1) 100%);
+                background-color: #FFFFFF;
                 transition: all .10s linear; 
                 cursor: pointer;
                 &:active{
