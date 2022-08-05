@@ -15,9 +15,9 @@ import ContactContainer from './Components/Views/ContactContainer/ContactContain
 import CategoryContainer from './Components/Views/CategoryContainer/CategoryContainer';
 import FavoritesContainer from './Components/Views/FavoritesContainer/FavoritesContainer';
 import ItemDetailContainer from './Components/Views/ItemDetailContainer/ItemDetailContainer';
+import Products from './Components/Views/Products/Products';
 import './styles/_base.scss';
 import 'react-toastify/dist/ReactToastify.css';
-import Products from './Components/Views/Products/Products';
 
 getFirestoreApp()
 
