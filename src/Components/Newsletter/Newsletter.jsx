@@ -5,7 +5,7 @@ import './Newsletter.scss';
 
 const Newsletter = () => {
     const [loader, setLoader] = useState(false)
-    const [userEmail, setUserEmail] = useState({email: ''})
+    const [userEmail, setUserEmail] = useState("")
     const [isSuscribed, setIsSuscribed] = useState(false)
 
     const successfulSubscription = () => toast.success('Suscripción realizada con éxito');
@@ -16,7 +16,7 @@ const Newsletter = () => {
         e.preventDefault()
         
         let emailObject = {}
-        emailObject.email = userEmail.email
+        emailObject.email = userEmail
         
         const dataBase = getFirestore()
         
@@ -63,14 +63,14 @@ const Newsletter = () => {
                       name='email' 
                       type='email' 
                       placeholder='Email Gamer' 
-                      value={userEmail.email} 
+                      value={userEmail} 
                       className='newsletter_div_form_input' 
-                      onChange={(e) => setUserEmail({...userEmail, [e.target.name]: e.target.value})}
+                      onChange={(e) => setUserEmail(e.target.value)}
                     />    
                     <button
                         type='submit'
-                        className={`newsletter_div_form_button ${!userEmail.email && 'disabled'}`}
-                        disabled={!userEmail.email}>
+                        className={`newsletter_div_form_button ${!userEmail && 'disabled'}`}
+                        disabled={!userEmail ? true : false}>
                         UNIRME
                     </button>
                 </form>            
