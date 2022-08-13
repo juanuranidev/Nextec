@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getFirestore, query, collection, getDocs } from 'firebase/firestore';
 import './Products.scss';
+import Filters from './Filters/Filters';
+import Product from '../../Product/Product';
 
 const Products = () => {
   const [data, setData] = useState([])
@@ -14,22 +16,12 @@ const Products = () => {
           .catch(err => console.log(err))
           .finally(() => setLoading(false))
   }, [])
-
-  console.log(data)
   
   return (
-    <section className='products'>
-      <aside className='aside'>
-        <div>
-          <h3>Marcas</h3>
-          <p>Marca número: 1</p>
-          <p>Marca número: 2</p>
-          <p>Marca número: 3</p>
-          <p>Marca número: 4</p>
-        </div>
-      </aside>
-      <div className='products'>
-
+    <section className='products' style={{display: "flex"}}>
+      <Filters/>
+      <div className='products' style={{display: "flex", width: "100%", flexWrap: "wrap", justifyContent: "center"}}>
+        {data.map(product  => <Product {...product} />)}
       </div>
     </section>
   );

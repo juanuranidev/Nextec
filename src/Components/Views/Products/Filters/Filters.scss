@@ -1,0 +1,77 @@
+.aside{
+    background-color: #ffffff;
+    border: 0.2rem solid #f0f0f0;
+    border-radius: 0.25rem;
+    .aside_h2{
+        padding: 1rem 0rem 1rem 1rem;
+        font-size: 1.5rem;
+        border-bottom: 0.2rem solid #f0f0f0;
+    }
+    .aside_searchbar{
+        padding: 1rem;
+        border-bottom: 0.2rem solid #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .aside_searchbar_input{
+            border: 0.1rem solid #f0f0f0;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+            &:focus{
+                outline: none !important;
+                border: 0.1rem solid #80bdff;
+                box-shadow: #007bff 0px 0px 0px 1.5px;
+                transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+            }
+        }
+    }
+    .aside_categories{
+        padding: 1rem;
+        border-bottom: 0.2rem solid #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        width: 100%;
+        .aside_categories_h3{
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .aside_categories_p{
+            display: flex;
+            margin: 0rem 0rem 0.5rem 0.5rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+    }
+    .aside_price{
+        @extend .aside_categories;
+        .aside_price_h3{
+            @extend .aside_categories_h3;
+        }
+        .aside_price_input{
+            margin-bottom: 0.5rem;
+            cursor: e-resize;
+        }
+        .aside_price_p{
+            opacity: 0.6;
+            margin-left: 0.5rem;
+            font-size: 0.7rem;
+        }
+    }
+    .aside_brands{
+        @extend .aside_categories;
+        .aside_brands_h3{
+            @extend .aside_categories_h3;
+        }
+        .aside_brands_label{
+            display: flex;
+            margin: 0rem 0rem 0.5rem 0.5rem;
+            font-size: 0.8rem;
+            .aside_brands_label_input{
+                margin-right: 0.25rem;
+            }
+        }
+    }
+}
