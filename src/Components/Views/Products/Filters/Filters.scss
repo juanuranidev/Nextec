@@ -1,19 +1,20 @@
-.aside{
+.filters{
     background-color: #ffffff;
     border: 0.2rem solid #f0f0f0;
     border-radius: 0.25rem;
-    .aside_h2{
+    height: 100%;
+    .filters_h2{
         padding: 1rem 0rem 1rem 1rem;
         font-size: 1.5rem;
         border-bottom: 0.2rem solid #f0f0f0;
     }
-    .aside_searchbar{
+    .filters_searchbar{
         padding: 1rem;
         border-bottom: 0.2rem solid #f0f0f0;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        .aside_searchbar_input{
+        .filters_searchbar_input{
             border: 0.1rem solid #f0f0f0;
             padding: 0.5rem;
             border-radius: 0.25rem;
@@ -26,7 +27,7 @@
             }
         }
     }
-    .aside_categories{
+    .filters_categories{
         padding: 1rem;
         border-bottom: 0.2rem solid #f0f0f0;
         display: flex;
@@ -34,43 +35,68 @@
         justify-content: center;
         margin: auto;
         width: 100%;
-        .aside_categories_h3{
+        .filters_categories_h3{
             font-size: 1rem;
             margin-bottom: 1rem;
         }
-        .aside_categories_p{
+        .filters_categories_p{
             display: flex;
             margin: 0rem 0rem 0.5rem 0.5rem;
             font-size: 0.8rem;
             cursor: pointer;
         }
     }
-    .aside_price{
-        @extend .aside_categories;
-        .aside_price_h3{
-            @extend .aside_categories_h3;
+    .filters_price{
+        @extend .filters_categories;
+        .filters_price_h3{
+            @extend .filters_categories_h3;
         }
-        .aside_price_input{
+        .filters_price_input{
             margin-bottom: 0.5rem;
             cursor: e-resize;
         }
-        .aside_price_p{
+        .filters_price_p{
             opacity: 0.6;
             margin-left: 0.5rem;
             font-size: 0.7rem;
         }
     }
-    .aside_brands{
-        @extend .aside_categories;
-        .aside_brands_h3{
-            @extend .aside_categories_h3;
+    .filters_brands{
+        @extend .filters_categories;
+        .filters_brands_h3{
+            @extend .filters_categories_h3;
         }
-        .aside_brands_label{
+        .filters_brands_label{
             display: flex;
             margin: 0rem 0rem 0.5rem 0.5rem;
             font-size: 0.8rem;
-            .aside_brands_label_input{
+            .filters_brands_label_input{
                 margin-right: 0.25rem;
+            }
+        }
+    }
+    .filters_reset{
+        @extend .filters_categories;
+        .filters_reset_button{
+            background-color: #155eac;
+            color: #ffffff;
+            border: none;
+            font-weight: 500;
+            margin: auto;
+            width: 80%;
+            border-radius: 0.25rem;
+            padding: 0.5rem 0rem;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 18%);
+            transition: all 0.1s cubic-bezier(.645,.045,.355,1);
+            &:hover{
+                background-color: #08385a;
+                transition: all 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+            }
+            &:active{
+                transform: scale(.96);
+                transition: all 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
             }
         }
     }

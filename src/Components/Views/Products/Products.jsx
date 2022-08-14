@@ -1,28 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { getFirestore, query, collection, getDocs } from 'firebase/firestore';
-import './Products.scss';
+import ProductsContainer from '../../ProductsContainer/ProductsContainer';
 import Filters from './Filters/Filters';
-import Product from '../../Product/Product';
+import Loader from '../../Loader/Loader';
+import './Products.scss';
 
 const Products = () => {
-  const [data, setData] = useState([])
+  const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
-
+ 
   useEffect(() => {
-      const dataBase = getFirestore()
-      const queryCollection = query(collection(dataBase, 'items'))
-      getDocs(queryCollection)
-          .then(res => setData(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
-          .catch(err => console.log(err))
-          .finally(() => setLoading(false))
+    const dataBase = getFirestore()
+    const queryCollection = query(collection(dataBase, 'items'))
+
+    getDocs(queryCollection)
+        .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
+        .catch(err => console.log(err))
+        .finally(() => setLoading(false))
   }, [])
   
+  if(loading){
+    return <Loader/>
+  }
+  console.log(products.filter(x => x.price > 300000))
+
   return (
-    <section className='products' style={{display: "flex"}}>
-      <Filters/>
-      <div className='products' style={{display: "flex", width: "100%", flexWrap: "wrap", justifyContent: "center"}}>
-        {data.map(product  => <Product {...product} />)}
-      </div>
+    <section className='products'>
+      <Filters />
+      <ProductsContainer products={products} />
     </section>
   );
 };
