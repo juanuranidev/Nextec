@@ -8,7 +8,7 @@ import './Products.scss';
 const Products = () => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
- 
+
   useEffect(() => {
     const dataBase = getFirestore()
     const queryCollection = query(collection(dataBase, 'items'))
