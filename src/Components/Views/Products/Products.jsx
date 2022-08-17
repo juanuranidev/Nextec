@@ -22,7 +22,6 @@ const Products = () => {
   if(loading){
     return <Loader/>
   }
-  console.log(products.filter(x => x.price > 300000))
 
   return (
     <section className='products'>
