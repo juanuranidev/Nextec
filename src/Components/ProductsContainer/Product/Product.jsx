@@ -31,8 +31,8 @@ const Product = ({...product}) => {
       </div>
       <div className='product_bottom'>
           {product.stock > 0
-          ? <p className='product_bottom_p disponible'>DISPONIBLE</p>
-          : <p className='product_bottom_p sin_stock'>SIN STOCK</p>}
+            ? <p className='product_bottom_p disponible'>DISPONIBLE</p>
+            : <p className='product_bottom_p sin_stock'>SIN STOCK</p>}
           <p className='product_bottom_price'>${(product.price).toLocaleString("ar")}</p>
       </div>
       <button className='product_button' onClick={() => handleAddToCart(product)}>Agregar</button>
