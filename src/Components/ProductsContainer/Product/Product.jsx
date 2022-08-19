@@ -5,7 +5,6 @@ import { useFavoritesContext } from '../../Context/FavoritesContext';
 import './Product.scss';
 
 const Product = ({...product}) => {
-
   const { addToCart } = useCartContext()
   const { favorites, handleFavorites } = useFavoritesContext()
 
