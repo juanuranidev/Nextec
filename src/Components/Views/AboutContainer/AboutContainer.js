@@ -5,7 +5,7 @@ import Adn from './img/adn.jpg';
 import Mission from './img/mission.jpg';
 import Vision from './img/vision.jpg';
 import Values from './img/values.jpg';
-import './_AboutContainer.scss';
+import './AboutContainer.scss';
 
 const AboutContainer = () => {
   return (

@@ -4,7 +4,7 @@ import Message from '../../Message/Message';
 import CartItem from './CartItem/CartItem';
 import EmptyCartButton from './EmptyCartButton/EmptyCartButton';
 import CartPayment from './CartPayment/CartPayment';
-import './_CartContainer.scss';
+import './CartContainer.scss';
 
 function CartContainer() {
     const { cartList } = useCartContext()
