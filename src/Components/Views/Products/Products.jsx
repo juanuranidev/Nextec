@@ -6,17 +6,21 @@ import Loader from '../../Loader/Loader';
 import './Products.scss';
 
 const Products = () => {
-  const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
+  const [products, setProducts] = useState([])
 
-  useEffect(() => {
+  const handleGetProducts = () => {
     const dataBase = getFirestore()
     const queryCollection = query(collection(dataBase, 'items'))
-
+  
     getDocs(queryCollection)
         .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
         .catch(err => console.log(err))
         .finally(() => setLoading(false))
+  }
+
+  useEffect(() => {
+    handleGetProducts()
   }, [])
   
   if(loading){
