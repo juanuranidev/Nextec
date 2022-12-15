@@ -12,7 +12,7 @@ const Products = () => {
   const handleGetProducts = () => {
     const dataBase = getFirestore()
     const queryCollection = query(collection(dataBase, 'items'))
-  
+    // .where('capital', '==', true).get()
     getDocs(queryCollection)
         .then(res => setProducts(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
         .catch(err => console.log(err))
