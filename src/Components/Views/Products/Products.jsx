@@ -30,8 +30,7 @@ const Products = () => {
       )
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
-  };
-
+  }
   {
     /*  <CategoryCard link='notebooks' text='Notebooks' />
         <CategoryCard link='placasdevideo' text='Placas de video' />
@@ -55,8 +54,8 @@ const Products = () => {
         <Filters />
         <ProductsContainer products={products} />
       </div>
-      <div>
-        <button onClick={() => setProductsLimit((prev) => prev + 20)}>
+      <div className="products_actions">
+        <button className="products_actions_button" onClick={() => setProductsLimit((prev) => prev + 20)}>
           Cargar más productos
         </button>
       </div>
