@@ -5,7 +5,7 @@ import {
   collection,
   getDocs,
   limit,
-  where
+  where,
 } from "firebase/firestore";
 import ProductsContainer from "../../ProductsContainer/ProductsContainer";
 import Filters from "./Filters/Filters";
@@ -17,12 +17,15 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const [productsLimit, setProductsLimit] = useState(10);
   const [categorySelected, setCategorySelected] = useState("");
+  const [maxRangeValue, setMaxRangeValue] = useState(100000);
+  const [minRangeValue, setMinRangeValue] = useState(0);
 
   const handleGetProducts = () => {
     const dataBase = getFirestore();
     const queryCollection = query(
       collection(dataBase, "items"),
       limit(productsLimit),
+      where("price", "<=", 20000)
     );
     getDocs(queryCollection)
       .then((res) =>
@@ -30,7 +33,8 @@ const Products = () => {
       )
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
-  }
+  };
+
   {
     /*  <CategoryCard link='notebooks' text='Notebooks' />
         <CategoryCard link='placasdevideo' text='Placas de video' />
@@ -42,7 +46,7 @@ const Products = () => {
 
   useEffect(() => {
     handleGetProducts();
-  }, [productsLimit]);
+  }, [productsLimit, ]);
 
   if (loading) {
     return <Loader />;
@@ -51,11 +55,19 @@ const Products = () => {
   return (
     <section className="products">
       <div className="container">
-        <Filters />
+        <Filters
+          maxRangeValue={maxRangeValue}
+          minRangeValue={minRangeValue}
+          setMaxRangeValue={setMaxRangeValue}
+          setMinRangeValue={setMinRangeValue}
+        />
         <ProductsContainer products={products} />
       </div>
       <div className="products_actions">
-        <button className="products_actions_button" onClick={() => setProductsLimit((prev) => prev + 20)}>
+        <button
+          className="products_actions_button"
+          onClick={() => setProductsLimit((prev) => prev + 20)}
+        >
           Cargar más productos
         </button>
       </div>
