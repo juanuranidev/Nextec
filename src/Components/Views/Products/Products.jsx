@@ -17,15 +17,14 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const [productsLimit, setProductsLimit] = useState(10);
   const [categorySelected, setCategorySelected] = useState("");
-  const [maxRangeValue, setMaxRangeValue] = useState(100000);
-  const [minRangeValue, setMinRangeValue] = useState(0);
+  const [rangeValue, setRangeValue] = useState(500000);
 
   const handleGetProducts = () => {
     const dataBase = getFirestore();
     const queryCollection = query(
       collection(dataBase, "items"),
       limit(productsLimit),
-      where("price", "<=", 20000)
+      where("price", "<=", rangeValue)
     );
     getDocs(queryCollection)
       .then((res) =>
@@ -34,7 +33,7 @@ const Products = () => {
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
   };
-
+console.log(rangeValue)
   {
     /*  <CategoryCard link='notebooks' text='Notebooks' />
         <CategoryCard link='placasdevideo' text='Placas de video' />
@@ -46,7 +45,7 @@ const Products = () => {
 
   useEffect(() => {
     handleGetProducts();
-  }, [productsLimit, ]);
+  }, [productsLimit]);
 
   if (loading) {
     return <Loader />;
@@ -55,12 +54,7 @@ const Products = () => {
   return (
     <section className="products">
       <div className="container">
-        <Filters
-          maxRangeValue={maxRangeValue}
-          minRangeValue={minRangeValue}
-          setMaxRangeValue={setMaxRangeValue}
-          setMinRangeValue={setMinRangeValue}
-        />
+        <Filters rangeValue={rangeValue} setRangeValue={setRangeValue} handleGetProducts={handleGetProducts} />
         <ProductsContainer products={products} />
       </div>
       <div className="products_actions">

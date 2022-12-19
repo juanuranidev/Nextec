@@ -1,19 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Filters.scss";
 
-const Filters = ({
-  maxRangeValue,
-  minRangeValue,
-  setMaxRangeValue,
-  setMinRangeValue,
-}) => {
-  const [rangeValue, setRangeValue] = useState(null);
-
+const Filters = ({ rangeValue, setRangeValue, handleGetProducts }) => {
   const [brand, setBrand] = useState("");
-
-  useEffect(() => {
-    setRangeValue(maxRangeValue);
-  }, []);
 
   const handleBrands = (e) => setBrand(e.target.value);
 
@@ -39,13 +28,13 @@ const Filters = ({
         <input
           className="filters_price_input"
           type="range"
-          min={minRangeValue}
-          max={maxRangeValue}
+          min={0}
+          max={500000}
           value={rangeValue}
-          onChange={(e) => setRangeValue(e.target.value)}
+          onChange={(e) => setRangeValue(Number(e.target.value))}
         />
         <p className="filters_price_p">
-          ${minRangeValue} - ${!rangeValue ? maxRangeValue : rangeValue}
+          ${0} - ${!rangeValue ? (500000).toLocaleString("ES-ar") : (rangeValue).toLocaleString("ES-ar")}
         </p>
       </div>
       <div className="filters_brands">
@@ -96,7 +85,7 @@ const Filters = ({
         </label>
       </div>
       <div className="filters_reset">
-        <button className="filters_reset_button">Resetear</button>
+        <button className="filters_reset_button" onClick={handleGetProducts}>Resetear</button>
       </div>
     </aside>
   );
