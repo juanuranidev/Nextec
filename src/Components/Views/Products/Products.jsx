@@ -33,16 +33,6 @@ const Products = () => {
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
   };
-console.log(rangeValue)
-  {
-    /*  <CategoryCard link='notebooks' text='Notebooks' />
-        <CategoryCard link='placasdevideo' text='Placas de video' />
-        <CategoryCard link='computadoras' text='Computadoras' />
-        <CategoryCard link='monitores' text='Monitores' />
-        orderBy("date", "desc"),
-        limit(messagesLimit) */
-  }
-
   useEffect(() => {
     handleGetProducts();
   }, [productsLimit]);

@@ -26,8 +26,18 @@ const Filters = ({ rangeValue, setRangeValue, handleGetProducts }) => {
       <div className="filters_price">
         <h3 className="filters_price_h3">Precio Máximo</h3>
         <input
-          className="filters_price_input"
+          className="text"
           type="range"
+          label="Precio Mínimo"
+          min={0}
+          max={500000}
+          value={rangeValue}
+          onChange={(e) => setRangeValue(Number(e.target.value))}
+        />
+        <input
+          className="text"
+          type="range"
+          label="Precio Máximo"
           min={0}
           max={500000}
           value={rangeValue}
