@@ -17,17 +17,17 @@ const Filters = ({ rangeValue, setRangeValue, handleGetProducts }) => {
           onChange={(e) => console.log(e.target.value)}
         />
       </div>
-      <div className="filters_categories">
+      {/* <div className="filters_categories">
         <h3 className="filters_categories_h3">Categorias</h3>
         <p className="filters_categories_p">CATEGORIA 1</p>
         <p className="filters_categories_p">CATEGORIA 2</p>
         <p className="filters_categories_p">CATEGORIA 3</p>
-      </div>
+      </div> */}
       <div className="filters_price">
         <h3 className="filters_price_h3">Precio Máximo</h3>
         <input
           className="text"
-          type="range"
+          type="text"
           label="Precio Mínimo"
           min={0}
           max={500000}
@@ -36,7 +36,7 @@ const Filters = ({ rangeValue, setRangeValue, handleGetProducts }) => {
         />
         <input
           className="text"
-          type="range"
+          type="text"
           label="Precio Máximo"
           min={0}
           max={500000}
