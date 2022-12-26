@@ -26,16 +26,7 @@ const Filters = ({ rangeValue, setRangeValue, handleGetProducts }) => {
       <div className="filters_price">
         <h3 className="filters_price_h3">Precio Máximo</h3>
         <input
-          className="text"
-          type="text"
-          label="Precio Mínimo"
-          min={0}
-          max={500000}
-          value={rangeValue}
-          onChange={(e) => setRangeValue(Number(e.target.value))}
-        />
-        <input
-          className="text"
+          className="filters_price_input"
           type="text"
           label="Precio Máximo"
           min={0}
@@ -43,9 +34,6 @@ const Filters = ({ rangeValue, setRangeValue, handleGetProducts }) => {
           value={rangeValue}
           onChange={(e) => setRangeValue(Number(e.target.value))}
         />
-        <p className="filters_price_p">
-          ${0} - ${!rangeValue ? (500000).toLocaleString("ES-ar") : (rangeValue).toLocaleString("ES-ar")}
-        </p>
       </div>
       <div className="filters_brands">
         <h3 className="filters_brands_h3">Marcas</h3>
@@ -95,7 +83,8 @@ const Filters = ({ rangeValue, setRangeValue, handleGetProducts }) => {
         </label>
       </div>
       <div className="filters_reset">
-        <button className="filters_reset_button" onClick={handleGetProducts}>Resetear</button>
+        <button className="filters_reset_button" onClick={handleGetProducts}>FILTRAR</button>
+        <p>Resetear Filtros</p>
       </div>
     </aside>
   );
