@@ -51,11 +51,16 @@
         .filters_price_h3{
             @extend .filters_categories_h3;
         }
-        .filters_price_input{
-            margin-bottom: 0.5rem;
-            padding: 0.2rem;
-            border-radius: 0.15rem;
-            border: 1px solid grey;
+        .filters_price_div{
+            display: flex;
+            justify-content: space-between;
+            .filters_price_div_input{
+                margin-bottom: 0.5rem;
+                padding: 0.2rem;
+                width: 45%;
+                border-radius: 0.15rem;
+                border: 1px solid grey;
+            }
         }
         .filters_price_p{
             opacity: 0.6;

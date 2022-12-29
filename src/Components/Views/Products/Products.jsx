@@ -15,9 +15,12 @@ import "./Products.scss";
 const Products = () => {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
+  const [searchBarValue, setSearchBarValue] = useState("");
   const [productsLimit, setProductsLimit] = useState(10);
   const [categorySelected, setCategorySelected] = useState("");
   const [rangeValue, setRangeValue] = useState(500000);
+  const [minRangeValue, setMinRangeValue] = useState("");
+  const [maxRangeValue, setMaxRangeValue] = useState("");
 
   const handleGetProducts = () => {
     const dataBase = getFirestore();
@@ -33,6 +36,34 @@ const Products = () => {
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
   };
+
+  const handleFilterProducts = () => {
+    if (searchBarValue) {
+      console.log(
+        products.filter((product) => {
+          if (!searchBarValue) {
+            return product;
+          } else {
+            return product.name
+              .toLowerCase()
+              .includes(searchBarValue.toLowerCase());
+          }
+        })
+      );
+      return products.filter((product) => {
+        if (!searchBarValue) {
+          return product;
+        } else {
+          return product.name
+            .toLowerCase()
+            .includes(searchBarValue.toLowerCase());
+        }
+      });
+    } else {
+      return products;
+    }
+  };
+
   useEffect(() => {
     handleGetProducts();
   }, [productsLimit]);
@@ -44,8 +75,15 @@ const Products = () => {
   return (
     <section className="products">
       <div className="container">
-        <Filters rangeValue={rangeValue} setRangeValue={setRangeValue} handleGetProducts={handleGetProducts} />
-        <ProductsContainer products={products} />
+        <Filters
+          rangeValue={rangeValue}
+          maxRangeValue={maxRangeValue}
+          setMinRangeValue={setMinRangeValue}
+          setMaxRangeValue={setMaxRangeValue}
+          setSearchBarValue={setSearchBarValue}
+          handleGetProducts={handleGetProducts}
+        />
+        <ProductsContainer products={handleFilterProducts()} />
       </div>
       <div className="products_actions">
         <button

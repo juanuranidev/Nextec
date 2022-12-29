@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import "./Filters.scss";
 
-const Filters = ({ rangeValue, setRangeValue, handleGetProducts }) => {
+const Filters = ({
+  minRangeValue,
+  maxRangeValue,
+  setMaxRangeValue,
+  setMinRangeValue,
+  setSearchBarValue,
+  handleGetProducts,
+}) => {
   const [brand, setBrand] = useState("");
 
   const handleBrands = (e) => setBrand(e.target.value);
@@ -14,28 +21,31 @@ const Filters = ({ rangeValue, setRangeValue, handleGetProducts }) => {
           type="text"
           className="filters_searchbar_input"
           placeholder="Buscar..."
-          onChange={(e) => console.log(e.target.value)}
+          onChange={(e) => setSearchBarValue(e.target.value)}
         />
       </div>
-      {/* <div className="filters_categories">
-        <h3 className="filters_categories_h3">Categorias</h3>
-        <p className="filters_categories_p">CATEGORIA 1</p>
-        <p className="filters_categories_p">CATEGORIA 2</p>
-        <p className="filters_categories_p">CATEGORIA 3</p>
-      </div> */}
       <div className="filters_price">
-        <h3 className="filters_price_h3">Precio Máximo</h3>
-        <input
-          className="filters_price_input"
-          type="text"
-          label="Precio Máximo"
-          min={0}
-          max={500000}
-          value={rangeValue}
-          onChange={(e) => setRangeValue(Number(e.target.value))}
-        />
+        <h3 className="filters_price_h3">Filtrar por precio</h3>
+        <div className="filters_price_div">
+          <input
+            type="text"
+            max={500000}
+            value={minRangeValue}
+            placeholder="Mínimo"
+            className="filters_price_div_input"
+            onChange={(e) => setMinRangeValue(e.target.value)}
+          />
+          <input
+            type="text"
+            max={500000}
+            value={maxRangeValue}
+            placeholder="Máximo"
+            className="filters_price_div_input"
+            onChange={(e) => setMaxRangeValue(e.target.value)}
+          />
+        </div>
       </div>
-      <div className="filters_brands">
+      {/* <div className="filters_brands">
         <h3 className="filters_brands_h3">Marcas</h3>
         <label className="filters_brands_label">
           <input
@@ -81,9 +91,11 @@ const Filters = ({ rangeValue, setRangeValue, handleGetProducts }) => {
           />
           Colectivo
         </label>
-      </div>
+      </div> */}
       <div className="filters_reset">
-        <button className="filters_reset_button" onClick={handleGetProducts}>FILTRAR</button>
+        <button className="filters_reset_button" onClick={handleGetProducts}>
+          FILTRAR
+        </button>
         <p>Resetear Filtros</p>
       </div>
     </aside>
