@@ -85,14 +85,16 @@ const Products = () => {
         />
         <ProductsContainer products={handleFilterProducts()} />
       </div>
-      <div className="products_actions">
-        <button
-          className="products_actions_button"
-          onClick={() => setProductsLimit((prev) => prev + 20)}
-        >
-          Cargar más productos
-        </button>
-      </div>
+      {products === productsLimit.length ? (
+        <div className="products_actions">
+          <button
+            className="products_actions_button"
+            onClick={() => setProductsLimit((prev) => prev + 20)}
+          >
+            Cargar más productos
+          </button>
+        </div>
+      ) : null}
     </section>
   );
 };
