@@ -39,17 +39,6 @@ const Products = () => {
 
   const handleFilterProducts = () => {
     if (searchBarValue) {
-      console.log(
-        products.filter((product) => {
-          if (!searchBarValue) {
-            return product;
-          } else {
-            return product.name
-              .toLowerCase()
-              .includes(searchBarValue.toLowerCase());
-          }
-        })
-      );
       return products.filter((product) => {
         if (!searchBarValue) {
           return product;
@@ -77,6 +66,7 @@ const Products = () => {
       <div className="container">
         <Filters
           rangeValue={rangeValue}
+          minRangeValue={minRangeValue}
           maxRangeValue={maxRangeValue}
           setMinRangeValue={setMinRangeValue}
           setMaxRangeValue={setMaxRangeValue}
