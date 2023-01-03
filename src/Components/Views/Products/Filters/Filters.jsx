@@ -29,7 +29,6 @@ const Filters = ({
         <div className="filters_price_div">
           <input
             type="text"
-            max={500000}
             value={minRangeValue}
             placeholder="Mínimo"
             className="filters_price_div_input"
@@ -37,7 +36,6 @@ const Filters = ({
           />
           <input
             type="text"
-            max={500000}
             value={maxRangeValue}
             placeholder="Máximo"
             className="filters_price_div_input"
