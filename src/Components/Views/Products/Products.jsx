@@ -15,19 +15,18 @@ import "./Products.scss";
 const Products = () => {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
-  const [searchBarValue, setSearchBarValue] = useState("");
   const [productsLimit, setProductsLimit] = useState(10);
-  const [categorySelected, setCategorySelected] = useState("");
-  const [rangeValue, setRangeValue] = useState(500000);
   const [minRangeValue, setMinRangeValue] = useState("");
   const [maxRangeValue, setMaxRangeValue] = useState("");
+  const [searchBarValue, setSearchBarValue] = useState("");
 
   const handleGetProducts = () => {
     const dataBase = getFirestore();
     const queryCollection = query(
       collection(dataBase, "items"),
       limit(productsLimit),
-      where("price", "<=", rangeValue)
+      where("price", "<=", maxRangeValue),
+      // where("price", ">=", minRangeValue)
     );
     getDocs(queryCollection)
       .then((res) =>
@@ -65,7 +64,6 @@ const Products = () => {
     <section className="products">
       <div className="container">
         <Filters
-          rangeValue={rangeValue}
           minRangeValue={minRangeValue}
           maxRangeValue={maxRangeValue}
           setMinRangeValue={setMinRangeValue}
