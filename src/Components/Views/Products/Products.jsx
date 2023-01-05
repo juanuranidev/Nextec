@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import {
-  getFirestore,
   query,
-  collection,
-  getDocs,
   limit,
-  where,
+  getDocs,
+  collection,
+  getFirestore,
 } from "firebase/firestore";
-import ProductsContainer from "../../ProductsContainer/ProductsContainer";
-import Filters from "./Filters/Filters";
 import Loader from "../../Loader/Loader";
+import Filters from "./Filters/Filters";
+import ProductsContainer from "../../ProductsContainer/ProductsContainer";
 import "./Products.scss";
 
 const Products = () => {
@@ -25,7 +24,7 @@ const Products = () => {
     const queryCollection = query(
       collection(dataBase, "items"),
       limit(productsLimit),
-      where("price", "<=", maxRangeValue),
+      // where("price", "<=", maxRangeValue),
       // where("price", ">=", minRangeValue)
     );
     getDocs(queryCollection)

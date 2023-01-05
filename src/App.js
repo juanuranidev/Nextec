@@ -4,12 +4,12 @@ import { FavoritesContextProvider } from './Components/Context/FavoritesContext'
 import { ToastContainer, Zoom } from 'react-toastify';
 import { CartContextProvider } from './Components/Context/CartContext';
 import { getFirestoreApp } from './Components/Firebase/dbConfig';
+import About from './Components/Views/AboutContainer/About';
 import Footer from './Components/Footer/Footer';
 import Navbar from './Components/Navbar/Navbar'
 import PageNotFound from './Components/Views/PageNotFound/PageNotFound';
 import MainContainer from './Components/Views/Main/Main';
 import CartContainer from './Components/Views/CartContainer/CartContainer';
-import AboutContainer from './Components/Views/AboutContainer/AboutContainer';
 import PaymentContainer from './Components/Views/PaymentContainer/PaymentContainer';
 import ContactContainer from './Components/Views/ContactContainer/ContactContainer'
 import CategoryContainer from './Components/Views/CategoryContainer/CategoryContainer';
@@ -31,7 +31,7 @@ function App() {
             <Route exact path='/' element={<MainContainer />}/>
             <Route exact path='/products' element={<Products />}/>
             <Route exact path='/category/:idCategory' element={ <CategoryContainer />}/>
-            <Route exact path='/about' element={<AboutContainer/>}/>
+            <Route exact path='/about' element={<About/>}/>
             <Route exact path='/contact' element={<ContactContainer />}/>
             <Route exact path='/products/:idItem' element={<ItemDetailContainer />}/>
             <Route exact path='/favorites' element={<FavoritesContainer />}/>
