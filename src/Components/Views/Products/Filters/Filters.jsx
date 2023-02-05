@@ -27,7 +27,7 @@ const Filters = ({
           onChange={(e) => setSearchBarValue(e.target.value)}
         />
       </div>
-      <div className="filters_price">
+      {/* <div className="filters_price">
         <h3 className="filters_price_h3">Filtrar por precio</h3>
         <div className="filters_price_div">
           <input
@@ -45,15 +45,15 @@ const Filters = ({
             onChange={(e) => setMaxRangeValue(e.target.value)}
           />
         </div>
-      </div>
-      <div className="filters_reset">
+      </div> */}
+      {/* <div className="filters_reset">
         <button className="filters_reset_button" onClick={handleGetProducts}>
           FILTRAR
         </button>
         <p className="filters_reset_p" onClick={handleResetFilters}>
           Resetear filtros
         </p>
-      </div>
+      </div> */}
     </aside>
   );
 };
