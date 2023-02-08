@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { FavoritesContextProvider } from './Components/Context/FavoritesContext';
+import { FavoritesContextProvider } from './Context/FavoritesContext';
 import { ToastContainer, Zoom } from 'react-toastify';
-import { CartContextProvider } from './Components/Context/CartContext';
-import { getFirestoreApp } from './Components/Firebase/dbConfig';
+import { CartContextProvider } from './Context/CartContext';
+import { getFirestoreApp } from './Firebase/dbConfig';
 import About from './Components/Views/AboutContainer/About';
 import Footer from './Components/Footer/Footer';
 import Navbar from './Components/Navbar/Navbar'
