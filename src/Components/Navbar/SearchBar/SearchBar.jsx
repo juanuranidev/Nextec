@@ -1,28 +1,44 @@
-import React, { useState, useEffect } from "react";
-import { getFirestore, query, collection, getDocs } from "firebase/firestore";
+import React, { useState, useEffect, useRef } from "react";
+import { getAllProductsService } from "../../../Services/productsService";
 import { Link } from "react-router-dom";
-import useDebouncer from "../../../Hooks/useDebouncer";
 import "./SearchBar.scss";
 
 const SearchBar = () => {
   const [products, setProducts] = useState(null);
   const [inputText, setInputText] = useState("");
+  const [showResults, setShowResults] = useState(false);
 
-  const { debouncedValue } = useDebouncer(inputText, 250);
+  const searchBarResultsRef = useRef(null);
 
-  useEffect(() => {
+  const handleGetAllProducts = async () => {
     try {
-      const dataBase = getFirestore();
-      const queryCollection = query(collection(dataBase, "items"));
-
-      getDocs(queryCollection)
-        .then((res) =>
-          setProducts(res.docs.map((prod) => ({ id: prod.id, ...prod.data() })))
-        )
-        .catch((err) => console.log(err));
+      const response = await getAllProductsService();
+      setProducts(
+        response.docs.map((prod) => ({ id: prod.id, ...prod.data() }))
+      );
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleCheckClickOutside = (event) => {
+    if (
+      searchBarResultsRef.current &&
+      !searchBarResultsRef.current.contains(event.target)
+    ) {
+      setShowResults(false);
+    }
+  };
+
+  useEffect(() => {
+    handleGetAllProducts();
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener("click", handleCheckClickOutside);
+    return () => {
+      document.removeEventListener("click", handleCheckClickOutside);
+    };
   }, []);
 
   return (
@@ -31,17 +47,22 @@ const SearchBar = () => {
         className="searchBar_input"
         type="text"
         placeholder="Busca tu próximo componente"
-        onChange={(e) => setInputText(e.target.value)}
+        onChange={(e) => {
+          setShowResults(true);
+          setInputText(e.target.value);
+        }}
         value={inputText}
       />
-      <span className="fa fa-search searchBar_span" />
-      <div className="searchBar_results">
-        {products !== null &&
-          products
+      {/* <span className="fa fa-search searchBar_span" /> */}
+      {showResults && (
+        <div className="searchBar_results" ref={searchBarResultsRef}>
+          {products
             .filter((product) => {
-              if (debouncedValue == "") {
+              if (inputText == "") {
                 return null;
-              } else if (product.name.includes(debouncedValue.toUpperCase())) {
+              } else if (
+                product.name.toLowerCase().includes(inputText.toLowerCase())
+              ) {
                 return product;
               }
             })
@@ -63,7 +84,8 @@ const SearchBar = () => {
                 </div>
               </Link>
             ))}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

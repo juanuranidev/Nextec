@@ -3,12 +3,14 @@
     padding: 0rem 2.5rem;
     display: flex;
     justify-content: center;
+    @media(max-width: 768px) {
+        display: none
+    }
     .searchBar_input{
-        // border: 0.05rem solid #155eac;
         border: none;
         border-radius: 0.25rem;
-        color: #ffffff;
-        height: 3rem;
+        color: #000000;
+        height: 2.5rem;
         width: 35rem;
         padding: 0.2rem; 
         background-color: #FFFFFF;
@@ -28,25 +30,26 @@
           opacity: 0.5;
         }
     }
-    .searchBar_span{
-        color: #000000;
-        opacity: .6;
-        font-size: 1.5rem;
-        position: absolute;
-        margin: 0.75rem 0rem 0rem 27rem;
-        cursor: pointer;
-    }
+    // .searchBar_span{
+    //     color: #000000;
+    //     opacity: .6;
+    //     font-size: 1rem;
+    //     position: absolute;
+    //     margin: 0.75rem 0rem 0rem 27rem;
+    //     cursor: pointer;
+    // }
     .searchBar_results{
         position: absolute;
-        width: 35rem;
-        margin-top: -8rem;
+        width: 30rem;
         margin: auto;
-        margin-top: 3rem;
-        // background-color: #202036;
+        margin-top: 2.4rem;
         padding: 0rem 1rem;
         max-height: 20rem;
         overflow-y: scroll;
         box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%);
+        background-color: #ffffff;
+        border-bottom-left-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
         .searchBar_product{
             text-decoration: none;
             .searchBar_product_div{
@@ -58,69 +61,10 @@
                 }
                 .searchBar_product_div_h2{
                     font-size: 1rem;
-                    color: #ffffff;
+                    color: #000000;
                     text-align: left;
                 }
             }
         }
     }
-
-
-    // .topNav_searchBar_input{
-    //     border: 0.1rem solid #ffffff;
-    //     border-radius: 0.25rem;
-    //     color: #ffffff;
-    //     height: 3rem;
-    //     width: 80%;
-    //     padding: 0.2rem; 
-    //     background-color: #141423;
-    //     &::placeholder{
-    //     color: #ffffff;
-    //     padding: 0.2rem;
-    //     opacity: 0.5;
-    //     }
-    //     &:-ms-input-placeholder{
-    //       color: #ffffff;
-    //       padding: 0.2rem;
-    //       opacity: 0.5;
-    //     }
-    //     &::-ms-input-placeholder{
-    //       color: #ffffff;
-    //       padding: 0.2rem;
-    //       opacity: 0.5;
-    //     }
-    // }
-    // .topNav_searchBar_span{
-    //     color: #ffffff;
-    //     font-size: 1.5rem;
-    //     margin-left: -2.2rem;
-    //     cursor: pointer;
-    // }
-    // .topNav_searchBar_results{
-    //     position: absolute;
-    //     width: 40%;
-    //     top: 10%;
-    //     margin: auto;
-    //     background-color: #202036;
-    //     padding: 0rem 1rem;
-    //     max-height: 20rem;
-    //     overflow-y: scroll;
-    //     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%);
-    //     .searchBar_product{
-    //         text-decoration: none;
-    //         .searchBar_product_div{
-    //             display: flex;
-    //             padding: 0.5rem 0rem;
-    //             .searchBar_product_div_img{
-    //                 width: 5rem;
-    //                 padding-right: 1rem;
-    //             }
-    //             .searchBar_product_div_h2{
-    //                 font-size: 1rem;
-    //                 color: #ffffff;
-    //                 text-align: left;
-    //             }
-    //         }
-    //     }
-    // }
 }
