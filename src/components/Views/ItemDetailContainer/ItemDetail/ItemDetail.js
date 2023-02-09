@@ -1,6 +1,6 @@
 import { React, useState} from 'react';
-import { useCartContext } from '../../../../Context/CartContext';
-import { useFavoritesContext } from '../../../../Context/FavoritesContext';
+import { useCartContext } from '../../../Context/CartContext';
+import { useFavoritesContext } from '../../../Context/FavoritesContext';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import BackButton from '../../../BackButton/BackButton';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFavoritesContext } from '../../../Context/FavoritesContext';
+import { useFavoritesContext } from '../../Context/FavoritesContext';
 import Header from '../Main/Header/Header';
 import Message from '../../Message/Message';
 import BackButton from './../../BackButton/BackButton';
