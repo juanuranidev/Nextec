@@ -30,6 +30,10 @@ const Navbar = () => {
               style={{ opacity: cartList.length >= 1 ? "1" : "0.5" }}
             />
           </Link>
+          <span
+            className="fas fa-bars fa-2x upperNavbar_icons_span"
+            onClick={null}
+          />
         </div>
       </div>
       <div className="lowerNabvar">
