@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCartContext } from '../../../Context/CartContext';
+import { useCartContext } from '../../Context/CartContext';
 import Message from '../../Message/Message';
 import CartItem from './CartItem/CartItem';
 import EmptyCartButton from './EmptyCartButton/EmptyCartButton';

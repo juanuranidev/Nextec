@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCartContext } from '../../../Context/CartContext';
+import { useCartContext } from '../../Context/CartContext';
 import PaymentFinished from './PaymentFinished/PaymentFinished';
 import PaymentsDetails from './PaymentsDetails/PaymentsDetails';
 import './_PaymentContainer.scss';
