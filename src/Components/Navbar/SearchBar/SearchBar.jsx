@@ -47,6 +47,7 @@ const SearchBar = () => {
         className="searchBar_input"
         type="text"
         placeholder="Busca tu próximo componente"
+        onClick={() => setShowResults(true)}
         onChange={(e) => {
           setShowResults(true);
           setInputText(e.target.value);

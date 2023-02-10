@@ -4,21 +4,28 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 1rem 0rem 1rem;
+    @media(max-width: 768px) {
+        padding: 1rem;
+    }
     .upperNavbar{
         display: flex;
         width: 100%;
         justify-content: space-between;
         align-items: center;
-        padding-top: 2.5rem;
         .upperNavbar_logo{
             width: 30%;
-            display: flex;
-            justify-content: flex-end;
-            .upperNavbar_logo_span{
+            @media(max-width: 768px) {
+                width: 50%;
             }
         }
         .upperNavbar_icons{
             width: 30%;
+             display: flex;
+            justify-content: flex-end;
+            @media(max-width: 768px) {
+                width: 50%;
+            }
             .upperNavbar_icons_span{
                 color: #FFFFFF;
                 font-size: 1.5rem;
@@ -29,31 +36,39 @@
                     background-color: #ffffff26;
                 }
             }
+            .upperNavbar_icons_span_open_menu {
+                display: none;
+                @media(max-width: 768px) {
+                    display: flex;
+                }
+                @extend .upperNavbar_icons_span;
+            }
         }
     }
     .lowerNabvar{
-        padding: 2.5rem 0rem 1rem 0rem;
+        margin-top: 1rem;
+        display: flex;
+        @media(max-width: 768px) {
+            display: none;
+        }
         .lowerNabvar_ul{
             list-style-type: none;
             display: flex;
             justify-content: center;
             .lowerNabvar_ul_a{
-                margin: 0rem 0.5rem;
+                width: 8rem;
+                text-align: center;
                 text-decoration: none;
                 color: #ffffff;
                 font-size: 1rem;
                 padding: 1rem;
-                border-radius: 0.25rem;
+                border-top-left-radius: 0.25rem;
+                border-top-right-radius: 0.25rem;
                 font-weight: 600;
                 transition: all .25s cubic-bezier(.645,.045,.355,1);
-                background-color: #ffffff26;
                 &:hover{
-                    color: #000000;
-                    background-color: #FFFFFF;
+                    background-color: #ffffff26;
                     transition: all .25s cubic-bezier(.645,.045,.355,1);
-                }
-                .lowerNabvar_ul_a_li{
-
                 }
             }
         }

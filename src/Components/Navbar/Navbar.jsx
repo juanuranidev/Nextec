@@ -3,12 +3,15 @@ import { useFavoritesContext } from "../../Context/FavoritesContext";
 import { useCartContext } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar/SearchBar";
+import MenuResponsive from "./MenuResponsive/MenuResponsive";
+import ModalBackground from "../Modals/ModalBackground/ModalBackground";
 import "./Navbar.scss";
 
 const Navbar = () => {
-  const [openMenu, setOpenMenu] = useState(false);
   const { cartList } = useCartContext();
   const { favorites } = useFavoritesContext();
+
+  const [openMenuResponsive, setOpenMenuResponsive] = useState(false);
 
   return (
     <nav className="navbar">
@@ -31,8 +34,8 @@ const Navbar = () => {
             />
           </Link>
           <span
-            className="fas fa-bars fa-2x upperNavbar_icons_span"
-            onClick={null}
+            className="fas fa-bars fa-2x upperNavbar_icons_span_open_menu"
+            onClick={() => setOpenMenuResponsive(true)}
           />
         </div>
       </div>
@@ -55,6 +58,11 @@ const Navbar = () => {
           </Link>
         </ul>
       </div>
+      <MenuResponsive onOpen={openMenuResponsive} />
+      <ModalBackground
+        onOpen={openMenuResponsive}
+        onClose={() => setOpenMenuResponsive(false)}
+      />
     </nav>
   );
 };
