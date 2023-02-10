@@ -4,7 +4,7 @@ import Vision from "./img/vision.jpg";
 import Values from "./img/values.jpg";
 import Mission from "./img/mission.jpg";
 import AboutContent from "./AboutContent/AboutContent";
-import './AboutContainer.scss';
+import "./AboutContainer.scss";
 
 export default function About() {
   return (
