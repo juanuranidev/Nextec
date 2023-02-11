@@ -17,6 +17,10 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="upperNavbar">
         <div className="upperNavbar_logo">
+          <span
+            className="fas fa-bars fa-2x upperNavbar_logo_open_menu"
+            onClick={() => setOpenMenuResponsive(true)}
+          />
           <span className="upperNavbar_logo_span">Logo</span>
         </div>
         <SearchBar />
@@ -33,10 +37,6 @@ const Navbar = () => {
               style={{ opacity: cartList.length >= 1 ? "1" : "0.5" }}
             />
           </Link>
-          <span
-            className="fas fa-bars fa-2x upperNavbar_icons_span_open_menu"
-            onClick={() => setOpenMenuResponsive(true)}
-          />
         </div>
       </div>
       <div className="lowerNabvar">
@@ -58,7 +58,10 @@ const Navbar = () => {
           </Link>
         </ul>
       </div>
-      <MenuResponsive onOpen={openMenuResponsive} />
+      <MenuResponsive
+        onOpen={openMenuResponsive}
+        onClose={() => setOpenMenuResponsive(false)}
+      />
       <ModalBackground
         onOpen={openMenuResponsive}
         onClose={() => setOpenMenuResponsive(false)}

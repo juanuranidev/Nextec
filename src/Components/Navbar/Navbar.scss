@@ -15,7 +15,26 @@
         align-items: center;
         .upperNavbar_logo{
             width: 30%;
+            display: flex;
+            align-items: center;
             @media(max-width: 768px) {
+                width: 50%;
+            }
+            .upperNavbar_logo_open_menu{
+                display: none;
+                color: #FFFFFF;
+                font-size: 1.5rem;
+                border-radius: 0.25rem;
+                padding: 0.5rem;
+                width: 50%;
+                cursor: pointer;
+                &:hover{
+                    background-color: #ffffff26;
+                }
+                @media(max-width: 768px) {
+                    display: flex;
+                }
+            }.upperNavbar_logo_span{
                 width: 50%;
             }
         }
@@ -35,13 +54,6 @@
                 &:hover{
                     background-color: #ffffff26;
                 }
-            }
-            .upperNavbar_icons_span_open_menu {
-                display: none;
-                @media(max-width: 768px) {
-                    display: flex;
-                }
-                @extend .upperNavbar_icons_span;
             }
         }
     }

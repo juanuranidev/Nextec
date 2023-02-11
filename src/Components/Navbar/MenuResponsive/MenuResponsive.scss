@@ -9,25 +9,19 @@
         width: 50%;
         height: 100%;
         top: 0rem;
-        right: 0rem;
+        left: 0rem;
         opacity: 1;
         z-index: 15;
         padding: 1rem;
-        transition: right 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: left 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
         box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
         overflow: auto;
         .menuResponsive_close{
             display: flex;
             justify-content: flex-end;
-            border-bottom: 1px solid #eeeeee;
             width: 100%;
-            .menuResponsive_close_div{
-                div:after{
-                    display: inline-block;
-                    font-size: 3rem;
-                    content: "\00d7";
-                    cursor: pointer;
-                  }
+            .menuResponsive_close_span{
+               color: #ffffff;
             }
         }
     }
@@ -40,7 +34,7 @@
 }
 .menuClose{
     @extend .menuResponsive;
-    right: -100%;
+    left: -100%;
     opacity: 0; 
       
 }
