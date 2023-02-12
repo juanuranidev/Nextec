@@ -31,6 +31,14 @@
     @media(max-width: 576px){
         width: 100%;
     }
+    .menuResponsive_close { 
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        .menuResponsive_close_span {
+
+        }
+    }
 }
 .menuClose{
     @extend .menuResponsive;

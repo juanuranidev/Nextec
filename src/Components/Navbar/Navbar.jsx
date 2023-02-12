@@ -16,11 +16,13 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="upperNavbar">
-        <div className="upperNavbar_logo">
+        <div className="upperNavbar_menu">
           <span
-            className="fas fa-bars fa-2x upperNavbar_logo_open_menu"
+            className="fas fa-bars fa-2x upperNavbar_menu_span"
             onClick={() => setOpenMenuResponsive(true)}
           />
+        </div>
+        <div className="upperNavbar_logo">
           <span className="upperNavbar_logo_span">Logo</span>
         </div>
         <SearchBar />
