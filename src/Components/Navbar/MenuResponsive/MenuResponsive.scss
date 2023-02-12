@@ -12,7 +12,6 @@
         left: 0rem;
         opacity: 1;
         z-index: 15;
-        padding: 1rem;
         transition: left 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
         box-shadow: rgb(0 0 0 / 18%) 0px 2px 4px;
         overflow: auto;
@@ -20,6 +19,7 @@
             display: flex;
             justify-content: flex-end;
             width: 100%;
+            padding: 1rem;
             .menuResponsive_close_span{
                color: #ffffff;
             }
@@ -35,8 +35,32 @@
         width: 100%;
         display: flex;
         justify-content: flex-start;
+        margin-bottom: 2.5rem;
         .menuResponsive_close_span {
 
+        }
+    }
+    .menuResponsive_links {
+        .menuResponsive_links_ul {
+            list-style: none;
+            .menuResponsive_links_ul_a {
+                color: #ffffff;
+                text-decoration: none;
+                .menuResponsive_links_ul_a_li {
+                    font-size: 2rem;
+                    padding: 1rem;
+                    &:hover{
+                        background-color: #ffffff26;
+                        transition: all .25s cubic-bezier(.645,.045,.355,1);
+                    }
+                }
+            }
+        }
+    }
+    .menuResponsive_bottom {
+        padding: 1rem;
+        .menuResponsive_bottom_p {
+            color: #ffffff
         }
     }
 }
