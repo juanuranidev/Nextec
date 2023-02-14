@@ -1,6 +1,6 @@
 import React from 'react';
-import { useCartContext } from '../../../Context/CartContext';
-import Message from '../../Message/Message';
+import { useCartContext } from '../../Context/CartContext';
+import Message from '../../Components/Message/Message';
 import CartItem from './CartItem/CartItem';
 import EmptyCartButton from './EmptyCartButton/EmptyCartButton';
 import CartPayment from './CartPayment/CartPayment';

@@ -8,7 +8,7 @@ import {
 } from "firebase/firestore";
 import Loader from "../../Components/Loader/Loader";
 import Filters from "./Filters/Filters";
-import ProductsContainer from "../../ProductsContainer/ProductsContainer";
+import ProductsContainer from "../../Components/ProductsContainer/ProductsContainer";
 import "./Products.scss";
 
 const Products = () => {
