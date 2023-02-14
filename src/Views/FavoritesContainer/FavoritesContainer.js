@@ -1,8 +1,8 @@
 import React from 'react';
-import { useFavoritesContext } from '../../../Context/FavoritesContext';
+import { useFavoritesContext } from '../../Context/FavoritesContext';
 import Header from '../Main/Header/Header';
-import Message from '../../Message/Message';
-import BackButton from './../../BackButton/BackButton';
+import Message from '../../Components/Message/Message';
+import BackButton from '../../Components/BackButton/BackButton';
 import './_FavoritesContainer.scss';
 
 const FavoritesContainer = () => {

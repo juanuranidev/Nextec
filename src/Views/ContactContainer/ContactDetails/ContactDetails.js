@@ -2,7 +2,7 @@ import { React, useState} from 'react';
 import { collection, getFirestore, addDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 import ReCAPTCHA from 'react-google-recaptcha';
-import Message from '../../../Message/Message';
+import Message from '../../../Components/Message/Message';
 import './_ContactDetails.scss';
 
 const ContactDetails = () => {

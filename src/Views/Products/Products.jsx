@@ -6,7 +6,7 @@ import {
   collection,
   getFirestore,
 } from "firebase/firestore";
-import Loader from "../../Loader/Loader";
+import Loader from "../../Components/Loader/Loader";
 import Filters from "./Filters/Filters";
 import ProductsContainer from "../../ProductsContainer/ProductsContainer";
 import "./Products.scss";
@@ -23,7 +23,7 @@ const Products = () => {
     const dataBase = getFirestore();
     const queryCollection = query(
       collection(dataBase, "items"),
-      limit(productsLimit),
+      limit(productsLimit)
       // where("price", "<=", maxRangeValue),
       // where("price", ">=", minRangeValue)
     );

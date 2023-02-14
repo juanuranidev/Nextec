@@ -4,18 +4,18 @@ import { FavoritesContextProvider } from './Context/FavoritesContext';
 import { ToastContainer, Zoom } from 'react-toastify';
 import { CartContextProvider } from './Context/CartContext';
 import { getFirestoreApp } from './Firebase/dbConfig';
-import About from './Components/Views/AboutContainer/About';
+import About from './Views/AboutContainer/About';
 import Footer from './Components/Footer/Footer';
 import Navbar from './Components/Navbar/Navbar'
-import PageNotFound from './Components/Views/PageNotFound/PageNotFound';
-import MainContainer from './Components/Views/Main/Main';
-import CartContainer from './Components/Views/CartContainer/CartContainer';
-import PaymentContainer from './Components/Views/PaymentContainer/PaymentContainer';
-import ContactContainer from './Components/Views/ContactContainer/ContactContainer'
-import CategoryContainer from './Components/Views/CategoryContainer/CategoryContainer';
-import FavoritesContainer from './Components/Views/FavoritesContainer/FavoritesContainer';
-import ItemDetailContainer from './Components/Views/ItemDetailContainer/ItemDetailContainer';
-import Products from './Components/Views/Products/Products';
+import PageNotFound from './Views/PageNotFound/PageNotFound';
+import MainContainer from './Views/Main/Main';
+import CartContainer from './Views/CartContainer/CartContainer';
+import PaymentContainer from './Views/PaymentContainer/PaymentContainer';
+import ContactContainer from './Views/ContactContainer/ContactContainer'
+import CategoryContainer from './Views/CategoryContainer/CategoryContainer';
+import FavoritesContainer from './Views/FavoritesContainer/FavoritesContainer';
+import ItemDetailContainer from './Views/ItemDetailContainer/ItemDetailContainer';
+import Products from './Views/Products/Products';
 import './styles/_base.scss';
 import 'react-toastify/dist/ReactToastify.css';
 
