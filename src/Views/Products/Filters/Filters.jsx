@@ -1,17 +1,8 @@
 import React from "react";
 import "./Filters.scss";
 
-const Filters = ({
-  minRangeValue,
-  maxRangeValue,
-  setMaxRangeValue,
-  setMinRangeValue,
-  setSearchBarValue,
-  handleGetProducts,
-}) => {
+const Filters = ({ setSearchBarValue, handleGetProducts }) => {
   const handleResetFilters = () => {
-    setMaxRangeValue("");
-    setMinRangeValue("");
     setSearchBarValue("");
     handleGetProducts();
   };

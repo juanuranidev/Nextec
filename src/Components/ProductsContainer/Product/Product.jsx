@@ -22,26 +22,39 @@ const Product = ({ ...product }) => {
   return (
     <div className="product">
       <div className="product_top">
-        <span
-          className={`${
-            isInFavorites(product) ? "fas" : "far"
-          } far fa-heart product_top_favorite`}
-          onClick={() => handleFavorites(product)}
-        />
-        <Link to={`/products/${product.id}`} className="product_top_a">
-          <img src={product.image} className="product_top_a_img" />
-          <h2 className="product_top_a_h2">{product.name}</h2>
-        </Link>
+        <div className="product_top_favorite">
+          <span
+            className={`${
+              isInFavorites(product) ? "fas" : "far"
+            } far fa-heart product_top_favorite_span`}
+            onClick={() => handleFavorites(product)}
+          />
+        </div>
+        <div className="product_top_link">
+          <Link to={`/products/${product.id}`} className="product_top_link_a">
+            <img src={product.image} className="product_top_link_a_img" />
+            <h2 className="product_top_link_a_h2">{product.name}</h2>
+          </Link>
+        </div>
       </div>
       <div className="product_bottom">
-        {product.stock > 0 ? (
-          <p className="product_bottom_p disponible">DISPONIBLE</p>
-        ) : (
-          <p className="product_bottom_p sin_stock">SIN STOCK</p>
-        )}
-        <p className="product_bottom_price">
-          ${product.price.toLocaleString("ar")}
-        </p>
+        <div className="product_bottom_price">
+          {product.stock > 0 ? (
+            <div className="product_bottom_price_available">
+              <p className="product_bottom_price_available_p">DISPONIBLE</p>
+              <p className="product_bottom_price_available_price">
+                ${product.price.toLocaleString("ar")}
+              </p>
+            </div>
+          ) : (
+            <div className="product_bottom_price_unavailable">
+              <p className="product_bottom_price_unavailable_p">SIN STOCK</p>
+              <p className="product_bottom_price_unavailable_price">
+                ${product.price.toLocaleString("ar")}
+              </p>
+            </div>
+          )}
+        </div>
       </div>
       <button
         className="product_button"

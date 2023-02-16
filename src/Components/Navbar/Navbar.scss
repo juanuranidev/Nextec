@@ -1,85 +1,87 @@
-.navbar{
-    background-color: #155eac;
+.navbar {
+  background-color: #155eac;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem 0rem 1rem;
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+  .upperNavbar {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: flex-start;
     align-items: center;
-    padding: 1rem 1rem 0rem 1rem;
-    @media(max-width: 768px) {
+    .upperNavbar_menu {
+      display: none;
+      @media (max-width: 768px) {
+        width: 30%;
+        display: block;
+      }
+      .upperNavbar_menu_span {
+        color: #ffffff;
+        cursor: pointer;
+      }
+    }
+    .upperNavbar_logo {
+      width: 50%;
+      text-align: center;
+      display: flex;
+      justify-content: flex-start;
+      @media (max-width: 768px) {
+        width: 40%;
+        justify-content: center;
+      }
+      .upperNavbar_logo_img {
+        width: 8rem;
+      }
+    }
+    .upperNavbar_icons {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+      @media (max-width: 768px) {
+        width: 30%;
+      }
+      .upperNavbar_icons_span {
+        color: #ffffff;
+        font-size: 1.5rem;
+        border-radius: 0.25rem;
+        padding: 0.5rem;
+        cursor: pointer;
+        &:hover {
+          background-color: #ffffff26;
+        }
+      }
+    }
+  }
+  .lowerNabvar {
+    margin-top: 1rem;
+    display: flex;
+    @media (max-width: 768px) {
+      display: none;
+    }
+    .lowerNabvar_ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      .lowerNabvar_ul_a {
+        width: 8rem;
+        text-align: center;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 1rem;
         padding: 1rem;
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
+        font-weight: 600;
+        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        &:hover {
+          background-color: #ffffff26;
+          transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+      }
     }
-    .upperNavbar{
-        display: flex;
-        width: 100%;
-        justify-content: flex-start;
-        align-items: center;
-        .upperNavbar_menu {
-            display: none;
-            @media(max-width: 768px) {
-                width: 30%;
-                display: block;
-            }
-            .upperNavbar_menu_span {
-                color: #ffffff;
-                cursor: pointer;
-            }
-        }
-        .upperNavbar_logo {
-            width: 50%;
-            text-align: center;
-            display: flex;
-            justify-content: flex-start;
-            @media(max-width: 768px) {
-                width: 40%;
-                justify-content: center;
-            }
-            
-        }
-        .upperNavbar_icons{
-            width: 50%;
-            display: flex;
-            justify-content: flex-end;
-            @media(max-width: 768px) {
-                width: 30%;
-            }
-            .upperNavbar_icons_span{
-                color: #FFFFFF;
-                font-size: 1.5rem;
-                border-radius: 0.25rem;
-                padding: 0.5rem;
-                cursor: pointer;
-                &:hover{
-                    background-color: #ffffff26;
-                }
-            }
-        }
-    }
-    .lowerNabvar{
-        margin-top: 1rem;
-        display: flex;
-        @media(max-width: 768px) {
-            display: none;
-        }
-        .lowerNabvar_ul{
-            list-style-type: none;
-            display: flex;
-            justify-content: center;
-            .lowerNabvar_ul_a{
-                width: 8rem;
-                text-align: center;
-                text-decoration: none;
-                color: #ffffff;
-                font-size: 1rem;
-                padding: 1rem;
-                border-top-left-radius: 0.25rem;
-                border-top-right-radius: 0.25rem;
-                font-weight: 600;
-                transition: all .25s cubic-bezier(.645,.045,.355,1);
-                &:hover{
-                    background-color: #ffffff26;
-                    transition: all .25s cubic-bezier(.645,.045,.355,1);
-                }
-            }
-        }
-    }
+  }
 }

@@ -1,38 +1,27 @@
 import React, { useState, useEffect } from "react";
-import {
-  query,
-  limit,
-  getDocs,
-  collection,
-  getFirestore,
-} from "firebase/firestore";
-import Loader from "../../Components/Loader/Loader";
-import Filters from "./Filters/Filters";
+import { getAllProductsWithLimitService } from "../../Services/productsService";
 import ProductsContainer from "../../Components/ProductsContainer/ProductsContainer";
+import Filters from "./Filters/Filters";
+import Loader from "../../Components/Loader/Loader";
 import "./Products.scss";
 
 const Products = () => {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [productsLimit, setProductsLimit] = useState(10);
-  const [minRangeValue, setMinRangeValue] = useState("");
-  const [maxRangeValue, setMaxRangeValue] = useState("");
   const [searchBarValue, setSearchBarValue] = useState("");
 
-  const handleGetProducts = () => {
-    const dataBase = getFirestore();
-    const queryCollection = query(
-      collection(dataBase, "items"),
-      limit(productsLimit)
-      // where("price", "<=", maxRangeValue),
-      // where("price", ">=", minRangeValue)
-    );
-    getDocs(queryCollection)
-      .then((res) =>
-        setProducts(res.docs.map((prod) => ({ id: prod.id, ...prod.data() })))
-      )
-      .catch((err) => console.log(err))
-      .finally(() => setLoading(false));
+  const handleGetProducts = async () => {
+    setLoading(true);
+    try {
+      const response = await getAllProductsWithLimitService(productsLimit);
+      setProducts(
+        response.docs.map((prod) => ({ id: prod.id, ...prod.data() }))
+      );
+    } catch (error) {
+      console.log(error);
+    }
+    setLoading(false);
   };
 
   const handleFilterProducts = () => {
@@ -61,27 +50,21 @@ const Products = () => {
 
   return (
     <section className="products">
-      <div className="container">
+      <div className="products_container">
         <Filters
-          minRangeValue={minRangeValue}
-          maxRangeValue={maxRangeValue}
-          setMinRangeValue={setMinRangeValue}
-          setMaxRangeValue={setMaxRangeValue}
           setSearchBarValue={setSearchBarValue}
           handleGetProducts={handleGetProducts}
         />
         <ProductsContainer products={handleFilterProducts()} />
       </div>
-      {products === productsLimit.length ? (
-        <div className="products_actions">
-          <button
-            className="products_actions_button"
-            onClick={() => setProductsLimit((prev) => prev + 20)}
-          >
-            Cargar más productos
-          </button>
-        </div>
-      ) : null}
+      <div className="products_actions">
+        <button
+          className="products_actions_button"
+          onClick={() => setProductsLimit((prev) => prev + 20)}
+        >
+          Cargar más productos
+        </button>
+      </div>
     </section>
   );
 };

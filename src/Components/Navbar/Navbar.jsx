@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useFavoritesContext } from "../../Context/FavoritesContext";
 import { useCartContext } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
+import Nextec from "../../Assets/Images/Logo/Nextec.png";
 import SearchBar from "./SearchBar/SearchBar";
 import MenuResponsive from "./MenuResponsive/MenuResponsive";
 import ModalBackground from "../Modals/ModalBackground/ModalBackground";
@@ -23,20 +24,20 @@ const Navbar = () => {
           />
         </div>
         <div className="upperNavbar_logo">
-          <span className="upperNavbar_logo_span">Logo</span>
+          <img className="upperNavbar_logo_img" src={Nextec} />
         </div>
         <SearchBar />
         <div className="upperNavbar_icons">
           <Link to="/favorites">
             <span
               className="fas fa-heart upperNavbar_icons_span"
-              style={{ opacity: favorites.length >= 1 ? "1" : "0.5" }}
+              style={{ opacity: !favorites.length ? "0.5" : "1" }}
             />
           </Link>
           <Link to="/cart">
             <span
               className="fas fa-shopping-cart upperNavbar_icons_span"
-              style={{ opacity: cartList.length >= 1 ? "1" : "0.5" }}
+              style={{ opacity: !cartList.length ? "0.5" : "1" }}
             />
           </Link>
         </div>
