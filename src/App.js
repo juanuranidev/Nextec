@@ -11,7 +11,7 @@ import PageNotFound from "./Views/PageNotFound/PageNotFound";
 import MainContainer from "./Views/Main/Main";
 import CartContainer from "./Views/CartContainer/CartContainer";
 import PaymentContainer from "./Views/PaymentContainer/PaymentContainer";
-import ContactContainer from "./Views/ContactContainer/ContactContainer";
+import Contact from "./Views/Contact/Contact";
 import CategoryContainer from "./Views/CategoryContainer/CategoryContainer";
 import FavoritesContainer from "./Views/FavoritesContainer/FavoritesContainer";
 import ItemDetailContainer from "./Views/ItemDetailContainer/ItemDetailContainer";
@@ -36,7 +36,7 @@ function App() {
               element={<CategoryContainer />}
             />
             <Route exact path="/about" element={<About />} />
-            <Route exact path="/contact" element={<ContactContainer />} />
+            <Route exact path="/contact" element={<Contact />} />
             <Route
               exact
               path="/products/:idItem"
