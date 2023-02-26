@@ -1,8 +1,19 @@
 import React from "react";
-import ContactDetails from "./ContactDetails/ContactDetails";
+import { useFormik } from "formik";
 import "./Contact.scss";
 
 const ContactContainer = () => {
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+    onSubmit: (values) => {
+      console.log(JSON.stringify(values, null, 2));
+    },
+  });
+
   return (
     <section className="contact">
       <div className="contact_container">
