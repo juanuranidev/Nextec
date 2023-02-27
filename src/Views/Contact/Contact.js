@@ -24,7 +24,28 @@ const ContactContainer = () => {
             siguiente formulario
           </p>
         </div>
-        <div className="contact_container_form"></div>
+        <div className="contact_container_form">
+          <form>
+            <label>Nombre</label>
+            <input
+              value={formik.values.name}
+              onChange={formik.handleChange}
+              label="name"
+            />
+            <label>Email</label>
+            <input
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              label="email"
+            />
+            <label>Mensaje</label>
+            <textarea
+              value={formik.values.message}
+              onChange={formik.handleChange}
+              label="message"
+            />
+          </form>
+        </div>
       </div>
     </section>
   );
