@@ -25,25 +25,28 @@ const ContactContainer = () => {
           </p>
         </div>
         <div className="contact_container_form">
-          <form>
+          <form onSubmit={formik.handleSubmit}>
             <label>Nombre</label>
             <input
               value={formik.values.name}
               onChange={formik.handleChange}
-              label="name"
+              name="name"
+              tyoe="text"
             />
             <label>Email</label>
             <input
               value={formik.values.email}
               onChange={formik.handleChange}
-              label="email"
+              name="email"
+              type="email"
             />
             <label>Mensaje</label>
             <textarea
               value={formik.values.message}
               onChange={formik.handleChange}
-              label="message"
+              name="message"
             />
+            <button type="submit">Enviar</button>
           </form>
         </div>
       </div>
