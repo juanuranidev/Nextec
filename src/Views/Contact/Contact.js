@@ -27,33 +27,56 @@ const ContactContainer = () => {
         </div>
 
         <form onSubmit={formik.handleSubmit} className="contact_container_form">
-          <label>Nombre</label>
-          <input
-            value={formik.values.name}
-            onChange={formik.handleChange}
-            name="name"
-            tyoe="text"
-          />
-          <label>Email</label>
-          <input
-            value={formik.values.email}
-            onChange={formik.handleChange}
-            name="email"
-            type="email"
-          />
-          <label>Telefono</label>
-          <input
-            value={formik.values.phone}
-            onChange={formik.handleChange}
-            name="phone"
-            type="number"
-          />
-          <label>Mensaje</label>
-          <textarea
-            value={formik.values.message}
-            onChange={formik.handleChange}
-            name="message"
-          />
+          <div className="contact_container_form_div_name">
+            <label className="contact_container_form_div_name_label">
+              Nombre
+            </label>
+            <input
+              name="name"
+              tyoe="text"
+              className="contact_container_form_div_name_input"
+              value={formik.values.name}
+              onChange={formik.handleChange}
+            />
+          </div>
+          <div className="contact_container_form_div">
+            <div className="contact_container_form_div_email">
+              <label className="contact_container_form_div_email_label">
+                Email
+              </label>
+              <input
+                name="email"
+                type="email"
+                className="contact_container_form_div_email_input"
+                value={formik.values.email}
+                onChange={formik.handleChange}
+              />
+            </div>
+            <div className="contact_container_form_div_phone">
+              <label className="contact_container_form_div_phone_label">
+                Telefono
+              </label>
+              <input
+                name="phone"
+                type="number"
+                className="contact_container_form_div_phone_input"
+                value={formik.values.phone}
+                onChange={formik.handleChange}
+              />
+            </div>
+          </div>
+
+          <div className="contact_container_form_div_textarea">
+            <label className="contact_container_form_div_textarea_label">
+              Mensaje
+            </label>
+            <textarea
+              name="message"
+              className="contact_container_form_div_textarea_textarea"
+              value={formik.values.message}
+              onChange={formik.handleChange}
+            />
+          </div>
           <button type="submit">Enviar</button>
         </form>
       </div>
