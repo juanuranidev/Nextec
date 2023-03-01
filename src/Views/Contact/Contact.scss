@@ -4,6 +4,7 @@
   .contact_container {
     width: 90%;
     margin: auto;
+    display: flex;
     border-radius: 0.25rem;
     background-color: #ffffff;
     box-shadow: rgb(0 0 0 / 8%) 0px 4px 12px;
@@ -22,8 +23,8 @@
         font-weight: 400;
       }
     }
-  }
-  .contact_container_form {
-    width: 60%;
+    .contact_container_form {
+      width: 60%;
+    }
   }
 }

@@ -7,6 +7,7 @@ const ContactContainer = () => {
     initialValues: {
       name: "",
       email: "",
+      phone: "",
       message: "",
     },
     onSubmit: (values) => {
@@ -24,31 +25,36 @@ const ContactContainer = () => {
             siguiente formulario
           </p>
         </div>
-        <div className="contact_container_form">
-          <form onSubmit={formik.handleSubmit}>
-            <label>Nombre</label>
-            <input
-              value={formik.values.name}
-              onChange={formik.handleChange}
-              name="name"
-              tyoe="text"
-            />
-            <label>Email</label>
-            <input
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              name="email"
-              type="email"
-            />
-            <label>Mensaje</label>
-            <textarea
-              value={formik.values.message}
-              onChange={formik.handleChange}
-              name="message"
-            />
-            <button type="submit">Enviar</button>
-          </form>
-        </div>
+        <form onSubmit={formik.handleSubmit} className="contact_container_form">
+          <label>Nombre</label>
+          <input
+            value={formik.values.name}
+            onChange={formik.handleChange}
+            name="name"
+            tyoe="text"
+          />
+          <label>Email</label>
+          <input
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            name="email"
+            type="email"
+          />
+          <label>Telefono</label>
+          <input
+            value={formik.values.phone}
+            onChange={formik.handleChange}
+            name="phone"
+            type="number"
+          />
+          <label>Mensaje</label>
+          <textarea
+            value={formik.values.message}
+            onChange={formik.handleChange}
+            name="message"
+          />
+          <button type="submit">Enviar</button>
+        </form>
       </div>
     </section>
   );
