@@ -25,6 +25,7 @@ const ContactContainer = () => {
             siguiente formulario
           </p>
         </div>
+
         <form onSubmit={formik.handleSubmit} className="contact_container_form">
           <label>Nombre</label>
           <input
