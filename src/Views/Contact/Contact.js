@@ -1,8 +1,16 @@
 import React from "react";
 import { useFormik } from "formik";
+import * as Yup from "yup";
 import "./Contact.scss";
 
 const ContactContainer = () => {
+  let messageSchema = object({
+    name: string().required("*"),
+    email: email().required("*"),
+    phone: number().required("*"),
+    message: string().required("*"),
+  });
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -13,6 +21,7 @@ const ContactContainer = () => {
     onSubmit: (values) => {
       console.log(JSON.stringify(values, null, 2));
     },
+    validationSchema: messageSchema,
   });
 
   return (
