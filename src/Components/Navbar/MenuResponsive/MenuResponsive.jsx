@@ -20,9 +20,6 @@ export default function MenuResponsive({ onOpen, onClose }) {
             <li className="menuResponsive_links_ul_a_li">Productos</li>
           </Link>
           <Link to="/" className="menuResponsive_links_ul_a" onClick={onClose}>
-            <li className="menuResponsive_links_ul_a_li">Nosotros</li>
-          </Link>
-          <Link to="/" className="menuResponsive_links_ul_a" onClick={onClose}>
             <li className="menuResponsive_links_ul_a_li">Contacto</li>
           </Link>
           <Link to="/" className="menuResponsive_links_ul_a" onClick={onClose}>

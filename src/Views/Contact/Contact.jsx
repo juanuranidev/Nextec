@@ -43,7 +43,7 @@ const ContactContainer = () => {
     <section className="contact">
       <div className="contact_container">
         <div className="contact_container_info">
-          <h2 className="contact_container_info_h2">HABLEMOS</h2>
+          <h2 className="contact_container_info_h2">Contactanos</h2>
           <p className="contact_container_info_p">
             Cualquier duda, inquietud o consulta podrás resolverla llenando el
             siguiente formulario.

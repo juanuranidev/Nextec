@@ -24,7 +24,9 @@ const Navbar = () => {
           />
         </div>
         <div className="upperNavbar_logo">
-          <img className="upperNavbar_logo_img" src={Nextec} />
+          <Link to="">
+            <img className="upperNavbar_logo_img" src={Nextec} />
+          </Link>
         </div>
         <SearchBar />
         <div className="upperNavbar_icons">
@@ -49,9 +51,6 @@ const Navbar = () => {
           </Link>
           <Link to="/products" className="lowerNabvar_ul_a">
             <li className="lowerNabvar_ul_a_li">Productos</li>
-          </Link>
-          <Link to="/about" className="lowerNabvar_ul_a">
-            <li className="lowerNabvar_ul_a_li">Nosotros</li>
           </Link>
           <Link to="/contact" className="lowerNabvar_ul_a">
             <li className="lowerNabvar_ul_a_li">Contacto</li>

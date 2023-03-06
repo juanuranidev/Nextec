@@ -1,21 +1,19 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { FavoritesContextProvider } from "./Context/FavoritesContext";
-import { ToastContainer, Zoom } from "react-toastify";
-import { CartContextProvider } from "./Context/CartContext";
 import { getFirestoreApp } from "./Firebase/dbConfig";
-import About from "./Views/AboutContainer/About";
-import Footer from "./Components/Footer/Footer";
-import Navbar from "./Components/Navbar/Navbar";
-import PageNotFound from "./Views/PageNotFound/PageNotFound";
+import { CartContextProvider } from "./Context/CartContext";
+import { ToastContainer, Zoom } from "react-toastify";
+import { FavoritesContextProvider } from "./Context/FavoritesContext";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ItemDetailContainer from "./Views/ItemDetailContainer/ItemDetailContainer";
+import FavoritesContainer from "./Views/FavoritesContainer/FavoritesContainer";
+import PaymentContainer from "./Views/PaymentContainer/PaymentContainer";
 import MainContainer from "./Views/Main/Main";
 import CartContainer from "./Views/CartContainer/CartContainer";
-import PaymentContainer from "./Views/PaymentContainer/PaymentContainer";
-import Contact from "./Views/Contact/Contact";
-import CategoryContainer from "./Views/CategoryContainer/CategoryContainer";
-import FavoritesContainer from "./Views/FavoritesContainer/FavoritesContainer";
-import ItemDetailContainer from "./Views/ItemDetailContainer/ItemDetailContainer";
+import PageNotFound from "./Views/PageNotFound/PageNotFound";
 import Products from "./Views/Products/Products";
+import Contact from "./Views/Contact/Contact";
+import Footer from "./Components/Footer/Footer";
+import Navbar from "./Components/Navbar/Navbar";
 import "./Assets/Scss/Base.scss";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -30,12 +28,6 @@ function App() {
           <Routes>
             <Route exact path="/" element={<MainContainer />} />
             <Route exact path="/products" element={<Products />} />
-            <Route
-              exact
-              path="/category/:idCategory"
-              element={<CategoryContainer />}
-            />
-            <Route exact path="/about" element={<About />} />
             <Route exact path="/contact" element={<Contact />} />
             <Route
               exact
