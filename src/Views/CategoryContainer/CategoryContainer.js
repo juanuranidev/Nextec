@@ -2,7 +2,6 @@ import { React, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
 import Header from '../Main/Header/Header';
-import BackButton from '../../Components/BackButton/BackButton';
 import './_CategoryContainer.scss';
 
 const CategoryContainer = () => {
@@ -22,7 +21,6 @@ const CategoryContainer = () => {
     return (
         <>
         <section className='categoryContainer'>
-            <BackButton />
             {/* <ItemList products={data}/> */}
         </section>
         </>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { useFavoritesContext } from '../../Context/FavoritesContext';
 import Header from '../Main/Header/Header';
-import Message from '../../Components/Message/Message';
-import BackButton from '../../Components/BackButton/BackButton';
+// import Message from '../../Components/Message/Message
+// import BackButton from '../../Components/BackButton/BackButton';
 import './_FavoritesContainer.scss';
 
 const FavoritesContainer = () => {
@@ -11,7 +11,7 @@ const FavoritesContainer = () => {
   if(favorites.length===0){
     return(
       <>
-        <Message h2={"No tenés favoritos"} p={"¡Agrega nuevos productos!"} />
+        {/* <Message h2={"No tenés favoritos"} p={"¡Agrega nuevos productos!"}  */}
       </>
     )
   }
@@ -19,7 +19,7 @@ const FavoritesContainer = () => {
   return (
     <>   
       <section className="favoritesContainer">
-        <BackButton />
+        {/* <BackButton /> */}
         {/* <ItemList products={favorites}/> */}
       </section>
     </>

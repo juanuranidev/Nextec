@@ -3,7 +3,7 @@ import { useCartContext } from '../../../Context/CartContext';
 import { useFavoritesContext } from '../../../Context/FavoritesContext';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
-import BackButton from '../../../Components/BackButton/BackButton';
+// import BackButton from '../../../Components/BackButton/BackButton';
 import MercadoPago from './img/mercadopago.png';
 import ItemCount from '../ItemCount/ItemCount';
 import './_ItemDetail.scss';
@@ -28,7 +28,7 @@ const ItemDetail = ({product}) => {
     
     return (
         <>
-            <BackButton />
+            {/* <BackButton /> */}
             <div className='itemDetail'>     
                 <div className='itemImage'>
                     <img src={product.image} className='itemImage_img' alt='Imágen del producto'/>

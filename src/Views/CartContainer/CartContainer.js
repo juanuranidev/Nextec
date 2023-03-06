@@ -1,6 +1,6 @@
 import React from 'react';
 import { useCartContext } from '../../Context/CartContext';
-import Message from '../../Components/Message/Message';
+// import Message from '../../Components/Message/Message';
 import CartItem from './CartItem/CartItem';
 import EmptyCartButton from './EmptyCartButton/EmptyCartButton';
 import CartPayment from './CartPayment/CartPayment';
@@ -13,7 +13,7 @@ function CartContainer() {
         return(
             <>
                 <section className='cartSection'>
-                    <Message h2={'Carrito vacío'} p={'¡Agrega nuevos productos!'} />
+                    {/* <Message h2={'Carrito vacío'} p={'¡Agrega nuevos productos!'} /> */}
                 </section>
             </>
         )

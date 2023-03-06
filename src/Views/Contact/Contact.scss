@@ -1,6 +1,8 @@
 .contact {
   padding: 5rem 0rem;
-  min-height: 60vh;
+  min-height: 50vh;
+  max-width: 80rem;
+  margin: auto;
   .contact_container {
     width: 90%;
     margin: auto;
@@ -9,28 +11,61 @@
     background-color: #ffffff;
     box-shadow: rgb(0 0 0 / 8%) 0px 4px 12px;
     padding: 1rem;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
     .contact_container_info {
-      width: 40%;
+      width: 55%;
       border-top-left-radius: 0.25rem;
       border-bottom-left-radius: 0.25rem;
       height: 100%;
       color: #000000;
+      @media (max-width: 768px) {
+        width: 100%;
+        margin-bottom: 2.5rem;
+      }
       .contact_container_info_h2 {
         margin-bottom: 1rem;
         font-size: 2rem;
       }
+      .contact_container_info_h4 {
+        margin-bottom: 0.2rem;
+        font-size: 1rem;
+      }
       .contact_container_info_p {
         font-weight: 400;
+        margin-bottom: 1.5rem;
+      }
+
+      .socials {
+        .socials_a {
+          color: #3498db;
+          transition: all 0.15s linear;
+          &:hover {
+            color: #2085c7;
+            transition: all 0.15s linear;
+          }
+          &:active {
+            color: #166ea9;
+            transition: all 0.15s linear;
+          }
+        }
       }
     }
     .contact_container_form {
-      width: 60%;
+      width: 45%;
+      margin-left: 1rem;
+      @media (max-width: 768px) {
+        width: 100%;
+        margin-left: 0rem;
+      }
       .contact_container_form_div_name {
         display: flex;
         flex-direction: column;
         width: 100%;
         .contact_container_form_div_name_label {
           margin-bottom: 0.5rem;
+          font-weight: 600;
         }
         .contact_container_form_div_name_input {
           border-radius: 0.25rem;
@@ -38,6 +73,7 @@
           height: 2.2rem;
           padding: 0.2rem;
           margin-bottom: 1rem;
+          font-size: 1rem;
         }
       }
       .contact_container_form_div {
@@ -50,6 +86,7 @@
           flex-direction: column;
           .contact_container_form_div_email_label {
             margin-bottom: 0.5rem;
+            font-weight: 600;
           }
           .contact_container_form_div_email_input {
             border-radius: 0.25rem;
@@ -58,6 +95,7 @@
             padding: 0.2rem;
             margin-bottom: 1rem;
             width: 100%;
+            font-size: 1rem;
           }
         }
         .contact_container_form_div_phone {
@@ -66,6 +104,7 @@
           flex-direction: column;
           .contact_container_form_div_phone_label {
             margin-bottom: 0.5rem;
+            font-weight: 600;
           }
           .contact_container_form_div_phone_input {
             border-radius: 0.25rem;
@@ -74,6 +113,7 @@
             padding: 0.2rem;
             margin-bottom: 1rem;
             width: 100%;
+            font-size: 1rem;
           }
         }
       }
@@ -85,6 +125,7 @@
         min-width: 100%;
         .contact_container_form_div_textarea_label {
           margin-bottom: 0.5rem;
+          font-weight: 600;
         }
         .contact_container_form_div_textarea_textarea {
           border-radius: 0.25rem;
@@ -93,6 +134,7 @@
           margin-bottom: 1rem;
           height: 5rem;
           resize: none;
+          font-size: 1rem;
         }
       }
     }

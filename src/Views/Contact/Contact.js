@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
 import { useFormik } from "formik";
-import * as Yup from "yup";
+import { registerMessageService } from "./ContactServices";
+import { object, string, number } from "yup";
+import PrimaryButton from "../../Components/Buttons/PrimaryButton";
+import Socials from "../../Components/Socials/Socials";
 import "./Contact.scss";
 
 const ContactContainer = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
   let messageSchema = object({
     name: string().required("*"),
-    email: email().required("*"),
-    phone: number().required("*"),
+    email: string().required("*"),
+    phone: number(),
     message: string().required("*"),
   });
 
@@ -18,8 +24,17 @@ const ContactContainer = () => {
       phone: "",
       message: "",
     },
-    onSubmit: (values) => {
-      console.log(JSON.stringify(values, null, 2));
+    onSubmit: async (values) => {
+      setIsLoading(true);
+      try {
+        const response = await registerMessageService(values);
+        toast.success("Mensaje enviado con éxito");
+        formik.resetForm();
+      } catch (error) {
+        console.log(error);
+        toast.error("Ocurrión un error. Intente nuevamente.");
+      }
+      setIsLoading(false);
     },
     validationSchema: messageSchema,
   });
@@ -28,21 +43,42 @@ const ContactContainer = () => {
     <section className="contact">
       <div className="contact_container">
         <div className="contact_container_info">
-          <h2 className="contact_container_info_h2">Hablemos</h2>
+          <h2 className="contact_container_info_h2">HABLEMOS</h2>
           <p className="contact_container_info_p">
             Cualquier duda, inquietud o consulta podrás resolverla llenando el
-            siguiente formulario
+            siguiente formulario.
           </p>
+          <h4 className="contact_container_info_h4">Dirección</h4>
+          <p className="contact_container_info_p">Calle falsa 123</p>
+          <h4 className="contact_container_info_h4">Email</h4>
+          <p className="contact_container_info_p">contacto@nextec.com</p>
+          <h4 className="contact_container_info_h4">Teléfono</h4>
+          <p className="contact_container_info_p">+54 3512345678</p>
+          <h4 className="contact_container_info_h4">Horarios</h4>
+          <p className="contact_container_info_p">
+            Lun a Vie de 8 a 18hs. Sábado de 10 a 14hs.
+          </p>
+          <Socials />
         </div>
-
         <form onSubmit={formik.handleSubmit} className="contact_container_form">
           <div className="contact_container_form_div_name">
             <label className="contact_container_form_div_name_label">
-              Nombre
+              Nombre completo{" "}
+              <label
+                style={{
+                  color:
+                    formik.errors.name && formik.touched.name
+                      ? "#ff0000"
+                      : "#000000",
+                }}
+              >
+                *
+              </label>
             </label>
             <input
+              id="name"
               name="name"
-              tyoe="text"
+              type="text"
               className="contact_container_form_div_name_input"
               value={formik.values.name}
               onChange={formik.handleChange}
@@ -51,7 +87,17 @@ const ContactContainer = () => {
           <div className="contact_container_form_div">
             <div className="contact_container_form_div_email">
               <label className="contact_container_form_div_email_label">
-                Email
+                Email{" "}
+                <label
+                  style={{
+                    color:
+                      formik.errors.email && formik.touched.email
+                        ? "#ff0000"
+                        : "#000000",
+                  }}
+                >
+                  *
+                </label>
               </label>
               <input
                 name="email"
@@ -63,7 +109,7 @@ const ContactContainer = () => {
             </div>
             <div className="contact_container_form_div_phone">
               <label className="contact_container_form_div_phone_label">
-                Telefono
+                Teléfono
               </label>
               <input
                 name="phone"
@@ -74,10 +120,19 @@ const ContactContainer = () => {
               />
             </div>
           </div>
-
           <div className="contact_container_form_div_textarea">
             <label className="contact_container_form_div_textarea_label">
-              Mensaje
+              Mensaje{" "}
+              <label
+                style={{
+                  color:
+                    formik.errors.message && formik.touched.message
+                      ? "#ff0000"
+                      : "#000000",
+                }}
+              >
+                *
+              </label>
             </label>
             <textarea
               name="message"
@@ -86,7 +141,11 @@ const ContactContainer = () => {
               onChange={formik.handleChange}
             />
           </div>
-          <button type="submit">Enviar</button>
+          <PrimaryButton
+            type="submit"
+            text={isLoading ? "Enviando..." : "Enviar"}
+            disabled={isLoading}
+          />
         </form>
       </div>
     </section>

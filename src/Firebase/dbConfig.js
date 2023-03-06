@@ -6,11 +6,11 @@ const firebaseConfig = {
   projectId: "tienda-electronica-61e80",
   storageBucket: "tienda-electronica-61e80.appspot.com",
   messagingSenderId: "1066442380740",
-  appId: "1:1066442380740:web:dcfec95d7a0c3a78584091"
+  appId: "1:1066442380740:web:7d81ad4061b951ff584091",
 };
 
 const app = initializeApp(firebaseConfig);
 
 export const getFirestoreApp = () => {
-    return app 
-}
+  return app;
+};
