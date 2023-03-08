@@ -1,6 +1,6 @@
 import React from "react";
 import { useFavoritesContext } from "../../Context/FavoritesContext";
-import "./_FavoritesContainer.scss";
+import "./Favorites.scss";
 
 const FavoritesContainer = () => {
   const { favorites } = useFavoritesContext();

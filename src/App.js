@@ -4,16 +4,16 @@ import { CartContextProvider } from "./Context/CartContext";
 import { ToastContainer, Zoom } from "react-toastify";
 import { FavoritesContextProvider } from "./Context/FavoritesContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ItemDetailContainer from "./Views/ItemDetailContainer/ItemDetailContainer";
-import FavoritesContainer from "./Views/FavoritesContainer/FavoritesContainer";
 import PaymentContainer from "./Views/PaymentContainer/PaymentContainer";
 import MainContainer from "./Views/Main/Main";
-import CartContainer from "./Views/CartContainer/CartContainer";
 import PageNotFound from "./Views/PageNotFound/PageNotFound";
+import ItemDetail from "./Views/ItemDetail/ItemDetail";
+import Favorites from "./Views/Favorites/Favorites";
 import Products from "./Views/Products/Products";
 import Contact from "./Views/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Navbar/Navbar";
+import Cart from "./Views/Cart/Cart";
 import "./Assets/Scss/Base.scss";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -29,13 +29,9 @@ function App() {
             <Route exact path="/" element={<MainContainer />} />
             <Route exact path="/products" element={<Products />} />
             <Route exact path="/contact" element={<Contact />} />
-            <Route
-              exact
-              path="/products/:idItem"
-              element={<ItemDetailContainer />}
-            />
-            <Route exact path="/favorites" element={<FavoritesContainer />} />
-            <Route exact path="/cart" element={<CartContainer />} />
+            <Route exact path="/products/:idItem" element={<ItemDetail />} />
+            <Route exact path="/favorites" element={<Favorites />} />
+            <Route exact path="/cart" element={<Cart />} />
             <Route exact path="/payment" element={<PaymentContainer />} />
             <Route exact path="/*" element={<PageNotFound />} />
           </Routes>
