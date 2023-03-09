@@ -1,5 +1,7 @@
 import React from "react";
+import ProductList from "../../Components/ProductList/ProductList";
 import { useFavoritesContext } from "../../Context/FavoritesContext";
+
 import "./Favorites.scss";
 
 const FavoritesContainer = () => {
@@ -14,7 +16,7 @@ const FavoritesContainer = () => {
   return (
     <section className="favoritesContainer">
       {/* <BackButton /> */}
-      <ItemList products={favorites} />
+      <ProductList products={favorites} />
     </section>
   );
 };
