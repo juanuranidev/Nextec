@@ -1,28 +1,38 @@
-import { React, useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { getFirestore, doc, getDoc } from 'firebase/firestore';
-import ItemDetail from './ItemDetail/ItemDetail';
-import './_ItemDetailContainer.scss';
+import { React, useState, useEffect } from "react";
+import { getItem } from "./ItemDetailService";
+import { useParams } from "react-router-dom";
+import ItemDetail from "./ItemDetail/ItemDetail";
+import Loader from "../../Components/Loader/Loader";
+import "./ItemDetail.scss";
 
 const ItemDetailContainer = () => {
-  const [product, setProduct] = useState({})
-  const [loading, setLoading] = useState(true)
-  const {idItem} = useParams()
+  const [product, setProduct] = useState({});
+  const [loading, setLoading] = useState(true);
+  const { idItem } = useParams();
+
+  const handleGetItemDetail = async () => {
+    setLoading(true);
+    try {
+      const response = await getItem(idItem);
+      setProduct({ id: response.id, ...response.data() });
+    } catch (error) {
+      console.log(error);
+    }
+    setLoading(false);
+  };
 
   useEffect(() => {
-    const dataBase = getFirestore()
-    const queryProd = doc (dataBase, 'items', idItem)
-    getDoc(queryProd)
-      .then(resp => setProduct({id: resp.id, ...resp.data()}))
-      .catch(err => console.log(err))
-      .finally(() => setLoading(false))
-  }, [idItem])
-  
-    return (
-        <section className='itemDetailContainer'>
-          <ItemDetail product={product} />
-        </section>
-    )
-} 
+    handleGetItemDetail();
+  }, [idItem]);
+
+  if (loading) return <Loader />;
+
+  return (
+    <section className="itemDetail">
+      {/* <ItemDetail product={product} /> */}
+      <div className="itemDetail_container"></div>
+    </section>
+  );
+};
 
 export default ItemDetailContainer;

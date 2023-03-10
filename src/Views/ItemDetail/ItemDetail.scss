@@ -1,3 +1,11 @@
-.itemDetailContainer{
-    margin: 2rem 0rem;
+.itemDetail {
+  padding: 5rem 0rem;
+  min-height: 50vh;
+  margin: auto;
+  background-color: #ffffff;
+  width: 90%;
+  .itemDetail_container {
+    width: 100%;
+    margin: auto;
+  }
 }
