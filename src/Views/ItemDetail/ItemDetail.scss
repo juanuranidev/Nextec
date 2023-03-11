@@ -3,9 +3,12 @@
   min-height: 50vh;
   margin: auto;
   background-color: #ffffff;
-  width: 90%;
+  width: 100%;
   .itemDetail_container {
-    width: 100%;
+    width: 90%;
     margin: auto;
+    .itemDetail_container_img {
+      width: 50%;
+    }
   }
 }

@@ -6,7 +6,7 @@ import Loader from "../../Components/Loader/Loader";
 import "./ItemDetail.scss";
 
 const ItemDetailContainer = () => {
-  const [product, setProduct] = useState({});
+  const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
   const { idItem } = useParams();
 
@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
     setLoading(true);
     try {
       const response = await getItem(idItem);
-      setProduct({ id: response.id, ...response.data() });
+      setItem({ id: response.id, ...response.data() });
     } catch (error) {
       console.log(error);
     }
@@ -30,7 +30,9 @@ const ItemDetailContainer = () => {
   return (
     <section className="itemDetail">
       {/* <ItemDetail product={product} /> */}
-      <div className="itemDetail_container"></div>
+      <div className="itemDetail_container">
+        <img className="itemDetail_container_img" src={item.image} />
+      </div>
     </section>
   );
 };
