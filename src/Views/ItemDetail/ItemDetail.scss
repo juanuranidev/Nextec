@@ -6,9 +6,23 @@
   width: 100%;
   .itemDetail_container {
     width: 90%;
+    max-width: 80rem;
     margin: auto;
+    background-color: red;
+    display: flex;
     .itemDetail_container_img {
       width: 50%;
+    }
+    .itemDetail_container_div {
+      width: 50%;
+      .itemDetail_container_div_favorite {
+        display: flex;
+        justify-content: flex-end;
+        .itemDetail_container_div_favorite_span {
+          color: #3498db;
+          cursor: pointer;
+        }
+      }
     }
   }
 }
