@@ -6,10 +6,9 @@
   width: 100%;
   .itemDetail_container {
     width: 90%;
-    max-width: 80rem;
     margin: auto;
-    background-color: red;
     display: flex;
+    max-width: 80rem;
     .itemDetail_container_img {
       width: 50%;
     }
@@ -18,8 +17,12 @@
       .itemDetail_container_div_favorite {
         display: flex;
         justify-content: flex-end;
+        .itemDetail_container_div_favorite_h2 {
+          margin-right: 0.5rem;
+        }
         .itemDetail_container_div_favorite_span {
           color: #3498db;
+          font-size: 1.5rem;
           cursor: pointer;
         }
       }

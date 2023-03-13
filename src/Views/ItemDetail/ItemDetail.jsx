@@ -43,6 +43,9 @@ const ItemDetailContainer = () => {
         <div className="itemDetail_container_div">
           {isInFavorites(item) ? (
             <div className="itemDetail_container_div_favorite">
+              <h2 className="itemDetail_container_div_favorite_h2">
+                {item.name}
+              </h2>
               <span
                 className="fas fa-heart fa-2x itemDetail_container_div_favorite_span"
                 onClick={() => handleFavorites(item)}
@@ -50,6 +53,9 @@ const ItemDetailContainer = () => {
             </div>
           ) : (
             <div className="itemDetail_container_div_favorite">
+              <h2 className="itemDetail_container_div_favorite_h2">
+                {item.name}
+              </h2>
               <span
                 className="far fa-heart fa-2x itemDetail_container_div_favorite_span"
                 onClick={() => handleFavorites(item)}
